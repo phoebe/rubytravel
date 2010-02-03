@@ -1,0 +1,176 @@
+  [4;36;1mSQL (10.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (80.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (141.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100202204958)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255), "password" varchar(255), "last_login" datetime, "first_name" varchar(255), "last_name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202204958')[0m
+Migrating to CreatePlaces (20100202205016)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "lat" float, "lon" float, "parent_id" integer, "type" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202205016')[0m
+Migrating to CreateTags (20100202205115)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "creator_id" integer, "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202205115')[0m
+Migrating to CreateTrips (20100202205126)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "trips" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202205126')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("places")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tags")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("trips")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTrips (20100202205126)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mDROP TABLE "trips"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100202205126'[0m
+Migrating to CreateTags (20100202205115)
+  [4;35;1mSQL (0.0ms)[0m   [0mDROP TABLE "tags"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100202205115'[0m
+Migrating to CreatePlaces (20100202205016)
+  [4;35;1mSQL (0.0ms)[0m   [0mDROP TABLE "places"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100202205016'[0m
+Migrating to CreateUsers (20100202204958)
+  [4;35;1mSQL (0.0ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100202204958'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100202204958)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255), "password" varchar(255), "last_login" datetime, "first_name" varchar(255), "last_name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100202204958')[0m
+Migrating to CreatePlaces (20100202205016)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "lat" float, "lon" float, "parent_id" integer, "type" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100202205016')[0m
+Migrating to CreateTags (20100202205115)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "creator_id" integer, "parent_id" integer, "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100202205115')[0m
+Migrating to CreateTrips (20100202205126)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "trips" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100202205126')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("trips")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mTag Create (0.0ms)[0m   [0;1mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('outdoors', '2010-02-02 21:46:43', NULL, 'Outdoors activities', NULL, '2010-02-02 21:46:43')[0m
+  [4;35;1mTag Create (0.0ms)[0m   [0mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('hiking', '2010-02-02 21:46:43', NULL, NULL, 1, '2010-02-02 21:46:43')[0m
+  [4;36;1mTag Create (0.0ms)[0m   [0;1mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('skiing', '2010-02-02 21:46:43', NULL, NULL, 1, '2010-02-02 21:46:43')[0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" [0m
+  [4;35;1mTag Load (10.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags".parent_id = 1) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."id" = 1) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'outdoors') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (100.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (140.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100202204958)
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100202204958)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100202204958)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255), "password" varchar(255), "last_login" datetime, "first_name" varchar(255), "last_name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100202204958')[0m
+Migrating to CreatePlaces (20100202205016)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "lat" float, "lon" float, "parent_id" integer, "type" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100202205016')[0m
+Migrating to CreateTags (20100202205115)
+  [4;35;1mSQL (10.0ms)[0m   [0mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "creator_id" integer, "parent_id" integer, "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100202205115')[0m
+Migrating to CreateTrips (20100202205126)
+  [4;35;1mSQL (10.0ms)[0m   [0mCREATE TABLE "trips" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100202205126')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("places")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("trips")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mUser Create (10.0ms)[0m   [0;1mINSERT INTO "users" ("last_login", "updated_at", "first_name", "login", "password", "last_name", "email", "created_at") VALUES(NULL, '2010-02-02 21:59:07', NULL, 'ron', NULL, NULL, NULL, '2010-02-02 21:59:07')[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO "users" ("last_login", "updated_at", "first_name", "login", "password", "last_name", "email", "created_at") VALUES(NULL, '2010-02-02 21:59:07', NULL, 'phoebe', NULL, NULL, NULL, '2010-02-02 21:59:07')[0m
+  [4;36;1mTag Create (0.0ms)[0m   [0;1mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('outdoors', '2010-02-02 21:59:07', 2, 'Outdoors activities', NULL, '2010-02-02 21:59:07')[0m
+  [4;35;1mTag Create (0.0ms)[0m   [0mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('hiking', '2010-02-02 21:59:07', 1, NULL, 1, '2010-02-02 21:59:07')[0m
+  [4;36;1mTag Create (0.0ms)[0m   [0;1mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('skiing', '2010-02-02 21:59:08', 2, NULL, 1, '2010-02-02 21:59:08')[0m
+  [4;35;1mTag Create (0.0ms)[0m   [0mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('culture', '2010-02-02 21:59:08', NULL, 'Cultural activities', NULL, '2010-02-02 21:59:08')[0m
+  [4;36;1mTag Create (0.0ms)[0m   [0;1mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('museum', '2010-02-02 21:59:08', NULL, NULL, 4, '2010-02-02 21:59:08')[0m
+  [4;35;1mTag Create (0.0ms)[0m   [0mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('art museum', '2010-02-02 21:59:08', 2, NULL, 5, '2010-02-02 21:59:08')[0m
+  [4;36;1mTag Create (0.0ms)[0m   [0;1mINSERT INTO "tags" ("name", "updated_at", "creator_id", "description", "parent_id", "created_at") VALUES('science museum', '2010-02-02 21:59:08', 1, NULL, 5, '2010-02-02 21:59:08')[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ron') LIMIT 1[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags".creator_id = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ron') LIMIT 1[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags".creator_id = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'phoebe') LIMIT 1[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags".creator_id = 2) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."id" = 1) [0m

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+ron:
+    name: ron
+    first_name: ron
+    last_name: newman
+
+phoebe:
+    name: phoebe
+    first_name: phoebe
+    last_name: miller
