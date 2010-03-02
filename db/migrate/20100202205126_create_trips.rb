@@ -1,7 +1,7 @@
 class CreateTrips < ActiveRecord::Migration
   def self.up
     create_table :trips do |t|
-
+      t.user_id 
       t.timestamps
     end
   end
