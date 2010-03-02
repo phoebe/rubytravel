@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20100302214302) do
 
   create_table "tags", :force => true do |t|
     t.string   "name",        :null => false
+    t.string   "uri",         :null => false
     t.integer  "creator_id"
     t.integer  "parent_id"
     t.string   "description"
