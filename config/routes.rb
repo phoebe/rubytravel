@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :profiles
+
+  map.resources :users
+
 
   Clearance::Routes.draw(map)
   # The priority is based upon order of creation: first created -> highest priority.
@@ -15,7 +19,9 @@ ActionController::Routing::Routes.draw do |map|
   #   map.resources :products
   map.resources :tags
   map.resources :profiles
-  map.resources :users
+  map.resources :users do |users|
+    users.resources :profiles
+  end
   map.resources :trips
 
   # Sample resource route with options:

@@ -1,0 +1,8 @@
+<p>Login: <%= @user.login %> </p>
+<p>Name: <%= @user.first_name %> <%= @user.last_name %> </p>
+<p>Email: <%= @user.email %></p>
+<p>You have <%= @user.profiles.count %> profiles defined so far.</p>
+<%= render @user.profiles %>
+<%= link_to 'Create a new profile', new_user_profile_path(@user) %>
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Back', users_path %>
