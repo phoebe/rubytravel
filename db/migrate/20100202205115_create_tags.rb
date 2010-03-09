@@ -8,6 +8,10 @@ class CreateTags < ActiveRecord::Migration
       t.string :description
       t.timestamps
     end
+
+    add_index :name => "tag_index", :unique  => true
+    add_index :uri => "tag_index", :unique  => true
+
   end
 
   def self.down
