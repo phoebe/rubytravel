@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   Clearance::Routes.draw(map)
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -12,6 +13,10 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
+  map.resources :tags
+  map.resources :profiles
+  map.resources :users
+  map.resources :trips
 
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
