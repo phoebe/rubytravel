@@ -7,13 +7,22 @@
 #   column: value
 
 active:
-	name: active
-	description: sports or action related, requires movement
+  name: active
+  uri: http://kalinda.us/ns/Active
+  description: sports or action related, requires movement, such as walking or dancing
 
 outdoors:
-	name: outdoors
-	description: outdoors activity
+  name: outdoors
+  uri: http://kalinda.us/ns/Outdoors
+  description: events or activities done outdoors 
 
 culture:
-	name: culture
-	descr
+  name: culture
+  uri: http://kalinda.us/ns/Culture
+  description: art, history, culinary and science
+
+healthy:
+  name: health
+  uri: http://kalinda.us/ns/Health
+  description: healthy or relaxing activities, such as spa, yoga or exercies
+  

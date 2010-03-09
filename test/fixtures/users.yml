@@ -7,11 +7,11 @@
 #   column: value
 
 ron:
-    name: ron
+    login: ron
     first_name: ron
     last_name: newman
 
 phoebe:
-    name: phoebe
+    login: phoebe
     first_name: phoebe
     last_name: miller
