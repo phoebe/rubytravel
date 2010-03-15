@@ -5,6 +5,7 @@ class CreateTags < ActiveRecord::Migration
       t.string :uri #, :null => false
       t.integer :creator_id
       t.integer :parent_id
+      t.integer :children_count
       t.string :description
       t.timestamps
     end
