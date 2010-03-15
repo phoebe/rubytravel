@@ -1,34 +1,32 @@
-#class UsersController < ApplicationController
-class UsersController <  Clearance::UsersController
-=begin
+class UsersController < ApplicationController
+ # include Clearance::UsersController
   before_filter :authenticate, :except => [:new, :create]
   before_filter :can_only_edit_self, :only => [:edit, :update]
-=end
  
+ 
+  
   # GET /users
   # GET /users.xml
-=begin
   def index
-    @user = User.find(:all)
+    @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }
     end
   end
-=end
 
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = current_user()
+    @user = User.find(params[:id])
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
     end
   end
 
-=begin
   # GET /users/new
   # GET /users/new.xml
   def new
@@ -90,6 +88,12 @@ class UsersController <  Clearance::UsersController
       format.xml  { head :ok }
     end
   end
-
-=end
+  
+  protected
+   def can_only_edit_self
+       unless current_user == User.find(params[:id])
+         flash[:error] = 'Gotta Authenticate first!'
+         redirect_to root_url
+       end
+   end
 end

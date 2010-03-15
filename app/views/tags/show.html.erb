@@ -1,3 +1,19 @@
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
+
+
+<%= link_to h(@tag.name), edit_tag_path(@tag) %> |
+<%= h @tag.description %>
+<%= h @tag.uri %>
+
+<blockquote>
+<table>
+<% @children.each do |tag| %>
+  <tr><td>
+    <%= render :partial => 'child_form', :locals => { :tag => tag } %>
+    </td>
+  </tr>
+<% end %>
+</table>
+</blockquote>
+<%= link_to 'New', new_tag_path %> |
 <%= link_to 'Back', tags_path %>

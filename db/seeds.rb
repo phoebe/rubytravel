@@ -6,8 +6,10 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
- ron = User.create!(:login => 'ron', :email => 'rnewman@thecia.net', :password=>'ron' )
- phoebe = User.create!(:login => 'phoebe',:email => 'phoebem@comcast.net', :password=>'phoebe' )
+ #ron = User.create!(:login => 'ron', :email => 'rnewman@thecia.net', :password=>'ron', :email_confirmed => :true)
+ ron = User.create!(:login => 'ron', :email => 'rubyslippery@gmail.com', :password=>'ron', :email_confirmed => :true)
+ phoebe = User.create!(:login => 'phoebe',:email => 'phoebem@comcast.net', :password=>'phoebe',:encrypted_password => 'crypted_password', :email_confirmed => :true)
+#User.update_all('encrypted_password = crypted_password, email_confirmed = true')
  outdoors = Tag.create!(:name => 'outdoors', :uri => 'http://kalinda.us/ns/Outdoors', :description =>'Outdoors activities',:creator => phoebe )
  Tag.create(:name => 'hiking',:uri=>'http://kalinda.us/ns/Hiking', :parent => outdoors, :creator=> ron)
  Tag.create(:name => 'skiing', :uri=>'http://kalinda.us/ns/Sking', :parent => outdoors, :creator=> phoebe)

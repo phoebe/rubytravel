@@ -1,8 +1,19 @@
 class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.xml
+  #
+ 
+  before_filter :authenticate
   def index
-    @profiles = Profile.all
+    if ( signed_in? ) 
+      @user = User.find( current_user().id);
+    else
+      print( "Must sign in first" )
+    end
+    if (@user)
+      @profiles = @user.profiles
+    
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,6 +23,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1
   # GET /profiles/1.xml
+  before_filter :authenticate
   def show
     @profile = Profile.find(params[:id])
 
@@ -22,8 +34,9 @@ class ProfilesController < ApplicationController
   end
 
   # GET /users/1/profiles/new.xml
+  before_filter :authenticate
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user()
     @profile = @user.profiles.build
 
     respond_to do |format|
@@ -33,15 +46,21 @@ class ProfilesController < ApplicationController
   end
 
   # GET /profiles/1/edit
+  before_filter :authenticate
   def edit
     @profile = Profile.find(params[:id])
+    if @profile.user_id != current_user.id
+      @profile=nil
+      flash(" You have no right to view this profile ")
+    end
   end
 
   # POST /profiles
   # POST /profiles.xml
+  before_filter :authenticate
   def create
-    @user = User.find(params[:user_id])
-    @profile = @user.profiles.build
+    @user = current_user()
+    @profile = @user.profiles.new(params[:profile])
 
     respond_to do |format|
       if @profile.save
@@ -57,11 +76,12 @@ class ProfilesController < ApplicationController
 
   # PUT /profiles/1
   # PUT /profiles/1.xml
+  before_filter :authenticate
   def update
     @profile = Profile.find(params[:id])
 
     respond_to do |format|
-      if @profile.update_attributes(params[:profile])
+      if @profile.user_id == current_user.id && @profile.update_attributes(params[:profile])
         flash[:notice] = 'Profile was successfully updated.'
         format.html { redirect_to(@profile) }
         format.xml  { head :ok }
@@ -74,10 +94,12 @@ class ProfilesController < ApplicationController
 
   # DELETE /profiles/1
   # DELETE /profiles/1.xml
+  before_filter :authenticate
   def destroy
     @profile = Profile.find(params[:id])
-    @profile.destroy
-
+    if @profile.user_id == current_user.id
+          @profile.destroy
+    end
     respond_to do |format|
       format.html { redirect_to(profiles_url) }
       format.xml  { head :ok }

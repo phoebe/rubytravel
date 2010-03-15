@@ -13,5 +13,21 @@ config.action_controller.consider_all_requests_local = true
 config.action_view.debug_rjs                         = true
 config.action_controller.perform_caching             = false
 
-# Don't care if the mailer can't send
-config.action_mailer.raise_delivery_errors = false
+# Do care if the mailer can't send
+# doesn't work for me - real one under config/initialize/actionmailer.rb
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+
+config.action_mailer.smtp_settings = {
+  :address => "smtp.gmail.com",
+  :domain => "gmail.com",
+  :port => 587,
+  :user_name => "rubyslippery@gmail.com",
+  :password => "slippery",
+  :authentication => :login,
+  :enable_starttls_auto => true #This line is must to ensure the tls for Gmail
+}
+
+# needed for Clearance mailer
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+#

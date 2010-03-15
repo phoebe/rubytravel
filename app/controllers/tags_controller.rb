@@ -2,8 +2,7 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.xml
   def index
-    @tags = Tag.all
-
+    @tags = Tag.find(:all, :conditions => ['parent_id is null'] )
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @tags }
@@ -14,7 +13,7 @@ class TagsController < ApplicationController
   # GET /tags/1.xml
   def show
     @tag = Tag.find(params[:id])
-
+    @children= @tag.children
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tag }
@@ -23,9 +22,12 @@ class TagsController < ApplicationController
 
   # GET /tags/new
   # GET /tags/new.xml
+  before_filter :authenticate
   def new
     @tag = Tag.new
-
+    if ! params[:tag_id].nil?
+      @tag.parent = Tag.find(params[:tag_id])
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @tag }
@@ -33,15 +35,20 @@ class TagsController < ApplicationController
   end
 
   # GET /tags/1/edit
+  before_filter :authenticate
   def edit
     @tag = Tag.find(params[:id])
   end
 
   # POST /tags
   # POST /tags.xml
+  before_filter :authenticate
   def create
-    @tag = Tag.new(params[:tag])
 
+    if ( params[:tag][:uri].nil? || params[:tag][:uri].empty?)
+      params[:tag][:uri] = URIPREFIX+params[:tag][:name].gsub(' ','_')
+    end    
+    @tag = Tag.new(params[:tag])
     respond_to do |format|
       if @tag.save
         flash[:notice] = 'Tag was successfully created.'
@@ -56,6 +63,7 @@ class TagsController < ApplicationController
 
   # PUT /tags/1
   # PUT /tags/1.xml
+  before_filter :authenticate
   def update
     @tag = Tag.find(params[:id])
 
@@ -73,6 +81,7 @@ class TagsController < ApplicationController
 
   # DELETE /tags/1
   # DELETE /tags/1.xml
+  before_filter :authenticate
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy

@@ -4,6 +4,11 @@
   <%= f.error_messages %>
 
   <p>
+    <%= hidden_field( :user, :id) %>
+    Name: <%= f.text_field :name %><br/>
+    Description: <%= f.text_field :description %><br/>
+  </p>
+  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>

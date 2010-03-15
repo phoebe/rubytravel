@@ -1,15 +1,22 @@
-<h1>New tag</h1>
-
 <% form_for(@tag) do |f| %>
-  <%= f.error_messages %>
 
+<span>New tag  
+  <% if !@tag.parent.nil? %>
+  under
+  <EM><%= @tag.parent.name %></EM> 
+  <%= hidden_field(:tag, :parent_id ) %>
+  <% end %>
+</span>
+<br/>
+
+  <%= f.error_messages %>
   <%= f.label :name %>
   <%= f.text_field :name %><br/>
   <%= f.label :uri %>
   <%= f.text_field :uri %><br />
-  <%= f.label :parent %>
- <% @parents=Tag.find(:all); %>
- <%= collection_select(:tag, :id, @parents, :id, :name, options ={:prompt => "-Select a Parent"}, :class =>"tag") %>
+
+ <!--% @parents=Tag.find(:all); %-->
+ <!-- %= collection_select(:tag, :id, @parents, :id, :name, options ={:prompt => "-Select a Parent"}, :class =>"tag") %-->
  
   <p>
     <%= f.submit 'Create' %>

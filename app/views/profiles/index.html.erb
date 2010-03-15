@@ -1,4 +1,4 @@
-<h1>Listing profiles</h1>
+<h1>Listing profiles for User <%= @user.handle() %> </h1>
 
 <table>
   <tr>
@@ -6,7 +6,8 @@
 
 <% @profiles.each do |profile| %>
   <tr>
-    <td><%= link_to 'Show', profile %></td>
+    <td><%= link_to profile.name , profile %></td>
+    <td><%= profile.description %>
     <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
     <td><%= link_to 'Destroy', profile, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -15,4 +16,4 @@
 
 <br />
 
-<%= link_to 'New profile', new_profile_path %>
+<%= link_to 'New profile', new_user_profile_path(@user.id) %>

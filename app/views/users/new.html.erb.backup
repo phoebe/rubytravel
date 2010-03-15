@@ -1,6 +1,5 @@
 <h1>New user</h1>
 
-
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
   <%= f.label :first_name %>
@@ -9,9 +8,13 @@
   <%= f.text_field :last_name %><br/>
   <%= f.label :login %>
   <%= f.text_field :login %><br />
-  <%= render :partial => '/users/form', :object => f %>
-  <%= f.submit 'Sign up', :disable_with => 'Please wait...' %>
-
+  <%= f.label :email %>
+  <%= f.text_field :email %><br />
+  <%= f.label :password %>
+  <%= f.text_field :password %><br />
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
 <% end %>
 
 <%= link_to 'Back', users_path %>
