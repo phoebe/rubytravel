@@ -9,10 +9,12 @@ class Tag < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_uniqueness_of :uri
   
-  def getRoot
-    return Tag.find(:all, :parent_id => :nil)
+  def Tag.getRoots
+    return Tag.find_all_by_parent_id(nil)
   end
   
-
+  def getChildren
+    return Tag.find_all_by_parent_id(self.id)
+  end
 
 end
