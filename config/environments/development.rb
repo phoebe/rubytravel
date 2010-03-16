@@ -16,7 +16,7 @@ config.action_controller.perform_caching             = false
 # Do care if the mailer can't send
 # doesn't work for me - real one under config/initialize/actionmailer.rb
 config.action_mailer.raise_delivery_errors = true
-config.action_mailer.delivery_method = :smtp
+config.action_mailer.delivery_method = :test
 
 config.action_mailer.smtp_settings = {
   :address => "smtp.gmail.com",
