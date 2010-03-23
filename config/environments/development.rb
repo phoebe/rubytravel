@@ -23,7 +23,7 @@ config.action_mailer.smtp_settings = {
   :domain => "gmail.com",
   :port => 587,
   :user_name => "rubyslippery@gmail.com",
-  :password => "slippery",
+  :password => "",
   :authentication => :login,
   :enable_starttls_auto => true #This line is must to ensure the tls for Gmail
 }
