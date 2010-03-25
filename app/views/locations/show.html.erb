@@ -1,0 +1,10 @@
+<TABLE BORDER=1>
+<tr>
+<% @location.attributes.each do |f| %>
+<td><B> <%= f[0] %></B></td>
+<td> <%= f[1] %></td>
+</tr>
+<% end %>
+<br/>
+</TABLE>
+<%= link_to 'Back', locations_path %>

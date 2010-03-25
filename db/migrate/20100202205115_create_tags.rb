@@ -3,6 +3,9 @@ class CreateTags < ActiveRecord::Migration
     create_table :tags do |t|
       t.string :name, :null => false
       t.string :uri #, :null => false
+      t.string :code #, :null => false
+      t.string :code2 #, :null => false
+      t.string :code3 #, :null => false
       t.integer :creator_id
       t.integer :parent_id
       t.integer :children_count

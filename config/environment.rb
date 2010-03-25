@@ -21,6 +21,9 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "clearance"
   config.gem "acts_as_tree"
+  config.gem 'mislav-will_paginate', 
+      :lib => 'will_paginate', 
+      :source => 'http://gems.github.com'
   # This is to fix the email config error from clearance
   config.action_mailer.default_url_options = { :host => "gmail.com" }
   
@@ -46,3 +49,4 @@ Rails::Initializer.run do |config|
 
 end
   URIPREFIX='http://kalinda.us/ns/'
+

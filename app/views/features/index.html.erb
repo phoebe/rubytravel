@@ -1,0 +1,21 @@
+<h1>Listing features</h1>
+
+<table border=1>
+  <tr>
+  </tr>
+
+<% @features.each do |feature| %>
+  <tr>
+    <td><%= link_to feature.code , features_path+"/"+ feature.indxkey() %> </td>
+    <td><%= feature.name %> </td>
+    <td><%= feature.description %></td>
+
+    <td><!-- %= link_to 'Edit', edit_feature_path(feature) %--></td>
+    <td><!-- %= link_to 'Destroy', feature, :confirm => 'Are you sure?', :method => :delete %--></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @features %>
+<%= link_to 'New feature', new_feature_path %>

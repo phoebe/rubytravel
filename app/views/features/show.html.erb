@@ -1,0 +1,11 @@
+
+<TABLE BORDER=1>
+<tr>
+<% @feature.attributes.each do |f| %>
+<td><B> <%= f[0] %></B></td>
+<td> <%= f[1] %></td>
+</tr>
+<% end %>
+<br/>
+</TABLE>
+<%= link_to 'Back', features_path %>

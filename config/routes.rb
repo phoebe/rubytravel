@@ -1,7 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :profiles
-
-  map.resources :users
+  map.resources :trips
 
 
   Clearance::Routes.draw(map)
@@ -17,15 +15,27 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
+  map.root :controller => :profiles
+
+  # nested resources
+  map.resources :profiles
+  map.resources :users,:only  =>[:new , :show, :index, :edit ]  do |users|
+    users.resources :profiles, :only =>[:new , :show, :index, :edit ]
+  end
   map.resources :tags do |tag|
     tag.resources :tags
   end
-  map.resources :profiles
-  map.resources :users do |users|
-    users.resources :profiles
-  end
+  
   map.resources :trips
-  map.root :controller => :profiles
+
+  map.resources :locations,:only => [:show, :index] 
+  map.connect 'locations/:geonameid', :controller => :locations, :action => [:show]
+  map.connect 'locations/:action/:geonameid', :controller => :locations, :action => [:show, :index]
+  map.connect 'locations/:action/:geonameid.:format', :controller => :locations, :action => [:show, :index]
+
+  map.resources :features
+  map.connect 'features/:action/:class.:code', :controller => :features, :action => [:show, :index]
+  map.connect 'features/:action/:class.:code.:format', :controller => :features, :action => [:show, :index]
 
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
@@ -53,6 +63,6 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  #map.connect ':controller/:action/:id'
+  #map.connect ':controller/:action/:id.:format'
 end
