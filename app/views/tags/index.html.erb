@@ -1,18 +1,6 @@
-<h1>Listing All Tags</h1>
-
-<table>
-  <tr>
-  </tr>
-
-<% @tags.each do |tag| %>
-  <tr>
-    <td><%= link_to tag.name , tag %></td>
-    <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-    <td><%= link_to 'Destroy', tag, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<h1>Listing All Categories</h1>
+<% @tags.each do |ctag| %>
+<UL>
+    <LI><%= render :partial => 'child_form', :locals => { :tag => ctag  } %></LI>
+</UL>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New tag', new_tag_path %>
