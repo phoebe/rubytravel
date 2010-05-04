@@ -1,0 +1,12 @@
+
+<%=  h @tag.name.capitalize() %> 
+<%= h @tag.uri %>
+<% @tags.each { |t| %>
+  
+
+<% } %>
+
+  <% end %>
+<% end %>
+<%= link_to 'Back', features_path %>
+

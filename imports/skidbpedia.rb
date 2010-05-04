@@ -1,0 +1,1 @@
+http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&should-sponge=&query=select+distinct+%3Fs+where+{%3Fs+a+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FSkiArea%3E}&format=text%2Fhtml&debug=on&timeout=

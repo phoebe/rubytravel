@@ -11,7 +11,27 @@
   <p>
     <%= f.submit 'Update' %>
   </p>
+  <%= link_to_function  :onMouseover => "document.getElementById('dropdown').style.display = 'none'"; "document.getElementById('dropdown').style.display = 'block'" %>
+  <div id="dropdown">
+  </div>
+  <div id="options">
+  <% @tags.each { |tag| %>
+  <%= render :partial => 'tags' , :locals => { :tag => tag } %>
+	
+ <% } %>
 <% end %>
+  </div>
+<!-- %=
+  javascript_tag "alert('All is good')", :defer => 'defer'
+%-->
+
+<%=
+link_to_function("Show me more", nil, :id => "more_link") do |page|
+# page[:details].visual_effect  :toggle_blind
+page[:more_link].replace_html "Show me less"
+end
+%>
+
 
 <%= link_to 'Show', @profile %> |
 <%= link_to 'Back', profiles_path %>

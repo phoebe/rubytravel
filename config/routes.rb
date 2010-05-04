@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :places
+
   map.resources :trips
 
 
@@ -21,12 +23,13 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :profiles
   map.resources :users,:only  =>[:new , :show, :index, :edit ]  do |users|
     users.resources :profiles, :only =>[:new , :show, :index, :edit ]
+    map.resources :trips
   end
   map.resources :tags do |tag|
     tag.resources :tags
   end
   
-  map.resources :trips
+
 
   map.resources :locations,:only => [:show, :index] 
   map.connect 'locations/:geonameid', :controller => :locations, :action => [:show]

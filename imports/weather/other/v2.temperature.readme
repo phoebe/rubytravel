@@ -1,0 +1,91 @@
+                                              May 1997
+
+This is a very brief description of GHCN version 2 temperature data and 
+metadata (inventory) files, providing details, such as formats, not 
+available in www.ncdc.noaa.gov/ghcn/ghcn.html.
+
+New monthly data are added to GHCN a few days after the end of 
+the month.  Please note that sometimes these new data are later
+replaced with data with different values due to, for example,
+occasional corrections to the transmitted data that countries
+will send over the Global Telecommunications System.
+
+All files except this one were compressed with a standard UNIX compression.
+To uncompress the files, most operating systems will respond to:
+"uncompress filename.Z", after which, the file is larger and the .Z ending is
+removed.  Because the compressed files are binary, the file transfer
+protocol may have to be set to binary prior to downloading (in ftp, type bin).
+
+The three raw data files are:
+v2.mean
+v2.max
+v2.min
+
+The versions of these data sets that have data which we adjusted
+to account for various non-climatic inhomogeneities are:
+v2.mean.adj
+v2.max.adj
+v2.min.adj
+
+Each line of the data file has:
+
+station number which has three parts:
+	country code (3 digits)
+	nearest WMO station number (5 digits)
+	modifier (3 digits) (this is usually 000 if it is that WMO station)
+
+Duplicate number:
+	one digit (0-9).  The duplicate order is based on length of data.
+Maximum and minimum temperature files have duplicate numbers but only one 
+time series (because there is only one way to calculate the mean monthly 
+maximum temperature).  The duplicate numbers in max/min refer back to the 
+mean temperature duplicate time series created by (Max+Min)/2.
+
+Year:
+	four digit year
+
+Data:
+	12 monthly values each as a 5 digit integer.  To convert to
+degrees Celsius they must be divided by 10.
+	Missing monthly values are given as -9999.
+
+If there are no data available for that station for a year, that year
+is not included in the data base.
+
+A short FORTRAN program that can read and subset GHCN v2 data has been
+provided (read.data.f).
+
+Station inventory and metadata:
+All stations with data in max/min OR mean temperature data files are
+listed in the inventory file:   v2.inv.  The available metadata
+are too involved to describe here.  To understand them, please refer
+to:  www.ncdc.noaa.gov/ghcn/ghcn.html and to the simple FORTRAN 
+program  read.inv.f.  The comments in this program describe the various
+metadata fields.  There are no flags in the inventory file to indicate
+whether the available data are mean only or mean and max/min.
+
+Country codes:
+	The file v2.country.codes lists the countries of the world and
+GHCN's numerical country code.
+
+Data that have failed Quality Control:
+	We've run a Quality Control system on GHCN data and removed
+data points that we determined are probably erroneous.  However, there
+are some cases where additional knowledge provides adequate justification
+for classifying some of these data as valid.  For example, if an isolated 
+station in 1880 was extremely cold in the month of March, we may have to 
+classify it as suspect.  However, a researcher with an 1880 newspaper article 
+describing the first ever March snowfall in that area may use that special
+information to reclassify the extremely cold data point as good.  Therefore, 
+we are providing a file of the data points that our QC flagged as probably 
+bad.  We do not recommend that they be used without special scrutiny.  And
+we ask that if you have corroborating evidence that any of the "bad" data
+points should be reclassified as good, please send us that information
+so we can make the appropriate changes in the GHCN data files.  The
+data points that failed QC are in the files v2.m*.failed.qc.  Each line
+in these files contains station number, duplicate number, year, month,
+and the value (again the value needs to be divided by 10 to get 
+degrees C).  A detailed description of GHCN's Quality Control can be
+found through www.ncdc.noaa.gov/ghcn/ghcn.html.
+
+

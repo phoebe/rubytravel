@@ -1,0 +1,10 @@
+
+<H1>
+I AM HERE
+</H1>
+<UL>
+  <% @tags.each do |tag| %>
+    <%= tag.name.capitalize() %>
+    <LI><%= render :partial => 'child_check_form', :collection => { :tags => tag.children  } %></LI>
+  <% end %>
+</UL>

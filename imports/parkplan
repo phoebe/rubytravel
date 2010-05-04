@@ -1,0 +1,40 @@
+crawl things to do
+	crawl places to go
+		 crawl nearby attraction as feeder -> look up later
+
+
+More info - > more popular parks -> higher rating
+check to see if it exists in wikipedia - pictures
+search name on google - more results = more popular -> higher rating
+						lead mead national recreation area - 137000
+						grand canyon national park - 4,320,000
+						yosemite national park 1,770,000 
+						yellowstone national park 2,520,000
+		logaritmic scale?
+
+subareas ->  mariposa grove, wawona in bigger parks? how?
+	everglades has hiking trails -> use as url
+
+	p strong for campgrounds?
+
+use google to get address and coordinates
+	http://maps.google.com/maps/api/geocode/xml?sensor=false&address=Big+Cypress+National+Preserve,Florida
+	reply ->
+	type "park"
+	type establishment
+
+	Use administrative_area_level_1
+	administrative_area_level_2
+	in reply with geonames db
+
+	appalachian trail is in google as type "route"
+	http://maps.google.com/maps/api/geocode/xml?sensor=false&address=Appalachian+Trail
+	result type formatted_address country,admin1,admin2,admin3 and location lat lng:
+
+
+
+
+
+
+
+

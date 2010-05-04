@@ -1,0 +1,1180 @@
+freebase.rb:174:in `[]': can't convert String into Integer (TypeError)
+	from freebase.rb:174:in `getAllTravelDestinations'
+	from freebase.rb:172:in `each'
+	from freebase.rb:172:in `getAllTravelDestinations'
+	from freebase.rb:310
+Server version: 5.1.44
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+Server version: 5.1.44
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+{"city"=>["Amsterdam"], "name"=>["Amsterdam"], "estimate-count"=>196, "country"=>["Netherlands"], "type"=>"/travel/travel_destination", "/location/location/containedby"=>[{"name"=>["Netherlands"], "type"=>"/location/country"}]}
+Server version: 5.1.44
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+{"city"=>["Amsterdam"], "country"=>["Netherlands"]}
+Server version: 5.1.44
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+{"city"=>"Amsterdam", "country"=>"Netherlands"}
+equivalentFipsCodegeonameid2750405tld.nlisonumeric528iso3NLDneighboursDE,BEpostalcode_regex^(d{4}[A-Z]{2})$countryNetherlandsisoNLcurrencynameEuropopulation16645000phone31postalcode_format#### @@currencycodeEURarea_km241526capitalAmsterdamlanguagesnl-NL,fy-NLcontinentEUfipsNL
+City: Amsterdam 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Amsterdam" and feature_code="PPL" 
+Amsterdam) CO 33 Amsterdam 
+Amsterdam) US GA Amsterdam 087
+Amsterdam) US MO Amsterdam 013
+Amsterdam) US OH Amsterdam 089
+Amsterdam) US VA Amsterdam 023
+Amsterdam) US NJ Amsterdam 019
+Amsterdam) US NY Amsterdam 057
+Amsterdam) US OH Amsterdam 081
+Amsterdam) US PA Amsterdam 085
+Amsterdam) US CA Amsterdam 047
+Amsterdam) US ID Amsterdam 083
+Amsterdam) US MT Amsterdam 031
+Amsterdam) ZA 05 Amsterdam 
+Amsterdam) ZA 07 Amsterdam 
+City Code= 1022857
+[{"country_code"=>"CO", "geonameid"=>"3781595", "admin2_code"=>"", "admin1_code"=>"33", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"4179700", "admin2_code"=>"087", "admin1_code"=>"GA", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"4374800", "admin2_code"=>"013", "admin1_code"=>"MO", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"4505240", "admin2_code"=>"089", "admin1_code"=>"OH", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"4744357", "admin2_code"=>"023", "admin1_code"=>"VA", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5095182", "admin2_code"=>"019", "admin1_code"=>"NJ", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5107152", "admin2_code"=>"057", "admin1_code"=>"NY", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5145733", "admin2_code"=>"081", "admin1_code"=>"OH", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5178270", "admin2_code"=>"085", "admin1_code"=>"PA", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5323799", "admin2_code"=>"047", "admin1_code"=>"CA", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5584007", "admin2_code"=>"083", "admin1_code"=>"ID", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5637141", "admin2_code"=>"031", "admin1_code"=>"MT", "asciiname"=>"Amsterdam"}, {"country_code"=>"ZA", "geonameid"=>"1022856", "admin2_code"=>"", "admin1_code"=>"05", "asciiname"=>"Amsterdam"}, {"country_code"=>"ZA", "geonameid"=>"1022857", "admin2_code"=>"", "admin1_code"=>"07", "asciiname"=>"Amsterdam"}]
+Dest= 1022857 Amsterdam  Netherlands NL
+{"country_code"=>"NL", "city"=>"Athens", "country"=>"Greece"}
+City: Athens 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Athens" and feature_code="PPL" 
+Athens) US AR Athens 061
+Athens) US GA Athens 059
+Athens) US IL Athens 129
+Athens) US KS Athens 207
+Athens) US KY Athens 067
+Athens) US LA Athens 027
+Athens) US MS Athens 095
+Athens) US OH Athens 009
+Athens) US TN Athens 107
+Athens) US TX Athens 213
+Athens) US WV Athens 055
+Athens) US VA Athens 033
+Athens) US AL Athens 083
+Athens) US IN Athens 049
+Athens) US ME Athens 025
+Athens) US MI Athens 025
+Athens) US MO Athens 045
+Athens) US NY Athens 039
+Athens) US PA Athens 015
+Athens) US VT Athens 025
+Athens) US WI Athens 073
+Athens) US CA Athens 037
+Athens) US UT Athens 035
+City Code= 5770910
+[{"country_code"=>"US", "geonameid"=>"4099912", "admin2_code"=>"061", "admin1_code"=>"AR", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4180386", "admin2_code"=>"059", "admin1_code"=>"GA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4232997", "admin2_code"=>"129", "admin1_code"=>"IL", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4267746", "admin2_code"=>"207", "admin1_code"=>"KS", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4282781", "admin2_code"=>"067", "admin1_code"=>"KY", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4315137", "admin2_code"=>"027", "admin1_code"=>"LA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4416664", "admin2_code"=>"095", "admin1_code"=>"MS", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4505542", "admin2_code"=>"009", "admin1_code"=>"OH", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4603284", "admin2_code"=>"107", "admin1_code"=>"TN", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4671545", "admin2_code"=>"213", "admin1_code"=>"TX", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4797549", "admin2_code"=>"055", "admin1_code"=>"WV", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4829249", "admin2_code"=>"033", "admin1_code"=>"VA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4830668", "admin2_code"=>"083", "admin1_code"=>"AL", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4917703", "admin2_code"=>"049", "admin1_code"=>"IN", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4956946", "admin2_code"=>"025", "admin1_code"=>"ME", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4984489", "admin2_code"=>"025", "admin1_code"=>"MI", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5053942", "admin2_code"=>"045", "admin1_code"=>"MO", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5107467", "admin2_code"=>"039", "admin1_code"=>"NY", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5178651", "admin2_code"=>"015", "admin1_code"=>"PA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5233317", "admin2_code"=>"025", "admin1_code"=>"VT", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5244312", "admin2_code"=>"073", "admin1_code"=>"WI", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5325144", "admin2_code"=>"037", "admin1_code"=>"CA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5770910", "admin2_code"=>"035", "admin1_code"=>"UT", "asciiname"=>"Athens"}]
+Dest= 5770910 Athens  Greece NL
+{"country_code"=>"NL", "city"=>"Austin", "country"=>"United States of America"}
+City: Austin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Austin" and feature_code="PPL" 
+Austin) BR 21 Austin 
+Austin) CA 10 Austin 05
+Austin) HT 11 Austin 
+Austin) US AR Austin 029
+Austin) US AR Austin 085
+Austin) US AR Austin 141
+Austin) US IN Austin 143
+Austin) US KY Austin 009
+Austin) US MO Austin 037
+Austin) US MO Austin 069
+Austin) US MS Austin 143
+Austin) US NC Austin 193
+Austin) US OH Austin 141
+Austin) US TN Austin 071
+Austin) US IL Austin 031
+Austin) US MI Austin 059
+Austin) US MI Austin 103
+Austin) US MN Austin 099
+Austin) US NY Austin 011
+Austin) US PA Austin 105
+Austin) US RI Austin 009
+Austin) US CA Austin 085
+Austin) US CO Austin 029
+Austin) US NV Austin 015
+Austin) US UT Austin 041
+Austin) US MT Austin 049
+Austin) US OR Austin 023
+Austin) US WA Austin 029
+Austin) US WA Austin 063
+City Code= 5786004
+[{"country_code"=>"BR", "geonameid"=>"3471300", "admin2_code"=>"", "admin1_code"=>"21", "asciiname"=>"Austin"}, {"country_code"=>"CA", "geonameid"=>"5888403", "admin2_code"=>"05", "admin1_code"=>"10", "asciiname"=>"Austin"}, {"country_code"=>"HT", "geonameid"=>"3731004", "admin2_code"=>"", "admin1_code"=>"11", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099973", "admin2_code"=>"029", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099974", "admin2_code"=>"085", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099975", "admin2_code"=>"141", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4254010", "admin2_code"=>"143", "admin1_code"=>"IN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4282830", "admin2_code"=>"009", "admin1_code"=>"KY", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4375358", "admin2_code"=>"037", "admin1_code"=>"MO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4375359", "admin2_code"=>"069", "admin1_code"=>"MO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4416697", "admin2_code"=>"143", "admin1_code"=>"MS", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4453191", "admin2_code"=>"193", "admin1_code"=>"NC", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4505641", "admin2_code"=>"141", "admin1_code"=>"OH", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4603359", "admin2_code"=>"071", "admin1_code"=>"TN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4883837", "admin2_code"=>"031", "admin1_code"=>"IL", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4984591", "admin2_code"=>"059", "admin1_code"=>"MI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4984592", "admin2_code"=>"103", "admin1_code"=>"MI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5016884", "admin2_code"=>"099", "admin1_code"=>"MN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5107539", "admin2_code"=>"011", "admin1_code"=>"NY", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5178713", "admin2_code"=>"105", "admin1_code"=>"PA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5220732", "admin2_code"=>"009", "admin1_code"=>"RI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5325278", "admin2_code"=>"085", "admin1_code"=>"CA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5412364", "admin2_code"=>"029", "admin1_code"=>"CO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5499537", "admin2_code"=>"015", "admin1_code"=>"NV", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5534614", "admin2_code"=>"041", "admin1_code"=>"UT", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5637923", "admin2_code"=>"049", "admin1_code"=>"MT", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5711916", "admin2_code"=>"023", "admin1_code"=>"OR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5786003", "admin2_code"=>"029", "admin1_code"=>"WA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5786004", "admin2_code"=>"063", "admin1_code"=>"WA", "asciiname"=>"Austin"}]
+Dest= 5786004 Austin  United States of America NL
+{"country_code"=>"NL", "city"=>"Atlanta", "country"=>"United States of America"}
+City: Atlanta 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Atlanta" and feature_code="PPL" 
+Atlanta) NI 18 Atlanta 
+Atlanta) US AR Atlanta 027
+Atlanta) US DE Atlanta 005
+Atlanta) US KS Atlanta 035
+Atlanta) US KY Atlanta 125
+Atlanta) US LA Atlanta 127
+Atlanta) US MO Atlanta 121
+Atlanta) US MS Atlanta 017
+Atlanta) US OH Atlanta 129
+Atlanta) US TX Atlanta 067
+Atlanta) US IL Atlanta 107
+Atlanta) US IN Atlanta 057
+Atlanta) US MI Atlanta 119
+Atlanta) US NE Atlanta 137
+Atlanta) US NY Atlanta 101
+Atlanta) US CA Atlanta 077
+Atlanta) US CO Atlanta 009
+Atlanta) US NV Atlanta 017
+Atlanta) US ID Atlanta 039
+Atlanta) US MI Atlanta 119
+Atlanta) ZA 10 Atlanta 
+Atlanta) ZA 10 Atlanta 
+City Code= 1022066
+[{"country_code"=>"NI", "geonameid"=>"3620833", "admin2_code"=>"", "admin1_code"=>"18", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4099936", "admin2_code"=>"027", "admin1_code"=>"AR", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4141276", "admin2_code"=>"005", "admin1_code"=>"DE", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4267754", "admin2_code"=>"035", "admin1_code"=>"KS", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4282799", "admin2_code"=>"125", "admin1_code"=>"KY", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4315153", "admin2_code"=>"127", "admin1_code"=>"LA", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4375288", "admin2_code"=>"121", "admin1_code"=>"MO", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4416665", "admin2_code"=>"017", "admin1_code"=>"MS", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4505567", "admin2_code"=>"129", "admin1_code"=>"OH", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4671576", "admin2_code"=>"067", "admin1_code"=>"TX", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4883772", "admin2_code"=>"107", "admin1_code"=>"IL", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4917706", "admin2_code"=>"057", "admin1_code"=>"IN", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4984500", "admin2_code"=>"119", "admin1_code"=>"MI", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5063304", "admin2_code"=>"137", "admin1_code"=>"NE", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5107476", "admin2_code"=>"101", "admin1_code"=>"NY", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5325166", "admin2_code"=>"077", "admin1_code"=>"CA", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5412305", "admin2_code"=>"009", "admin1_code"=>"CO", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5499491", "admin2_code"=>"017", "admin1_code"=>"NV", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5584336", "admin2_code"=>"039", "admin1_code"=>"ID", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"7259532", "admin2_code"=>"119", "admin1_code"=>"MI", "asciiname"=>"Atlanta"}, {"country_code"=>"ZA", "geonameid"=>"1022065", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Atlanta"}, {"country_code"=>"ZA", "geonameid"=>"1022066", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Atlanta"}]
+Dest= 1022066 Atlanta  United States of America NL
+{"country_code"=>"NL", "city"=>"Berlin", "country"=>"Germany"}
+City: Berlin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Berlin" and feature_code="PPL" 
+Berlin) CO 27 Berlin 
+Berlin) CO 16 Berlin 
+Berlin) CO 30 Berlin 
+Berlin) CO 29 Berlin 
+Berlin) CO 28 Berlin 
+Berlin) DE 10 Berlin 
+Berlin) HT 07 Berlin 
+Berlin) JM 11 Berlin 
+Berlin) SE 18 Berlin 
+Berlin) US AL Berlin 043
+Berlin) US AL Berlin 047
+Berlin) US AR Berlin 003
+Berlin) US GA Berlin 071
+Berlin) US IL Berlin 167
+Berlin) US KS Berlin 011
+Berlin) US KY Berlin 023
+Berlin) US MD Berlin 047
+Berlin) US NJ Berlin 007
+Berlin) US OK Berlin 129
+Berlin) US PA Berlin 111
+Berlin) US SC Berlin 003
+Berlin) US TN Berlin 117
+Berlin) US TX Berlin 477
+Berlin) US VA Berlin 175
+Berlin) US WV Berlin 041
+Berlin) US IA Berlin 083
+Berlin) US MA Berlin 027
+Berlin) US MO Berlin 075
+Berlin) US ND Berlin 045
+Berlin) US NH Berlin 007
+Berlin) US NY Berlin 083
+Berlin) US OH Berlin 075
+Berlin) US OH Berlin 171
+Berlin) US WI Berlin 047
+Berlin) US CT Berlin 003
+Berlin) US NV Berlin 023
+Berlin) US OR Berlin 043
+Berlin) ZA 05 Berlin 
+Berlin) ZA 03 Berlin 
+City Code= 1019884
+[{"country_code"=>"CO", "geonameid"=>"3688895", "admin2_code"=>"", "admin1_code"=>"27", "asciiname"=>"Berlin"}, {"country_code"=>"CO", "geonameid"=>"3736256", "admin2_code"=>"", "admin1_code"=>"16", "asciiname"=>"Berlin"}, {"country_code"=>"CO", "geonameid"=>"3756346", "admin2_code"=>"", "admin1_code"=>"30", "asciiname"=>"Berlin"}, {"country_code"=>"CO", "geonameid"=>"3778492", "admin2_code"=>"", "admin1_code"=>"29", "asciiname"=>"Berlin"}, {"country_code"=>"CO", "geonameid"=>"3791480", "admin2_code"=>"", "admin1_code"=>"28", "asciiname"=>"Berlin"}, {"country_code"=>"DE", "geonameid"=>"2950158", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Berlin"}, {"country_code"=>"HT", "geonameid"=>"3730172", "admin2_code"=>"", "admin1_code"=>"07", "asciiname"=>"Berlin"}, {"country_code"=>"JM", "geonameid"=>"3491395", "admin2_code"=>"", "admin1_code"=>"11", "asciiname"=>"Berlin"}, {"country_code"=>"SE", "geonameid"=>"2722657", "admin2_code"=>"", "admin1_code"=>"18", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4047787", "admin2_code"=>"043", "admin1_code"=>"AL", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4047789", "admin2_code"=>"047", "admin1_code"=>"AL", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4101288", "admin2_code"=>"003", "admin1_code"=>"AR", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4182096", "admin2_code"=>"071", "admin1_code"=>"GA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4233627", "admin2_code"=>"167", "admin1_code"=>"IL", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4268177", "admin2_code"=>"011", "admin1_code"=>"KS", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4283975", "admin2_code"=>"023", "admin1_code"=>"KY", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4348460", "admin2_code"=>"047", "admin1_code"=>"MD", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4500771", "admin2_code"=>"007", "admin1_code"=>"NJ", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4530350", "admin2_code"=>"129", "admin1_code"=>"OK", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4556518", "admin2_code"=>"111", "admin1_code"=>"PA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4570700", "admin2_code"=>"003", "admin1_code"=>"SC", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4605635", "admin2_code"=>"117", "admin1_code"=>"TN", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4673607", "admin2_code"=>"477", "admin1_code"=>"TX", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4746766", "admin2_code"=>"175", "admin1_code"=>"VA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4798708", "admin2_code"=>"041", "admin1_code"=>"WV", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4848290", "admin2_code"=>"083", "admin1_code"=>"IA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4930431", "admin2_code"=>"027", "admin1_code"=>"MA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5054063", "admin2_code"=>"075", "admin1_code"=>"MO", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5058265", "admin2_code"=>"045", "admin1_code"=>"ND", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5083330", "admin2_code"=>"007", "admin1_code"=>"NH", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5108863", "admin2_code"=>"083", "admin1_code"=>"NY", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5147132", "admin2_code"=>"075", "admin1_code"=>"OH", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5147133", "admin2_code"=>"171", "admin1_code"=>"OH", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5245497", "admin2_code"=>"047", "admin1_code"=>"WI", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5282244", "admin2_code"=>"003", "admin1_code"=>"CT", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5499945", "admin2_code"=>"023", "admin1_code"=>"NV", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5713705", "admin2_code"=>"043", "admin1_code"=>"OR", "asciiname"=>"Berlin"}, {"country_code"=>"ZA", "geonameid"=>"1019883", "admin2_code"=>"", "admin1_code"=>"05", "asciiname"=>"Berlin"}, {"country_code"=>"ZA", "geonameid"=>"1019884", "admin2_code"=>"", "admin1_code"=>"03", "asciiname"=>"Berlin"}]
+Dest= 1019884 Berlin  Germany NL
+{"country_code"=>"NL", "city"=>"Brussels", "country"=>"Belgium"}
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code="PPL" 
+Brussels) US IL Brussels 013
+Brussels) US WI Brussels 029
+City Code= 4833850
+[{"country_code"=>"US", "geonameid"=>"4234671", "admin2_code"=>"013", "admin1_code"=>"IL", "asciiname"=>"Brussels"}, {"country_code"=>"US", "geonameid"=>"4833850", "admin2_code"=>"029", "admin1_code"=>"WI", "asciiname"=>"Brussels"}]
+Dest= 4833850 Brussels  Belgium NL
+{"country_code"=>"NL", "city"=>"Beijing", "country"=>"China"}
+City: Beijing 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Beijing" and feature_code="PPL" 
+Beijing) CN 24 Beijing 
+City Code= 1816671
+[{"country_code"=>"CN", "geonameid"=>"1816671", "admin2_code"=>"", "admin1_code"=>"24", "asciiname"=>"Beijing"}]
+Dest= 1816671 Beijing 24 China NL
+{"country_code"=>"NL", "city"=>"Bali", "admin2_code"=>"", "admin1_code"=>"24", "country"=>"Indonesia"}
+City: Bali 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Bali" and feature_code="PPL"  and admin1_code='24'
+Bali) IN 24 Bali 
+City Code= 1277589
+[{"country_code"=>"IN", "geonameid"=>"1277589", "admin2_code"=>"", "admin1_code"=>"24", "asciiname"=>"Bali"}]
+Dest= 1277589 Bali 24 Indonesia NL
+{"country_code"=>"NL", "city"=>"Boston", "admin2_code"=>"", "admin1_code"=>"24", "country"=>"United States of America"}
+City: Boston 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Boston" and feature_code="PPL"  and admin1_code='24'
+City Code= 
+[]
+Dest=  Boston 24 United States of America NL
+{"country_code"=>"NL", "city"=>"Copenhagen", "admin2_code"=>"", "admin1_code"=>"24", "country"=>"Denmark"}
+City: Copenhagen 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Copenhagen" and feature_code="PPL"  and admin1_code='24'
+City Code= 
+[]
+Dest=  Copenhagen 24 Denmark NL
+Server version: 5.1.44
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+{"city"=>"Amsterdam", "country"=>"Netherlands"}
+select * from countryInfo where country like "Netherlands" 
+equivalentFipsCodegeonameid2750405tld.nlisonumeric528iso3NLDneighboursDE,BEpostalcode_regex^(d{4}[A-Z]{2})$countryNetherlandsisoNLcurrencynameEuropopulation16645000phone31postalcode_format#### @@currencycodeEURarea_km241526capitalAmsterdamlanguagesnl-NL,fy-NLcontinentEUfipsNL
+City: Amsterdam 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Amsterdam" and feature_code="PPL" 
+Amsterdam) CO 33 Amsterdam 
+Amsterdam) US GA Amsterdam 087
+Amsterdam) US MO Amsterdam 013
+Amsterdam) US OH Amsterdam 089
+Amsterdam) US VA Amsterdam 023
+Amsterdam) US NJ Amsterdam 019
+Amsterdam) US NY Amsterdam 057
+Amsterdam) US OH Amsterdam 081
+Amsterdam) US PA Amsterdam 085
+Amsterdam) US CA Amsterdam 047
+Amsterdam) US ID Amsterdam 083
+Amsterdam) US MT Amsterdam 031
+Amsterdam) ZA 05 Amsterdam 
+Amsterdam) ZA 07 Amsterdam 
+City Code= 1022857
+[{"country_code"=>"CO", "geonameid"=>"3781595", "admin2_code"=>"", "admin1_code"=>"33", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"4179700", "admin2_code"=>"087", "admin1_code"=>"GA", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"4374800", "admin2_code"=>"013", "admin1_code"=>"MO", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"4505240", "admin2_code"=>"089", "admin1_code"=>"OH", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"4744357", "admin2_code"=>"023", "admin1_code"=>"VA", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5095182", "admin2_code"=>"019", "admin1_code"=>"NJ", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5107152", "admin2_code"=>"057", "admin1_code"=>"NY", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5145733", "admin2_code"=>"081", "admin1_code"=>"OH", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5178270", "admin2_code"=>"085", "admin1_code"=>"PA", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5323799", "admin2_code"=>"047", "admin1_code"=>"CA", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5584007", "admin2_code"=>"083", "admin1_code"=>"ID", "asciiname"=>"Amsterdam"}, {"country_code"=>"US", "geonameid"=>"5637141", "admin2_code"=>"031", "admin1_code"=>"MT", "asciiname"=>"Amsterdam"}, {"country_code"=>"ZA", "geonameid"=>"1022856", "admin2_code"=>"", "admin1_code"=>"05", "asciiname"=>"Amsterdam"}, {"country_code"=>"ZA", "geonameid"=>"1022857", "admin2_code"=>"", "admin1_code"=>"07", "asciiname"=>"Amsterdam"}]
+Dest= 1022857 Amsterdam  Netherlands NL
+{"country_code"=>"NL", "city"=>"Athens", "country"=>"Greece"}
+City: Athens 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Athens" and feature_code="PPL" 
+Athens) US AR Athens 061
+Athens) US GA Athens 059
+Athens) US IL Athens 129
+Athens) US KS Athens 207
+Athens) US KY Athens 067
+Athens) US LA Athens 027
+Athens) US MS Athens 095
+Athens) US OH Athens 009
+Athens) US TN Athens 107
+Athens) US TX Athens 213
+Athens) US WV Athens 055
+Athens) US VA Athens 033
+Athens) US AL Athens 083
+Athens) US IN Athens 049
+Athens) US ME Athens 025
+Athens) US MI Athens 025
+Athens) US MO Athens 045
+Athens) US NY Athens 039
+Athens) US PA Athens 015
+Athens) US VT Athens 025
+Athens) US WI Athens 073
+Athens) US CA Athens 037
+Athens) US UT Athens 035
+City Code= 5770910
+[{"country_code"=>"US", "geonameid"=>"4099912", "admin2_code"=>"061", "admin1_code"=>"AR", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4180386", "admin2_code"=>"059", "admin1_code"=>"GA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4232997", "admin2_code"=>"129", "admin1_code"=>"IL", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4267746", "admin2_code"=>"207", "admin1_code"=>"KS", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4282781", "admin2_code"=>"067", "admin1_code"=>"KY", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4315137", "admin2_code"=>"027", "admin1_code"=>"LA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4416664", "admin2_code"=>"095", "admin1_code"=>"MS", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4505542", "admin2_code"=>"009", "admin1_code"=>"OH", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4603284", "admin2_code"=>"107", "admin1_code"=>"TN", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4671545", "admin2_code"=>"213", "admin1_code"=>"TX", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4797549", "admin2_code"=>"055", "admin1_code"=>"WV", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4829249", "admin2_code"=>"033", "admin1_code"=>"VA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4830668", "admin2_code"=>"083", "admin1_code"=>"AL", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4917703", "admin2_code"=>"049", "admin1_code"=>"IN", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4956946", "admin2_code"=>"025", "admin1_code"=>"ME", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"4984489", "admin2_code"=>"025", "admin1_code"=>"MI", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5053942", "admin2_code"=>"045", "admin1_code"=>"MO", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5107467", "admin2_code"=>"039", "admin1_code"=>"NY", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5178651", "admin2_code"=>"015", "admin1_code"=>"PA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5233317", "admin2_code"=>"025", "admin1_code"=>"VT", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5244312", "admin2_code"=>"073", "admin1_code"=>"WI", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5325144", "admin2_code"=>"037", "admin1_code"=>"CA", "asciiname"=>"Athens"}, {"country_code"=>"US", "geonameid"=>"5770910", "admin2_code"=>"035", "admin1_code"=>"UT", "asciiname"=>"Athens"}]
+Dest= 5770910 Athens  Greece NL
+{"country_code"=>"NL", "city"=>"Austin", "country"=>"United States of America"}
+City: Austin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Austin" and feature_code="PPL" 
+Austin) BR 21 Austin 
+Austin) CA 10 Austin 05
+Austin) HT 11 Austin 
+Austin) US AR Austin 029
+Austin) US AR Austin 085
+Austin) US AR Austin 141
+Austin) US IN Austin 143
+Austin) US KY Austin 009
+Austin) US MO Austin 037
+Austin) US MO Austin 069
+Austin) US MS Austin 143
+Austin) US NC Austin 193
+Austin) US OH Austin 141
+Austin) US TN Austin 071
+Austin) US IL Austin 031
+Austin) US MI Austin 059
+Austin) US MI Austin 103
+Austin) US MN Austin 099
+Austin) US NY Austin 011
+Austin) US PA Austin 105
+Austin) US RI Austin 009
+Austin) US CA Austin 085
+Austin) US CO Austin 029
+Austin) US NV Austin 015
+Austin) US UT Austin 041
+Austin) US MT Austin 049
+Austin) US OR Austin 023
+Austin) US WA Austin 029
+Austin) US WA Austin 063
+City Code= 5786004
+[{"country_code"=>"BR", "geonameid"=>"3471300", "admin2_code"=>"", "admin1_code"=>"21", "asciiname"=>"Austin"}, {"country_code"=>"CA", "geonameid"=>"5888403", "admin2_code"=>"05", "admin1_code"=>"10", "asciiname"=>"Austin"}, {"country_code"=>"HT", "geonameid"=>"3731004", "admin2_code"=>"", "admin1_code"=>"11", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099973", "admin2_code"=>"029", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099974", "admin2_code"=>"085", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099975", "admin2_code"=>"141", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4254010", "admin2_code"=>"143", "admin1_code"=>"IN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4282830", "admin2_code"=>"009", "admin1_code"=>"KY", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4375358", "admin2_code"=>"037", "admin1_code"=>"MO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4375359", "admin2_code"=>"069", "admin1_code"=>"MO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4416697", "admin2_code"=>"143", "admin1_code"=>"MS", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4453191", "admin2_code"=>"193", "admin1_code"=>"NC", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4505641", "admin2_code"=>"141", "admin1_code"=>"OH", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4603359", "admin2_code"=>"071", "admin1_code"=>"TN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4883837", "admin2_code"=>"031", "admin1_code"=>"IL", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4984591", "admin2_code"=>"059", "admin1_code"=>"MI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4984592", "admin2_code"=>"103", "admin1_code"=>"MI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5016884", "admin2_code"=>"099", "admin1_code"=>"MN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5107539", "admin2_code"=>"011", "admin1_code"=>"NY", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5178713", "admin2_code"=>"105", "admin1_code"=>"PA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5220732", "admin2_code"=>"009", "admin1_code"=>"RI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5325278", "admin2_code"=>"085", "admin1_code"=>"CA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5412364", "admin2_code"=>"029", "admin1_code"=>"CO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5499537", "admin2_code"=>"015", "admin1_code"=>"NV", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5534614", "admin2_code"=>"041", "admin1_code"=>"UT", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5637923", "admin2_code"=>"049", "admin1_code"=>"MT", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5711916", "admin2_code"=>"023", "admin1_code"=>"OR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5786003", "admin2_code"=>"029", "admin1_code"=>"WA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5786004", "admin2_code"=>"063", "admin1_code"=>"WA", "asciiname"=>"Austin"}]
+Dest= 5786004 Austin  United States of America NL
+{"country_code"=>"NL", "city"=>"Atlanta", "country"=>"United States of America"}
+City: Atlanta 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Atlanta" and feature_code="PPL" 
+Atlanta) NI 18 Atlanta 
+Atlanta) US AR Atlanta 027
+Atlanta) US DE Atlanta 005
+Atlanta) US KS Atlanta 035
+Atlanta) US KY Atlanta 125
+Atlanta) US LA Atlanta 127
+Atlanta) US MO Atlanta 121
+Atlanta) US MS Atlanta 017
+Atlanta) US OH Atlanta 129
+Atlanta) US TX Atlanta 067
+Atlanta) US IL Atlanta 107
+Atlanta) US IN Atlanta 057
+Atlanta) US MI Atlanta 119
+Atlanta) US NE Atlanta 137
+Atlanta) US NY Atlanta 101
+Atlanta) US CA Atlanta 077
+Atlanta) US CO Atlanta 009
+Atlanta) US NV Atlanta 017
+Atlanta) US ID Atlanta 039
+Atlanta) US MI Atlanta 119
+Atlanta) ZA 10 Atlanta 
+Atlanta) ZA 10 Atlanta 
+City Code= 1022066
+[{"country_code"=>"NI", "geonameid"=>"3620833", "admin2_code"=>"", "admin1_code"=>"18", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4099936", "admin2_code"=>"027", "admin1_code"=>"AR", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4141276", "admin2_code"=>"005", "admin1_code"=>"DE", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4267754", "admin2_code"=>"035", "admin1_code"=>"KS", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4282799", "admin2_code"=>"125", "admin1_code"=>"KY", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4315153", "admin2_code"=>"127", "admin1_code"=>"LA", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4375288", "admin2_code"=>"121", "admin1_code"=>"MO", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4416665", "admin2_code"=>"017", "admin1_code"=>"MS", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4505567", "admin2_code"=>"129", "admin1_code"=>"OH", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4671576", "admin2_code"=>"067", "admin1_code"=>"TX", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4883772", "admin2_code"=>"107", "admin1_code"=>"IL", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4917706", "admin2_code"=>"057", "admin1_code"=>"IN", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4984500", "admin2_code"=>"119", "admin1_code"=>"MI", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5063304", "admin2_code"=>"137", "admin1_code"=>"NE", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5107476", "admin2_code"=>"101", "admin1_code"=>"NY", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5325166", "admin2_code"=>"077", "admin1_code"=>"CA", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5412305", "admin2_code"=>"009", "admin1_code"=>"CO", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5499491", "admin2_code"=>"017", "admin1_code"=>"NV", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5584336", "admin2_code"=>"039", "admin1_code"=>"ID", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"7259532", "admin2_code"=>"119", "admin1_code"=>"MI", "asciiname"=>"Atlanta"}, {"country_code"=>"ZA", "geonameid"=>"1022065", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Atlanta"}, {"country_code"=>"ZA", "geonameid"=>"1022066", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Atlanta"}]
+Dest= 1022066 Atlanta  United States of America NL
+{"country_code"=>"NL", "city"=>"Berlin", "country"=>"Germany"}
+City: Berlin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Berlin" and feature_code="PPL" 
+Berlin) CO 27 Berlin 
+Berlin) CO 16 Berlin 
+Berlin) CO 30 Berlin 
+Berlin) CO 29 Berlin 
+Berlin) CO 28 Berlin 
+Berlin) DE 10 Berlin 
+Berlin) HT 07 Berlin 
+Berlin) JM 11 Berlin 
+Berlin) SE 18 Berlin 
+Berlin) US AL Berlin 043
+Berlin) US AL Berlin 047
+Berlin) US AR Berlin 003
+Berlin) US GA Berlin 071
+Berlin) US IL Berlin 167
+Berlin) US KS Berlin 011
+Berlin) US KY Berlin 023
+Berlin) US MD Berlin 047
+Berlin) US NJ Berlin 007
+Berlin) US OK Berlin 129
+Berlin) US PA Berlin 111
+Berlin) US SC Berlin 003
+Berlin) US TN Berlin 117
+Berlin) US TX Berlin 477
+Berlin) US VA Berlin 175
+Berlin) US WV Berlin 041
+Berlin) US IA Berlin 083
+Berlin) US MA Berlin 027
+Berlin) US MO Berlin 075
+Berlin) US ND Berlin 045
+Berlin) US NH Berlin 007
+Berlin) US NY Berlin 083
+Berlin) US OH Berlin 075
+Berlin) US OH Berlin 171
+Berlin) US WI Berlin 047
+Berlin) US CT Berlin 003
+Berlin) US NV Berlin 023
+Berlin) US OR Berlin 043
+Berlin) ZA 05 Berlin 
+Berlin) ZA 03 Berlin 
+City Code= 1019884
+[{"country_code"=>"CO", "geonameid"=>"3688895", "admin2_code"=>"", "admin1_code"=>"27", "asciiname"=>"Berlin"}, {"country_code"=>"CO", "geonameid"=>"3736256", "admin2_code"=>"", "admin1_code"=>"16", "asciiname"=>"Berlin"}, {"country_code"=>"CO", "geonameid"=>"3756346", "admin2_code"=>"", "admin1_code"=>"30", "asciiname"=>"Berlin"}, {"country_code"=>"CO", "geonameid"=>"3778492", "admin2_code"=>"", "admin1_code"=>"29", "asciiname"=>"Berlin"}, {"country_code"=>"CO", "geonameid"=>"3791480", "admin2_code"=>"", "admin1_code"=>"28", "asciiname"=>"Berlin"}, {"country_code"=>"DE", "geonameid"=>"2950158", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Berlin"}, {"country_code"=>"HT", "geonameid"=>"3730172", "admin2_code"=>"", "admin1_code"=>"07", "asciiname"=>"Berlin"}, {"country_code"=>"JM", "geonameid"=>"3491395", "admin2_code"=>"", "admin1_code"=>"11", "asciiname"=>"Berlin"}, {"country_code"=>"SE", "geonameid"=>"2722657", "admin2_code"=>"", "admin1_code"=>"18", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4047787", "admin2_code"=>"043", "admin1_code"=>"AL", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4047789", "admin2_code"=>"047", "admin1_code"=>"AL", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4101288", "admin2_code"=>"003", "admin1_code"=>"AR", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4182096", "admin2_code"=>"071", "admin1_code"=>"GA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4233627", "admin2_code"=>"167", "admin1_code"=>"IL", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4268177", "admin2_code"=>"011", "admin1_code"=>"KS", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4283975", "admin2_code"=>"023", "admin1_code"=>"KY", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4348460", "admin2_code"=>"047", "admin1_code"=>"MD", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4500771", "admin2_code"=>"007", "admin1_code"=>"NJ", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4530350", "admin2_code"=>"129", "admin1_code"=>"OK", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4556518", "admin2_code"=>"111", "admin1_code"=>"PA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4570700", "admin2_code"=>"003", "admin1_code"=>"SC", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4605635", "admin2_code"=>"117", "admin1_code"=>"TN", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4673607", "admin2_code"=>"477", "admin1_code"=>"TX", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4746766", "admin2_code"=>"175", "admin1_code"=>"VA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4798708", "admin2_code"=>"041", "admin1_code"=>"WV", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4848290", "admin2_code"=>"083", "admin1_code"=>"IA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"4930431", "admin2_code"=>"027", "admin1_code"=>"MA", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5054063", "admin2_code"=>"075", "admin1_code"=>"MO", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5058265", "admin2_code"=>"045", "admin1_code"=>"ND", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5083330", "admin2_code"=>"007", "admin1_code"=>"NH", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5108863", "admin2_code"=>"083", "admin1_code"=>"NY", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5147132", "admin2_code"=>"075", "admin1_code"=>"OH", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5147133", "admin2_code"=>"171", "admin1_code"=>"OH", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5245497", "admin2_code"=>"047", "admin1_code"=>"WI", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5282244", "admin2_code"=>"003", "admin1_code"=>"CT", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5499945", "admin2_code"=>"023", "admin1_code"=>"NV", "asciiname"=>"Berlin"}, {"country_code"=>"US", "geonameid"=>"5713705", "admin2_code"=>"043", "admin1_code"=>"OR", "asciiname"=>"Berlin"}, {"country_code"=>"ZA", "geonameid"=>"1019883", "admin2_code"=>"", "admin1_code"=>"05", "asciiname"=>"Berlin"}, {"country_code"=>"ZA", "geonameid"=>"1019884", "admin2_code"=>"", "admin1_code"=>"03", "asciiname"=>"Berlin"}]
+Dest= 1019884 Berlin  Germany NL
+{"country_code"=>"NL", "city"=>"Brussels", "country"=>"Belgium"}
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code="PPL" 
+Brussels) US IL Brussels 013
+Brussels) US WI Brussels 029
+City Code= 4833850
+[{"country_code"=>"US", "geonameid"=>"4234671", "admin2_code"=>"013", "admin1_code"=>"IL", "asciiname"=>"Brussels"}, {"country_code"=>"US", "geonameid"=>"4833850", "admin2_code"=>"029", "admin1_code"=>"WI", "asciiname"=>"Brussels"}]
+Dest= 4833850 Brussels  Belgium NL
+{"country_code"=>"NL", "city"=>"Beijing", "country"=>"China"}
+City: Beijing 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Beijing" and feature_code="PPL" 
+Beijing) CN 24 Beijing 
+City Code= 1816671
+[{"country_code"=>"CN", "geonameid"=>"1816671", "admin2_code"=>"", "admin1_code"=>"24", "asciiname"=>"Beijing"}]
+Dest= 1816671 Beijing 24 China NL
+{"country_code"=>"NL", "city"=>"Bali", "admin2_code"=>"", "admin1_code"=>"24", "country"=>"Indonesia"}
+City: Bali 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Bali" and feature_code="PPL"  and admin1_code='24'
+Bali) IN 24 Bali 
+City Code= 1277589
+[{"country_code"=>"IN", "geonameid"=>"1277589", "admin2_code"=>"", "admin1_code"=>"24", "asciiname"=>"Bali"}]
+Dest= 1277589 Bali 24 Indonesia NL
+{"country_code"=>"NL", "city"=>"Boston", "admin2_code"=>"", "admin1_code"=>"24", "country"=>"United States of America"}
+City: Boston 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Boston" and feature_code="PPL"  and admin1_code='24'
+City Code= 
+[]
+Dest=  Boston 24 United States of America NL
+{"country_code"=>"NL", "city"=>"Copenhagen", "admin2_code"=>"", "admin1_code"=>"24", "country"=>"Denmark"}
+City: Copenhagen 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Copenhagen" and feature_code="PPL"  and admin1_code='24'
+City Code= 
+[]
+Dest=  Copenhagen 24 Denmark NL
+Server version: 5.1.44
+ country=Belgium country_code=
+select * from countryInfo where country like "Belgium" 
+equivalentFipsCodegeonameid2802361tld.beisonumeric56iso3BELneighboursDE,NL,LU,FRpostalcode_regex^(d{4})$countryBelgiumisoBEcurrencynameEuropopulation10403000phone32postalcode_format####currencycodeEURarea_km230510capitalBrusselslanguagesnl-BE,fr-BE,de-BEcontinentEUfipsBE
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code="PPL"  and country_code='BE'
+City Code= 
+[]
+nil
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+{"city"=>"Amsterdam", "country"=>"Netherlands"}
+ country=Netherlands country_code=
+select * from countryInfo where country like "Netherlands" 
+equivalentFipsCodegeonameid2750405tld.nlisonumeric528iso3NLDneighboursDE,BEpostalcode_regex^(d{4}[A-Z]{2})$countryNetherlandsisoNLcurrencynameEuropopulation16645000phone31postalcode_format#### @@currencycodeEURarea_km241526capitalAmsterdamlanguagesnl-NL,fy-NLcontinentEUfipsNL
+City: Amsterdam 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Amsterdam" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Amsterdam  Netherlands NL
+{"country_code"=>"NL", "city"=>"Athens", "country"=>"Greece"}
+ country=Greece country_code=NL
+City: Athens 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Athens" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Athens  Greece NL
+{"country_code"=>"NL", "city"=>"Austin", "country"=>"United States of America"}
+ country=United States of America country_code=NL
+City: Austin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Austin" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Austin  United States of America NL
+{"country_code"=>"NL", "city"=>"Atlanta", "country"=>"United States of America"}
+ country=United States of America country_code=NL
+City: Atlanta 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Atlanta" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Atlanta  United States of America NL
+{"country_code"=>"NL", "city"=>"Berlin", "country"=>"Germany"}
+ country=Germany country_code=NL
+City: Berlin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Berlin" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Berlin  Germany NL
+{"country_code"=>"NL", "city"=>"Brussels", "country"=>"Belgium"}
+ country=Belgium country_code=NL
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Brussels  Belgium NL
+{"country_code"=>"NL", "city"=>"Beijing", "country"=>"China"}
+ country=China country_code=NL
+City: Beijing 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Beijing" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Beijing  China NL
+{"country_code"=>"NL", "city"=>"Bali", "country"=>"Indonesia"}
+ country=Indonesia country_code=NL
+City: Bali 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Bali" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Bali  Indonesia NL
+{"country_code"=>"NL", "city"=>"Boston", "country"=>"United States of America"}
+ country=United States of America country_code=NL
+City: Boston 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Boston" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Boston  United States of America NL
+{"country_code"=>"NL", "city"=>"Copenhagen", "country"=>"Denmark"}
+ country=Denmark country_code=NL
+City: Copenhagen 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Copenhagen" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Copenhagen  Denmark NL
+Server version: 5.1.44
+ country=Belgium country_code=
+select * from countryInfo where country like "Belgium" 
+equivalentFipsCodegeonameid2802361tld.beisonumeric56iso3BELneighboursDE,NL,LU,FRpostalcode_regex^(d{4})$countryBelgiumisoBEcurrencynameEuropopulation10403000phone32postalcode_format####currencycodeEURarea_km230510capitalBrusselslanguagesnl-BE,fr-BE,de-BEcontinentEUfipsBE
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code="PPL"  and country_code='BE'
+City Code= 
+[]
+nil
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+{"city"=>"Amsterdam", "country"=>"Netherlands"}
+ country=Netherlands country_code=
+select * from countryInfo where country like "Netherlands" 
+equivalentFipsCodegeonameid2750405tld.nlisonumeric528iso3NLDneighboursDE,BEpostalcode_regex^(d{4}[A-Z]{2})$countryNetherlandsisoNLcurrencynameEuropopulation16645000phone31postalcode_format#### @@currencycodeEURarea_km241526capitalAmsterdamlanguagesnl-NL,fy-NLcontinentEUfipsNL
+City: Amsterdam 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Amsterdam" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Amsterdam  Netherlands NL
+{"city"=>"Athens", "country"=>"Greece"}
+ country=Greece country_code=
+select * from countryInfo where country like "Greece" 
+equivalentFipsCodegeonameid390903tld.grisonumeric300iso3GRCneighboursAL,MK,TR,BGpostalcode_regex^(d{5})$countryGreeceisoGRcurrencynameEuropopulation10722000phone30postalcode_format### ##currencycodeEURarea_km2131940capitalAthenslanguagesel-GR,en,frcontinentEUfipsGR
+City: Athens 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Athens" and feature_code="PPL"  and country_code='GR'
+City Code= 
+[]
+Dest=  Athens  Greece GR
+{"city"=>"Austin", "country"=>"United States of America"}
+ country=United States of America country_code=
+select * from countryInfo where country like "United States of America" 
+City: Austin 
+select * from countryInfo where country like "United States of America" 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Austin" and feature_code="PPL" 
+Austin) BR 21 Austin 
+Austin) CA 10 Austin 05
+Austin) HT 11 Austin 
+Austin) US AR Austin 029
+Austin) US AR Austin 085
+Austin) US AR Austin 141
+Austin) US IN Austin 143
+Austin) US KY Austin 009
+Austin) US MO Austin 037
+Austin) US MO Austin 069
+Austin) US MS Austin 143
+Austin) US NC Austin 193
+Austin) US OH Austin 141
+Austin) US TN Austin 071
+Austin) US IL Austin 031
+Austin) US MI Austin 059
+Austin) US MI Austin 103
+Austin) US MN Austin 099
+Austin) US NY Austin 011
+Austin) US PA Austin 105
+Austin) US RI Austin 009
+Austin) US CA Austin 085
+Austin) US CO Austin 029
+Austin) US NV Austin 015
+Austin) US UT Austin 041
+Austin) US MT Austin 049
+Austin) US OR Austin 023
+Austin) US WA Austin 029
+Austin) US WA Austin 063
+City Code= 5786004
+[{"country_code"=>"BR", "geonameid"=>"3471300", "admin2_code"=>"", "admin1_code"=>"21", "asciiname"=>"Austin"}, {"country_code"=>"CA", "geonameid"=>"5888403", "admin2_code"=>"05", "admin1_code"=>"10", "asciiname"=>"Austin"}, {"country_code"=>"HT", "geonameid"=>"3731004", "admin2_code"=>"", "admin1_code"=>"11", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099973", "admin2_code"=>"029", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099974", "admin2_code"=>"085", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099975", "admin2_code"=>"141", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4254010", "admin2_code"=>"143", "admin1_code"=>"IN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4282830", "admin2_code"=>"009", "admin1_code"=>"KY", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4375358", "admin2_code"=>"037", "admin1_code"=>"MO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4375359", "admin2_code"=>"069", "admin1_code"=>"MO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4416697", "admin2_code"=>"143", "admin1_code"=>"MS", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4453191", "admin2_code"=>"193", "admin1_code"=>"NC", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4505641", "admin2_code"=>"141", "admin1_code"=>"OH", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4603359", "admin2_code"=>"071", "admin1_code"=>"TN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4883837", "admin2_code"=>"031", "admin1_code"=>"IL", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4984591", "admin2_code"=>"059", "admin1_code"=>"MI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4984592", "admin2_code"=>"103", "admin1_code"=>"MI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5016884", "admin2_code"=>"099", "admin1_code"=>"MN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5107539", "admin2_code"=>"011", "admin1_code"=>"NY", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5178713", "admin2_code"=>"105", "admin1_code"=>"PA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5220732", "admin2_code"=>"009", "admin1_code"=>"RI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5325278", "admin2_code"=>"085", "admin1_code"=>"CA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5412364", "admin2_code"=>"029", "admin1_code"=>"CO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5499537", "admin2_code"=>"015", "admin1_code"=>"NV", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5534614", "admin2_code"=>"041", "admin1_code"=>"UT", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5637923", "admin2_code"=>"049", "admin1_code"=>"MT", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5711916", "admin2_code"=>"023", "admin1_code"=>"OR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5786003", "admin2_code"=>"029", "admin1_code"=>"WA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5786004", "admin2_code"=>"063", "admin1_code"=>"WA", "asciiname"=>"Austin"}]
+Dest= 5786004 Austin  United States of America 
+{"city"=>"Atlanta", "country"=>"United States of America"}
+ country=United States of America country_code=
+select * from countryInfo where country like "United States of America" 
+City: Atlanta 
+select * from countryInfo where country like "United States of America" 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Atlanta" and feature_code="PPL" 
+Atlanta) NI 18 Atlanta 
+Atlanta) US AR Atlanta 027
+Atlanta) US DE Atlanta 005
+Atlanta) US KS Atlanta 035
+Atlanta) US KY Atlanta 125
+Atlanta) US LA Atlanta 127
+Atlanta) US MO Atlanta 121
+Atlanta) US MS Atlanta 017
+Atlanta) US OH Atlanta 129
+Atlanta) US TX Atlanta 067
+Atlanta) US IL Atlanta 107
+Atlanta) US IN Atlanta 057
+Atlanta) US MI Atlanta 119
+Atlanta) US NE Atlanta 137
+Atlanta) US NY Atlanta 101
+Atlanta) US CA Atlanta 077
+Atlanta) US CO Atlanta 009
+Atlanta) US NV Atlanta 017
+Atlanta) US ID Atlanta 039
+Atlanta) US MI Atlanta 119
+Atlanta) ZA 10 Atlanta 
+Atlanta) ZA 10 Atlanta 
+City Code= 1022066
+[{"country_code"=>"NI", "geonameid"=>"3620833", "admin2_code"=>"", "admin1_code"=>"18", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4099936", "admin2_code"=>"027", "admin1_code"=>"AR", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4141276", "admin2_code"=>"005", "admin1_code"=>"DE", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4267754", "admin2_code"=>"035", "admin1_code"=>"KS", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4282799", "admin2_code"=>"125", "admin1_code"=>"KY", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4315153", "admin2_code"=>"127", "admin1_code"=>"LA", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4375288", "admin2_code"=>"121", "admin1_code"=>"MO", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4416665", "admin2_code"=>"017", "admin1_code"=>"MS", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4505567", "admin2_code"=>"129", "admin1_code"=>"OH", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4671576", "admin2_code"=>"067", "admin1_code"=>"TX", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4883772", "admin2_code"=>"107", "admin1_code"=>"IL", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4917706", "admin2_code"=>"057", "admin1_code"=>"IN", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4984500", "admin2_code"=>"119", "admin1_code"=>"MI", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5063304", "admin2_code"=>"137", "admin1_code"=>"NE", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5107476", "admin2_code"=>"101", "admin1_code"=>"NY", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5325166", "admin2_code"=>"077", "admin1_code"=>"CA", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5412305", "admin2_code"=>"009", "admin1_code"=>"CO", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5499491", "admin2_code"=>"017", "admin1_code"=>"NV", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5584336", "admin2_code"=>"039", "admin1_code"=>"ID", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"7259532", "admin2_code"=>"119", "admin1_code"=>"MI", "asciiname"=>"Atlanta"}, {"country_code"=>"ZA", "geonameid"=>"1022065", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Atlanta"}, {"country_code"=>"ZA", "geonameid"=>"1022066", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Atlanta"}]
+Dest= 1022066 Atlanta  United States of America 
+{"city"=>"Berlin", "country"=>"Germany"}
+ country=Germany country_code=
+select * from countryInfo where country like "Germany" 
+equivalentFipsCodegeonameid2921044tld.deisonumeric276iso3DEUneighboursCH,PL,NL,DK,BE,CZ,LU,FR,ATpostalcode_regex^(d{5})$countryGermanyisoDEcurrencynameEuropopulation82369000phone49postalcode_format#####currencycodeEURarea_km2357021capitalBerlinlanguagesdecontinentEUfipsGM
+City: Berlin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Berlin" and feature_code="PPL"  and country_code='DE'
+Berlin) DE 10 Berlin 
+City Code= 2950158
+[{"country_code"=>"DE", "geonameid"=>"2950158", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Berlin"}]
+Dest= 2950158 Berlin 10 Germany DE
+{"city"=>"Brussels", "country"=>"Belgium"}
+ country=Belgium country_code=
+select * from countryInfo where country like "Belgium" 
+equivalentFipsCodegeonameid2802361tld.beisonumeric56iso3BELneighboursDE,NL,LU,FRpostalcode_regex^(d{4})$countryBelgiumisoBEcurrencynameEuropopulation10403000phone32postalcode_format####currencycodeEURarea_km230510capitalBrusselslanguagesnl-BE,fr-BE,de-BEcontinentEUfipsBE
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code="PPL"  and country_code='BE'
+City Code= 
+[]
+Dest=  Brussels  Belgium BE
+{"city"=>"Beijing", "country"=>"China"}
+ country=China country_code=
+select * from countryInfo where country like "China" 
+equivalentFipsCodegeonameid1814991tld.cnisonumeric156iso3CHNneighboursLA,BT,TJ,KZ,MN,AF,NP,MM,KG,PK,KP,RU,VN,INpostalcode_regex^(d{6})$countryChinaisoCNcurrencynameYuan Renminbipopulation1330044000phone86postalcode_format######currencycodeCNYarea_km29596960capitalBeijinglanguageszh-CN,yue,wuucontinentASfipsCH
+City: Beijing 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Beijing" and feature_code="PPL"  and country_code='CN'
+Beijing) CN 24 Beijing 
+City Code= 1816671
+[{"country_code"=>"CN", "geonameid"=>"1816671", "admin2_code"=>"", "admin1_code"=>"24", "asciiname"=>"Beijing"}]
+Dest= 1816671 Beijing 24 China CN
+{"city"=>"Bali", "country"=>"Indonesia"}
+ country=Indonesia country_code=
+select * from countryInfo where country like "Indonesia" 
+equivalentFipsCodegeonameid1643084tld.idisonumeric360iso3IDNneighboursPG,TL,MYpostalcode_regex^(d{5})$countryIndonesiaisoIDcurrencynameRupiahpopulation237512000phone62postalcode_format#####currencycodeIDRarea_km21919440capitalJakartalanguagesid,en,nl,jvcontinentASfipsID
+City: Bali 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Bali" and feature_code="PPL"  and country_code='ID'
+Bali) ID 26 Bali 
+Bali) ID 30 Bali 
+Bali) ID 07 Bali 
+Bali) ID 10 Bali 
+Bali) ID 10 Bali 
+Bali) ID 08 Bali 
+Bali) ID 08 Bali 
+Bali) ID 17 Bali 
+Bali) ID 18 Bali 
+City Code= 7060130
+[{"country_code"=>"ID", "geonameid"=>"1215308", "admin2_code"=>"", "admin1_code"=>"26", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"1650536", "admin2_code"=>"", "admin1_code"=>"30", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6560308", "admin2_code"=>"", "admin1_code"=>"07", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6564362", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6564486", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6773142", "admin2_code"=>"", "admin1_code"=>"08", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6777857", "admin2_code"=>"", "admin1_code"=>"08", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"7057570", "admin2_code"=>"", "admin1_code"=>"17", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"7060130", "admin2_code"=>"", "admin1_code"=>"18", "asciiname"=>"Bali"}]
+Dest= 7060130 Bali  Indonesia ID
+{"city"=>"Boston", "country"=>"United States of America"}
+ country=United States of America country_code=
+select * from countryInfo where country like "United States of America" 
+City: Boston 
+select * from countryInfo where country like "United States of America" 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Boston" and feature_code="PPL" 
+Boston) BO 04 Boston 
+Boston) CO 27 Boston 
+Boston) CR 03 Boston 
+Boston) CR 06 Boston 
+Boston) GB ENG Boston H7
+Boston) IE 10 Boston 
+Boston) IE 03 Boston 
+Boston) JM 07 Boston 
+Boston) PE 08 Boston 
+Boston) PH 26 Boston 
+Boston) SE 26 Boston 
+Boston) SR 15 Boston 
+Boston) US AL Boston 039
+Boston) US AR Boston 087
+Boston) US GA Boston 275
+Boston) US IN Boston 177
+Boston) US KY Boston 031
+Boston) US KY Boston 059
+Boston) US KY Boston 111
+Boston) US KY Boston 179
+Boston) US KY Boston 191
+Boston) US LA Boston 113
+Boston) US MO Boston 011
+Boston) US OH Boston 013
+Boston) US OH Boston 071
+Boston) US TN Boston 187
+Boston) US TX Boston 037
+Boston) US VA Boston 001
+Boston) US VA Boston 047
+Boston) US VA Boston 800
+Boston) US MI Boston 061
+Boston) US NY Boston 029
+Boston) US OH Boston 049
+Boston) US OH Boston 153
+Boston) US PA Boston 003
+Boston) US CT Boston 001
+Boston) ZA 02 Boston 
+Boston) ZA 03 Boston 
+City Code= 1016801
+[{"country_code"=>"BO", "geonameid"=>"3923025", "admin2_code"=>"", "admin1_code"=>"04", "asciiname"=>"Boston"}, {"country_code"=>"CO", "geonameid"=>"3688560", "admin2_code"=>"", "admin1_code"=>"27", "asciiname"=>"Boston"}, {"country_code"=>"CR", "geonameid"=>"3624633", "admin2_code"=>"", "admin1_code"=>"03", "asciiname"=>"Boston"}, {"country_code"=>"CR", "geonameid"=>"3624634", "admin2_code"=>"", "admin1_code"=>"06", "asciiname"=>"Boston"}, {"country_code"=>"GB", "geonameid"=>"2655138", "admin2_code"=>"H7", "admin1_code"=>"ENG", "asciiname"=>"Boston"}, {"country_code"=>"IE", "geonameid"=>"2966052", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Boston"}, {"country_code"=>"IE", "geonameid"=>"2966053", "admin2_code"=>"", "admin1_code"=>"03", "asciiname"=>"Boston"}, {"country_code"=>"JM", "geonameid"=>"3491273", "admin2_code"=>"", "admin1_code"=>"07", "asciiname"=>"Boston"}, {"country_code"=>"PE", "geonameid"=>"3946617", "admin2_code"=>"", "admin1_code"=>"08", "asciiname"=>"Boston"}, {"country_code"=>"PH", "geonameid"=>"1723862", "admin2_code"=>"", "admin1_code"=>"26", "asciiname"=>"Boston"}, {"country_code"=>"SE", "geonameid"=>"2599670", "admin2_code"=>"", "admin1_code"=>"26", "asciiname"=>"Boston"}, {"country_code"=>"SR", "geonameid"=>"3384518", "admin2_code"=>"", "admin1_code"=>"15", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4051334", "admin2_code"=>"039", "admin1_code"=>"AL", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4102651", "admin2_code"=>"087", "admin1_code"=>"AR", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4183849", "admin2_code"=>"275", "admin1_code"=>"GA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4254810", "admin2_code"=>"177", "admin1_code"=>"IN", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285205", "admin2_code"=>"031", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285206", "admin2_code"=>"059", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285207", "admin2_code"=>"111", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285208", "admin2_code"=>"179", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285209", "admin2_code"=>"191", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4317656", "admin2_code"=>"113", "admin1_code"=>"LA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4377987", "admin2_code"=>"011", "admin1_code"=>"MO", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4506902", "admin2_code"=>"013", "admin1_code"=>"OH", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4506903", "admin2_code"=>"071", "admin1_code"=>"OH", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4607849", "admin2_code"=>"187", "admin1_code"=>"TN", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4675742", "admin2_code"=>"037", "admin1_code"=>"TX", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4748439", "admin2_code"=>"001", "admin1_code"=>"VA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4748440", "admin2_code"=>"047", "admin1_code"=>"VA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4748441", "admin2_code"=>"800", "admin1_code"=>"VA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4986658", "admin2_code"=>"061", "admin1_code"=>"MI", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5109797", "admin2_code"=>"029", "admin1_code"=>"NY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5147902", "admin2_code"=>"049", "admin1_code"=>"OH", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5147903", "admin2_code"=>"153", "admin1_code"=>"OH", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5181238", "admin2_code"=>"003", "admin1_code"=>"PA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5282639", "admin2_code"=>"001", "admin1_code"=>"CT", "asciiname"=>"Boston"}, {"country_code"=>"ZA", "geonameid"=>"1016800", "admin2_code"=>"", "admin1_code"=>"02", "asciiname"=>"Boston"}, {"country_code"=>"ZA", "geonameid"=>"1016801", "admin2_code"=>"", "admin1_code"=>"03", "asciiname"=>"Boston"}]
+Dest= 1016801 Boston  United States of America 
+{"city"=>"Copenhagen", "country"=>"Denmark"}
+ country=Denmark country_code=
+select * from countryInfo where country like "Denmark" 
+equivalentFipsCodegeonameid2623032tld.dkisonumeric208iso3DNKneighboursDEpostalcode_regex^(d{4})$countryDenmarkisoDKcurrencynameKronepopulation5484000phone45postalcode_format####currencycodeDKKarea_km243094capitalCopenhagenlanguagesda-DK,en,fo,de-DKcontinentEUfipsDA
+City: Copenhagen 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Copenhagen" and feature_code="PPL"  and country_code='DK'
+City Code= 
+[]
+Dest=  Copenhagen  Denmark DK
+Server version: 5.1.44
+ country=Belgium country_code=
+select * from countryInfo where country like "Belgium" 
+equivalentFipsCodegeonameid2802361tld.beisonumeric56iso3BELneighboursDE,NL,LU,FRpostalcode_regex^(d{4})$countryBelgiumisoBEcurrencynameEuropopulation10403000phone32postalcode_format####currencycodeEURarea_km230510capitalBrusselslanguagesnl-BE,fr-BE,de-BEcontinentEUfipsBE
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code="PPL"  and country_code='BE'
+City Code= 
+[]
+nil
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+{"city"=>"Amsterdam", "country"=>"Netherlands"}
+ country=Netherlands country_code=
+select * from countryInfo where country like "Netherlands" 
+equivalentFipsCodegeonameid2750405tld.nlisonumeric528iso3NLDneighboursDE,BEpostalcode_regex^(d{4}[A-Z]{2})$countryNetherlandsisoNLcurrencynameEuropopulation16645000phone31postalcode_format#### @@currencycodeEURarea_km241526capitalAmsterdamlanguagesnl-NL,fy-NLcontinentEUfipsNL
+City: Amsterdam 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Amsterdam" and feature_code="PPL"  and country_code='NL'
+City Code= 
+[]
+Dest=  Amsterdam  Netherlands NL
+{"city"=>"Athens", "country"=>"Greece"}
+ country=Greece country_code=
+select * from countryInfo where country like "Greece" 
+equivalentFipsCodegeonameid390903tld.grisonumeric300iso3GRCneighboursAL,MK,TR,BGpostalcode_regex^(d{5})$countryGreeceisoGRcurrencynameEuropopulation10722000phone30postalcode_format### ##currencycodeEURarea_km2131940capitalAthenslanguagesel-GR,en,frcontinentEUfipsGR
+City: Athens 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Athens" and feature_code="PPL"  and country_code='GR'
+City Code= 
+[]
+Dest=  Athens  Greece GR
+{"city"=>"Austin", "country"=>"United States of America"}
+ country=United States of America country_code=
+select * from countryInfo where country like "United States of America" 
+equivalentFipsCodegeonameid6252001tld.usisonumeric840iso3USAneighboursCA,MX,CUpostalcode_regex^(d{9})$countryUnited States of AmericaisoUScurrencynameDollarpopulation303824000phone1postalcode_format#####-####currencycodeUSDarea_km29629091capitalWashingtonlanguagesen-US,es-US,hawcontinentNAfipsUS
+City: Austin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Austin" and feature_code="PPL"  and country_code='US'
+Austin) US AR Austin 029
+Austin) US AR Austin 085
+Austin) US AR Austin 141
+Austin) US IN Austin 143
+Austin) US KY Austin 009
+Austin) US MO Austin 037
+Austin) US MO Austin 069
+Austin) US MS Austin 143
+Austin) US NC Austin 193
+Austin) US OH Austin 141
+Austin) US TN Austin 071
+Austin) US IL Austin 031
+Austin) US MI Austin 059
+Austin) US MI Austin 103
+Austin) US MN Austin 099
+Austin) US NY Austin 011
+Austin) US PA Austin 105
+Austin) US RI Austin 009
+Austin) US CA Austin 085
+Austin) US CO Austin 029
+Austin) US NV Austin 015
+Austin) US UT Austin 041
+Austin) US MT Austin 049
+Austin) US OR Austin 023
+Austin) US WA Austin 029
+Austin) US WA Austin 063
+City Code= 5786004
+[{"country_code"=>"US", "geonameid"=>"4099973", "admin2_code"=>"029", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099974", "admin2_code"=>"085", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4099975", "admin2_code"=>"141", "admin1_code"=>"AR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4254010", "admin2_code"=>"143", "admin1_code"=>"IN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4282830", "admin2_code"=>"009", "admin1_code"=>"KY", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4375358", "admin2_code"=>"037", "admin1_code"=>"MO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4375359", "admin2_code"=>"069", "admin1_code"=>"MO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4416697", "admin2_code"=>"143", "admin1_code"=>"MS", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4453191", "admin2_code"=>"193", "admin1_code"=>"NC", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4505641", "admin2_code"=>"141", "admin1_code"=>"OH", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4603359", "admin2_code"=>"071", "admin1_code"=>"TN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4883837", "admin2_code"=>"031", "admin1_code"=>"IL", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4984591", "admin2_code"=>"059", "admin1_code"=>"MI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"4984592", "admin2_code"=>"103", "admin1_code"=>"MI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5016884", "admin2_code"=>"099", "admin1_code"=>"MN", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5107539", "admin2_code"=>"011", "admin1_code"=>"NY", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5178713", "admin2_code"=>"105", "admin1_code"=>"PA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5220732", "admin2_code"=>"009", "admin1_code"=>"RI", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5325278", "admin2_code"=>"085", "admin1_code"=>"CA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5412364", "admin2_code"=>"029", "admin1_code"=>"CO", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5499537", "admin2_code"=>"015", "admin1_code"=>"NV", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5534614", "admin2_code"=>"041", "admin1_code"=>"UT", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5637923", "admin2_code"=>"049", "admin1_code"=>"MT", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5711916", "admin2_code"=>"023", "admin1_code"=>"OR", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5786003", "admin2_code"=>"029", "admin1_code"=>"WA", "asciiname"=>"Austin"}, {"country_code"=>"US", "geonameid"=>"5786004", "admin2_code"=>"063", "admin1_code"=>"WA", "asciiname"=>"Austin"}]
+Dest= 5786004 Austin  United States of America US
+{"city"=>"Atlanta", "country"=>"United States of America"}
+ country=United States of America country_code=
+select * from countryInfo where country like "United States of America" 
+equivalentFipsCodegeonameid6252001tld.usisonumeric840iso3USAneighboursCA,MX,CUpostalcode_regex^(d{9})$countryUnited States of AmericaisoUScurrencynameDollarpopulation303824000phone1postalcode_format#####-####currencycodeUSDarea_km29629091capitalWashingtonlanguagesen-US,es-US,hawcontinentNAfipsUS
+City: Atlanta 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Atlanta" and feature_code="PPL"  and country_code='US'
+Atlanta) US AR Atlanta 027
+Atlanta) US DE Atlanta 005
+Atlanta) US KS Atlanta 035
+Atlanta) US KY Atlanta 125
+Atlanta) US LA Atlanta 127
+Atlanta) US MO Atlanta 121
+Atlanta) US MS Atlanta 017
+Atlanta) US OH Atlanta 129
+Atlanta) US TX Atlanta 067
+Atlanta) US IL Atlanta 107
+Atlanta) US IN Atlanta 057
+Atlanta) US MI Atlanta 119
+Atlanta) US NE Atlanta 137
+Atlanta) US NY Atlanta 101
+Atlanta) US CA Atlanta 077
+Atlanta) US CO Atlanta 009
+Atlanta) US NV Atlanta 017
+Atlanta) US ID Atlanta 039
+Atlanta) US MI Atlanta 119
+City Code= 7259532
+[{"country_code"=>"US", "geonameid"=>"4099936", "admin2_code"=>"027", "admin1_code"=>"AR", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4141276", "admin2_code"=>"005", "admin1_code"=>"DE", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4267754", "admin2_code"=>"035", "admin1_code"=>"KS", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4282799", "admin2_code"=>"125", "admin1_code"=>"KY", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4315153", "admin2_code"=>"127", "admin1_code"=>"LA", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4375288", "admin2_code"=>"121", "admin1_code"=>"MO", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4416665", "admin2_code"=>"017", "admin1_code"=>"MS", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4505567", "admin2_code"=>"129", "admin1_code"=>"OH", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4671576", "admin2_code"=>"067", "admin1_code"=>"TX", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4883772", "admin2_code"=>"107", "admin1_code"=>"IL", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4917706", "admin2_code"=>"057", "admin1_code"=>"IN", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"4984500", "admin2_code"=>"119", "admin1_code"=>"MI", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5063304", "admin2_code"=>"137", "admin1_code"=>"NE", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5107476", "admin2_code"=>"101", "admin1_code"=>"NY", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5325166", "admin2_code"=>"077", "admin1_code"=>"CA", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5412305", "admin2_code"=>"009", "admin1_code"=>"CO", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5499491", "admin2_code"=>"017", "admin1_code"=>"NV", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"5584336", "admin2_code"=>"039", "admin1_code"=>"ID", "asciiname"=>"Atlanta"}, {"country_code"=>"US", "geonameid"=>"7259532", "admin2_code"=>"119", "admin1_code"=>"MI", "asciiname"=>"Atlanta"}]
+Dest= 7259532 Atlanta  United States of America US
+{"city"=>"Berlin", "country"=>"Germany"}
+ country=Germany country_code=
+select * from countryInfo where country like "Germany" 
+equivalentFipsCodegeonameid2921044tld.deisonumeric276iso3DEUneighboursCH,PL,NL,DK,BE,CZ,LU,FR,ATpostalcode_regex^(d{5})$countryGermanyisoDEcurrencynameEuropopulation82369000phone49postalcode_format#####currencycodeEURarea_km2357021capitalBerlinlanguagesdecontinentEUfipsGM
+City: Berlin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Berlin" and feature_code="PPL"  and country_code='DE'
+Berlin) DE 10 Berlin 
+City Code= 2950158
+[{"country_code"=>"DE", "geonameid"=>"2950158", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Berlin"}]
+Dest= 2950158 Berlin 10 Germany DE
+{"city"=>"Brussels", "country"=>"Belgium"}
+ country=Belgium country_code=
+select * from countryInfo where country like "Belgium" 
+equivalentFipsCodegeonameid2802361tld.beisonumeric56iso3BELneighboursDE,NL,LU,FRpostalcode_regex^(d{4})$countryBelgiumisoBEcurrencynameEuropopulation10403000phone32postalcode_format####currencycodeEURarea_km230510capitalBrusselslanguagesnl-BE,fr-BE,de-BEcontinentEUfipsBE
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code="PPL"  and country_code='BE'
+City Code= 
+[]
+Dest=  Brussels  Belgium BE
+{"city"=>"Beijing", "country"=>"China"}
+ country=China country_code=
+select * from countryInfo where country like "China" 
+equivalentFipsCodegeonameid1814991tld.cnisonumeric156iso3CHNneighboursLA,BT,TJ,KZ,MN,AF,NP,MM,KG,PK,KP,RU,VN,INpostalcode_regex^(d{6})$countryChinaisoCNcurrencynameYuan Renminbipopulation1330044000phone86postalcode_format######currencycodeCNYarea_km29596960capitalBeijinglanguageszh-CN,yue,wuucontinentASfipsCH
+City: Beijing 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Beijing" and feature_code="PPL"  and country_code='CN'
+Beijing) CN 24 Beijing 
+City Code= 1816671
+[{"country_code"=>"CN", "geonameid"=>"1816671", "admin2_code"=>"", "admin1_code"=>"24", "asciiname"=>"Beijing"}]
+Dest= 1816671 Beijing 24 China CN
+{"city"=>"Bali", "country"=>"Indonesia"}
+ country=Indonesia country_code=
+select * from countryInfo where country like "Indonesia" 
+equivalentFipsCodegeonameid1643084tld.idisonumeric360iso3IDNneighboursPG,TL,MYpostalcode_regex^(d{5})$countryIndonesiaisoIDcurrencynameRupiahpopulation237512000phone62postalcode_format#####currencycodeIDRarea_km21919440capitalJakartalanguagesid,en,nl,jvcontinentASfipsID
+City: Bali 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Bali" and feature_code="PPL"  and country_code='ID'
+Bali) ID 26 Bali 
+Bali) ID 30 Bali 
+Bali) ID 07 Bali 
+Bali) ID 10 Bali 
+Bali) ID 10 Bali 
+Bali) ID 08 Bali 
+Bali) ID 08 Bali 
+Bali) ID 17 Bali 
+Bali) ID 18 Bali 
+City Code= 7060130
+[{"country_code"=>"ID", "geonameid"=>"1215308", "admin2_code"=>"", "admin1_code"=>"26", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"1650536", "admin2_code"=>"", "admin1_code"=>"30", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6560308", "admin2_code"=>"", "admin1_code"=>"07", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6564362", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6564486", "admin2_code"=>"", "admin1_code"=>"10", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6773142", "admin2_code"=>"", "admin1_code"=>"08", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"6777857", "admin2_code"=>"", "admin1_code"=>"08", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"7057570", "admin2_code"=>"", "admin1_code"=>"17", "asciiname"=>"Bali"}, {"country_code"=>"ID", "geonameid"=>"7060130", "admin2_code"=>"", "admin1_code"=>"18", "asciiname"=>"Bali"}]
+Dest= 7060130 Bali  Indonesia ID
+{"city"=>"Boston", "country"=>"United States of America"}
+ country=United States of America country_code=
+select * from countryInfo where country like "United States of America" 
+equivalentFipsCodegeonameid6252001tld.usisonumeric840iso3USAneighboursCA,MX,CUpostalcode_regex^(d{9})$countryUnited States of AmericaisoUScurrencynameDollarpopulation303824000phone1postalcode_format#####-####currencycodeUSDarea_km29629091capitalWashingtonlanguagesen-US,es-US,hawcontinentNAfipsUS
+City: Boston 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Boston" and feature_code="PPL"  and country_code='US'
+Boston) US AL Boston 039
+Boston) US AR Boston 087
+Boston) US GA Boston 275
+Boston) US IN Boston 177
+Boston) US KY Boston 031
+Boston) US KY Boston 059
+Boston) US KY Boston 111
+Boston) US KY Boston 179
+Boston) US KY Boston 191
+Boston) US LA Boston 113
+Boston) US MO Boston 011
+Boston) US OH Boston 013
+Boston) US OH Boston 071
+Boston) US TN Boston 187
+Boston) US TX Boston 037
+Boston) US VA Boston 001
+Boston) US VA Boston 047
+Boston) US VA Boston 800
+Boston) US MI Boston 061
+Boston) US NY Boston 029
+Boston) US OH Boston 049
+Boston) US OH Boston 153
+Boston) US PA Boston 003
+Boston) US CT Boston 001
+City Code= 5282639
+[{"country_code"=>"US", "geonameid"=>"4051334", "admin2_code"=>"039", "admin1_code"=>"AL", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4102651", "admin2_code"=>"087", "admin1_code"=>"AR", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4183849", "admin2_code"=>"275", "admin1_code"=>"GA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4254810", "admin2_code"=>"177", "admin1_code"=>"IN", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285205", "admin2_code"=>"031", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285206", "admin2_code"=>"059", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285207", "admin2_code"=>"111", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285208", "admin2_code"=>"179", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4285209", "admin2_code"=>"191", "admin1_code"=>"KY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4317656", "admin2_code"=>"113", "admin1_code"=>"LA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4377987", "admin2_code"=>"011", "admin1_code"=>"MO", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4506902", "admin2_code"=>"013", "admin1_code"=>"OH", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4506903", "admin2_code"=>"071", "admin1_code"=>"OH", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4607849", "admin2_code"=>"187", "admin1_code"=>"TN", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4675742", "admin2_code"=>"037", "admin1_code"=>"TX", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4748439", "admin2_code"=>"001", "admin1_code"=>"VA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4748440", "admin2_code"=>"047", "admin1_code"=>"VA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4748441", "admin2_code"=>"800", "admin1_code"=>"VA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"4986658", "admin2_code"=>"061", "admin1_code"=>"MI", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5109797", "admin2_code"=>"029", "admin1_code"=>"NY", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5147902", "admin2_code"=>"049", "admin1_code"=>"OH", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5147903", "admin2_code"=>"153", "admin1_code"=>"OH", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5181238", "admin2_code"=>"003", "admin1_code"=>"PA", "asciiname"=>"Boston"}, {"country_code"=>"US", "geonameid"=>"5282639", "admin2_code"=>"001", "admin1_code"=>"CT", "asciiname"=>"Boston"}]
+Dest= 5282639 Boston  United States of America US
+{"city"=>"Copenhagen", "country"=>"Denmark"}
+ country=Denmark country_code=
+select * from countryInfo where country like "Denmark" 
+equivalentFipsCodegeonameid2623032tld.dkisonumeric208iso3DNKneighboursDEpostalcode_regex^(d{4})$countryDenmarkisoDKcurrencynameKronepopulation5484000phone45postalcode_format####currencycodeDKKarea_km243094capitalCopenhagenlanguagesda-DK,en,fo,de-DKcontinentEUfipsDA
+City: Copenhagen 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Copenhagen" and feature_code="PPL"  and country_code='DK'
+City Code= 
+[]
+Dest=  Copenhagen  Denmark DK
+Server version: 5.1.44
+ country=Belgium country_code=
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code like "PPL%"  and country_code='BE' order by population desc 
+City Code= 2800866
+2800866
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+{"city"=>"Amsterdam", "country"=>"Netherlands"}
+ country=Netherlands country_code=
+City: Amsterdam 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Amsterdam" and feature_code like "PPL%"  and country_code='NL' order by population desc 
+City Code= 2759794
+Dest= 2759794 Amsterdam 07 Netherlands NL
+{"city"=>"Athens", "country"=>"Greece"}
+ country=Greece country_code=
+City: Athens 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Athens" and feature_code like "PPL%"  and country_code='GR' order by population desc 
+City Code= 264371
+Dest= 264371 Athens ESYE31 Greece GR
+{"city"=>"Austin", "country"=>"United States of America"}
+ country=United States of America country_code=
+City: Austin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Austin" and feature_code like "PPL%"  and country_code='US' order by population desc 
+Austin) US TX Austin 453
+Austin) US MN Austin 099
+Austin) US IN Austin 143
+Austin) US PA Austin 105
+Austin) US AR Austin 085
+Austin) US NY Austin 011
+Austin) US RI Austin 009
+Austin) US CA Austin 085
+Austin) US CO Austin 029
+Austin) US NV Austin 015
+Austin) US UT Austin 041
+Austin) US MT Austin 049
+Austin) US OR Austin 023
+Austin) US WA Austin 029
+Austin) US AR Austin 029
+Austin) US MI Austin 103
+Austin) US AR Austin 141
+Austin) US KY Austin 009
+Austin) US MO Austin 037
+Austin) US MO Austin 069
+Austin) US MS Austin 143
+Austin) US NC Austin 193
+Austin) US OH Austin 141
+Austin) US TN Austin 071
+Austin) US IL Austin 031
+Austin) US MI Austin 059
+Austin) US WA Austin 063
+City Code= 
+Dest=  Austin  United States of America US
+{"city"=>"Atlanta", "country"=>"United States of America"}
+ country=United States of America country_code=
+City: Atlanta 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Atlanta" and feature_code like "PPL%"  and country_code='US' order by population desc 
+Atlanta) US GA Atlanta 121
+Atlanta) US TX Atlanta 067
+Atlanta) US IL Atlanta 107
+Atlanta) US IN Atlanta 057
+Atlanta) US MI Atlanta 119
+Atlanta) US MO Atlanta 121
+Atlanta) US KS Atlanta 035
+Atlanta) US LA Atlanta 127
+Atlanta) US NE Atlanta 137
+Atlanta) US CA Atlanta 077
+Atlanta) US NY Atlanta 101
+Atlanta) US NV Atlanta 017
+Atlanta) US ID Atlanta 039
+Atlanta) US CO Atlanta 009
+Atlanta) US AR Atlanta 027
+Atlanta) US OH Atlanta 129
+Atlanta) US MS Atlanta 017
+Atlanta) US KY Atlanta 125
+Atlanta) US DE Atlanta 005
+Atlanta) US MI Atlanta 119
+City Code= 
+Dest=  Atlanta  United States of America US
+{"city"=>"Berlin", "country"=>"Germany"}
+ country=Germany country_code=
+City: Berlin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Berlin" and feature_code like "PPL%"  and country_code='DE' order by population desc 
+Berlin) DE 16 Berlin 
+Berlin) DE 10 Berlin 
+City Code= 
+Dest=  Berlin  Germany DE
+{"city"=>"Brussels", "country"=>"Belgium"}
+ country=Belgium country_code=
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code like "PPL%"  and country_code='BE' order by population desc 
+City Code= 2800866
+Dest= 2800866 Brussels BRU Belgium BE
+{"city"=>"Beijing", "country"=>"China"}
+ country=China country_code=
+City: Beijing 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Beijing" and feature_code like "PPL%"  and country_code='CN' order by population desc 
+Beijing) CN 22 Beijing 
+Beijing) CN 24 Beijing 
+City Code= 
+Dest=  Beijing  China CN
+{"city"=>"Bali", "country"=>"Indonesia"}
+ country=Indonesia country_code=
+City: Bali 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Bali" and feature_code like "PPL%"  and country_code='ID' order by population desc 
+Bali) ID 26 Bali 
+Bali) ID 30 Bali 
+Bali) ID 07 Bali 
+Bali) ID 10 Bali 
+Bali) ID 10 Bali 
+Bali) ID 08 Bali 
+Bali) ID 08 Bali 
+Bali) ID 17 Bali 
+Bali) ID 18 Bali 
+City Code= 
+Dest=  Bali  Indonesia ID
+{"city"=>"Boston", "country"=>"United States of America"}
+ country=United States of America country_code=
+City: Boston 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Boston" and feature_code like "PPL%"  and country_code='US' order by population desc 
+Boston) US MA Boston 025
+Boston) US GA Boston 275
+Boston) US IN Boston 177
+Boston) US AL Boston 039
+Boston) US VA Boston 001
+Boston) US VA Boston 047
+Boston) US VA Boston 800
+Boston) US MI Boston 061
+Boston) US NY Boston 029
+Boston) US OH Boston 049
+Boston) US OH Boston 153
+Boston) US PA Boston 003
+Boston) US TX Boston 037
+Boston) US TN Boston 187
+Boston) US OH Boston 071
+Boston) US AR Boston 087
+Boston) US KY Boston 031
+Boston) US KY Boston 059
+Boston) US KY Boston 111
+Boston) US KY Boston 179
+Boston) US KY Boston 191
+Boston) US LA Boston 113
+Boston) US MO Boston 011
+Boston) US OH Boston 013
+Boston) US CT Boston 001
+City Code= 
+Dest=  Boston  United States of America US
+{"city"=>"Copenhagen", "country"=>"Denmark"}
+ country=Denmark country_code=
+City: Copenhagen 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Copenhagen" and feature_code like "PPL%"  and country_code='DK' order by population desc 
+City Code= 2618425
+Dest= 2618425 Copenhagen 17 Denmark DK
+Server version: 5.1.44
+ country=Belgium country_code=
+Server version: 5.1.44
+ country=Belgium country_code=
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code like "PPL%"  and country_code='BE' order by population desc 
+City Code= 2800866
+2800866
+Server version: 5.1.44
+http://www.freebase.com/api/service/mqlread?queries=%7B%22qname%22:%7B%22escape%22:false,%22query%22:[%7B%22estimate-count%22:null,%22limit%22:10,%22type%22:%22/travel/travel_destination%22,%22name%22:[],%22/location/location/containedby%22:[%7B%22type%22:%22/location/country%22,%22name%22:[]%7D]%7D]%7D%7D
+{"city"=>"Amsterdam", "country"=>"Netherlands"}
+ country=Netherlands country_code=
+City: Amsterdam 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Amsterdam" and feature_code like "PPL%"  and country_code='NL' order by population desc 
+City Code= 2759794
+Dest= 2759794 Amsterdam 07 Netherlands NL
+{"city"=>"Athens", "country"=>"Greece"}
+ country=Greece country_code=
+City: Athens 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Athens" and feature_code like "PPL%"  and country_code='GR' order by population desc 
+City Code= 264371
+Dest= 264371 Athens ESYE31 Greece GR
+{"city"=>"Austin", "country"=>"United States of America"}
+ country=United States of America country_code=
+City: Austin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Austin" and feature_code like "PPL%"  and country_code='US' order by population desc 
+Austin) US TX Austin 453
+Austin) US MN Austin 099
+Austin) US IN Austin 143
+Austin) US PA Austin 105
+Austin) US AR Austin 085
+Austin) US NY Austin 011
+Austin) US RI Austin 009
+Austin) US CA Austin 085
+Austin) US CO Austin 029
+Austin) US NV Austin 015
+Austin) US UT Austin 041
+Austin) US MT Austin 049
+Austin) US OR Austin 023
+Austin) US WA Austin 029
+Austin) US AR Austin 029
+Austin) US MI Austin 103
+Austin) US AR Austin 141
+Austin) US KY Austin 009
+Austin) US MO Austin 037
+Austin) US MO Austin 069
+Austin) US MS Austin 143
+Austin) US NC Austin 193
+Austin) US OH Austin 141
+Austin) US TN Austin 071
+Austin) US IL Austin 031
+Austin) US MI Austin 059
+Austin) US WA Austin 063
+City Code= 
+Dest=  Austin  United States of America US
+{"city"=>"Atlanta", "country"=>"United States of America"}
+ country=United States of America country_code=
+City: Atlanta 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Atlanta" and feature_code like "PPL%"  and country_code='US' order by population desc 
+Atlanta) US GA Atlanta 121
+Atlanta) US TX Atlanta 067
+Atlanta) US IL Atlanta 107
+Atlanta) US IN Atlanta 057
+Atlanta) US MI Atlanta 119
+Atlanta) US MO Atlanta 121
+Atlanta) US KS Atlanta 035
+Atlanta) US LA Atlanta 127
+Atlanta) US NE Atlanta 137
+Atlanta) US CA Atlanta 077
+Atlanta) US NY Atlanta 101
+Atlanta) US NV Atlanta 017
+Atlanta) US ID Atlanta 039
+Atlanta) US CO Atlanta 009
+Atlanta) US AR Atlanta 027
+Atlanta) US OH Atlanta 129
+Atlanta) US MS Atlanta 017
+Atlanta) US KY Atlanta 125
+Atlanta) US DE Atlanta 005
+Atlanta) US MI Atlanta 119
+City Code= 
+Dest=  Atlanta  United States of America US
+{"city"=>"Berlin", "country"=>"Germany"}
+ country=Germany country_code=
+City: Berlin 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Berlin" and feature_code like "PPL%"  and country_code='DE' order by population desc 
+Berlin) DE 16 Berlin 
+Berlin) DE 10 Berlin 
+City Code= 
+Dest=  Berlin  Germany DE
+{"city"=>"Brussels", "country"=>"Belgium"}
+ country=Belgium country_code=
+City: Brussels 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Brussels" and feature_code like "PPL%"  and country_code='BE' order by population desc 
+City Code= 2800866
+Dest= 2800866 Brussels BRU Belgium BE
+{"city"=>"Beijing", "country"=>"China"}
+ country=China country_code=
+City: Beijing 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Beijing" and feature_code like "PPL%"  and country_code='CN' order by population desc 
+Beijing) CN 22 Beijing 
+Beijing) CN 24 Beijing 
+City Code= 
+Dest=  Beijing  China CN
+{"city"=>"Bali", "country"=>"Indonesia"}
+ country=Indonesia country_code=
+City: Bali 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Bali" and feature_code like "PPL%"  and country_code='ID' order by population desc 
+Bali) ID 26 Bali 
+Bali) ID 30 Bali 
+Bali) ID 07 Bali 
+Bali) ID 10 Bali 
+Bali) ID 10 Bali 
+Bali) ID 08 Bali 
+Bali) ID 08 Bali 
+Bali) ID 17 Bali 
+Bali) ID 18 Bali 
+City Code= 
+Dest=  Bali  Indonesia ID
+{"city"=>"Boston", "country"=>"United States of America"}
+ country=United States of America country_code=
+City: Boston 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Boston" and feature_code like "PPL%"  and country_code='US' order by population desc 
+Boston) US MA Boston 025
+Boston) US GA Boston 275
+Boston) US IN Boston 177
+Boston) US AL Boston 039
+Boston) US VA Boston 001
+Boston) US VA Boston 047
+Boston) US VA Boston 800
+Boston) US MI Boston 061
+Boston) US NY Boston 029
+Boston) US OH Boston 049
+Boston) US OH Boston 153
+Boston) US PA Boston 003
+Boston) US TX Boston 037
+Boston) US TN Boston 187
+Boston) US OH Boston 071
+Boston) US AR Boston 087
+Boston) US KY Boston 031
+Boston) US KY Boston 059
+Boston) US KY Boston 111
+Boston) US KY Boston 179
+Boston) US KY Boston 191
+Boston) US LA Boston 113
+Boston) US MO Boston 011
+Boston) US OH Boston 013
+Boston) US CT Boston 001
+City Code= 
+Dest=  Boston  United States of America US
+{"city"=>"Copenhagen", "country"=>"Denmark"}
+ country=Denmark country_code=
+City: Copenhagen 
+select country_code,admin1_code,admin2_code,asciiname,geonameid from allCountries where name like "Copenhagen" and feature_code like "PPL%"  and country_code='DK' order by population desc 
+City Code= 2618425
+Dest= 2618425 Copenhagen 17 Denmark DK

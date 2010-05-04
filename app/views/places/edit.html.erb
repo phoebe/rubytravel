@@ -1,0 +1,46 @@
+<h1>Editing place</h1>
+
+<% form_for(@place) do |f| %>
+  <%= hidden_field 'place', :id  %>
+  <%= hidden_field 'place', :geonameid  %>
+  Name<%= text_field 'place', :name  %>
+  <BR/>
+  Street Address<%= text_field 'place', :street_address  %>
+  <BR/>
+  City<%= text_field 'place', :city  %>
+  State<%= text_field 'place', :state  %>
+  <BR/>
+  Postal_code<%= text_field 'place', :postal_code  %>
+  Country_code<%= text_field 'place', :country_code  %>
+  <BR/>
+  URL<%= text_field 'place', :url  %>
+  <BR/>
+  Phone<%= text_field 'place', :phone  %>
+  <BR/>
+  Email<%= text_field 'place', :email  %>
+  <BR/>
+  Rating<%= text_field 'place', :rating  %>
+  <BR/>
+  Difficulty<%= text_field 'place', :difficulty  %>
+  <BR/>
+  Accessibility<%= text_field 'place', :howaccessible  %>
+  <BR/>
+  Transport<%= text_field 'place', :transportation  %>
+  <BR/>
+  Use Code<%= text_area 'place', :use_code, :size=>20  %>
+  <BR/>
+  Hours (text) <%= text_area 'place', :hours, :size=> 5  %>
+  <BR/>
+  Hour start(int)<%= text_field 'place', :hour_start  %>
+  Hour end (int)<%= text_field 'place', :hour_end  %>
+  Days open(MTWTFSS)<%= text_field 'place', :open_days  %>
+
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @place %> |
+<%= link_to 'Back', places_path %>

@@ -1,0 +1,20 @@
+
+
+<h1> SHOW TAG </h1>
+<%= link_to h(@tag.name), edit_tag_path(@tag) %> |
+<%= h @tag.description %>    <%= link_to 'New', new_tag_tag_path(@tag) %> 
+<%= h @tag.uri %>
+
+<blockquote>
+<table>
+<% @tag.children.each do |tag| %>
+  <tr><td>
+    <%= render :partial => 'child_form', :locals => { :tag => tag } %>
+
+    </td>
+  </tr>
+<% end %>
+</table>
+</blockquote>
+<%= link_to 'New', new_tag_path %> |
+<%= link_to 'Back', tags_path %>
