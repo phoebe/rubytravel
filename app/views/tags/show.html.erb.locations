@@ -1,0 +1,26 @@
+
+<%=  h @tag.name.capitalize() %> 
+Also known as
+<%= h @tag.uri %>
+
+<%= render :partial => 'child_form', :locals => { :tag => @tag } %>
+
+<%= link_to 'New', new_tag_path %> |
+<%= link_to 'Back', tags_path %>
+<% if ! @tag.code.nil? %>
+  <% str = @tag.code.split(',') %>
+<!-- % @locations= Location.find(:all, :conditions => [ "feature_code IN (?)", str ], :order => :country_code, :limit => 50) %-->
+  <% @locations = Location.paginate  :page => params[:page], :order => 'code ASC', :conditions => [ "feature_code IN (?)", str ], :order => :country_code %>
+  <% if ( !@locations.empty? ) %>
+    <%= render :partial => 'locations/locations', :locals => { :locations => @locations  } %>
+    <%= will_paginate @locations %>
+  <% end %>
+   
+  <!--%  @places = Place.paginate  :page => params[:page], :order => 'code ASC', :conditions => [ "feature_code IN (?)", str ], :order => :country_code % -->
+  <!--% if ( !@places.empty? ) %-->
+    <!-- %= render :partial => 'places/places', :locals => { :places => @places  } %-->
+     <!-- %= will_paginate @places % -->
+  <!-- % end % -->
+<% end %>
+<%= link_to 'Back', features_path %>
+

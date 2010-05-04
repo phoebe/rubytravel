@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100315143158) do
+ActiveRecord::Schema.define(:version => 20100323040816) do
+
+  create_table "features", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "places", :force => true do |t|
     t.string   "name",        :null => false
@@ -40,6 +50,9 @@ ActiveRecord::Schema.define(:version => 20100315143158) do
   create_table "tags", :force => true do |t|
     t.string   "name",           :null => false
     t.string   "uri"
+    t.string   "code"
+    t.string   "code2"
+    t.string   "code3"
     t.integer  "creator_id"
     t.integer  "parent_id"
     t.integer  "children_count"

@@ -1,0 +1,21 @@
+
+<TABLE BORDER=1>
+<tr>
+<% @feature.attributes.each do |f| %>
+<td><B> <%= f[0] %></B></td>
+<td> <%= f[1] %></td>
+</tr>
+<% end %>
+<br/>
+</TABLE>
+<% str = @feature.fcode.split(',') %>
+
+<!-- % @locations= Location.find(:all, :conditions => [ "feature_code IN (?)", str], :order => :country_code, :limit => 50) %-->
+<% @places = Place.paginate  :page => params[:page], :order => 'code ASC', :conditions => [ "feature_code IN (?)", str ], :order => :country_code %>
+<% if ( !@locations.empty? ) %>
+<%= render :partial => 'places/places', :locals => { :places => @places  } %>
+<%= will_paginate @locations %>
+<% end %>
+
+
+<%= link_to 'Back', features_path %>

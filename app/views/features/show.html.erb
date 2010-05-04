@@ -8,4 +8,14 @@
 <% end %>
 <br/>
 </TABLE>
+<% str = @feature.fcode.split(',') %>
+
+<!-- % @locations= Location.find(:all, :conditions => [ "feature_code IN (?)", str], :order => :country_code, :limit => 50) %-->
+<% @locations = Location.paginate  :page => params[:page], :order => 'code ASC', :conditions => [ "feature_code IN (?)", str ], :order => :country_code %>
+<% if ( !@locations.empty? ) %>
+<%= render :partial => 'locations/locations', :locals => { :locations => @locations  } %>
+<%= will_paginate @locations %>
+<% end %>
+
+
 <%= link_to 'Back', features_path %>

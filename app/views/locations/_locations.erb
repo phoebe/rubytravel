@@ -1,0 +1,45 @@
+<TABLE BORDER=1>
+<tr>
+<% fields= Array[
+'alternatenames',
+'latitude','longitude',
+'feature_code',
+'country_code',
+'admin1_code','admin2_code','admin3_code','admin4_code',
+'timezone',
+'population',
+'elevation','gtopo30',
+'source'];
+ displayfields= Array['Name','Other names','Geolocation','Feature',
+ 'Country','Admin','Time Zone','Pop','Elevation','Source']
+%>
+
+ <!-- % @locations.first.attributes.each do |name, value| %-->
+  <% displayfields.each do |name| %>
+  <th> <%= name.capitalize %></th>
+ <%end%>
+</tr>
+ <tr>
+ <% locations.each do |location| %>
+     <td><%= link_to location.name , location %></td>
+     <!--% location.attributes.each do |f| %--> 
+     <!--% fields.each do |f| %-->
+        <td> <%= location.attributes['alternatenames'] %></td>
+          <td> <%= location.latitude %> , <%= location.longitude %></td>
+          <td> <%= location.feature_code %></td>
+          <td> <%= location.country_code %></td>
+          <td> <%= location.admin1_code %>/ <%= location.admin2_code %>/
+          <%= location.admin3_code %>/ <%= location.admin4_code %></td>
+          <td> <%= location.timezone %></td>
+          <td> <%= location.population %></td>
+            <td> <%= location.attributes['elevation']%> / <%= location.attributes['gtopo30'] %></td>
+          <td> <%= location.source %></td>
+     
+ </tr>
+<% end %>
+<br/>
+</TABLE>
+ 
+
+
+

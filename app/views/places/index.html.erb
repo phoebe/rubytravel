@@ -1,0 +1,13 @@
+<h1>Listing places</h1>
+
+<% form_tag('places', :method => "get") do %>
+Name:<%= text_field_tag :name, params[:name] %> 
+Uses:<%= text_field_tag :use_code, params[:use_code] %> 
+<%= submit_tag 'Search', :name=>nil %> <!-- To avoid commit=Search in the url --> 
+<% end %>
+
+<%= render :partial => 'places', :locals => { :places => @places  } %>
+<%= will_paginate @places, :params => { :search => @search_terms } %>
+<br />
+
+<%= link_to 'New place', new_place_path %>

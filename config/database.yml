@@ -9,6 +9,7 @@ development:
 geonames:
   adapter: mysql
   database: geonames
+  flags: CLIENT_MULTI_RESULTS
   host: localhost
   username: phoebe
 

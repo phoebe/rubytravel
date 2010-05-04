@@ -7,7 +7,8 @@
 <% @features.each do |feature| %>
   <tr>
     <td><%= link_to feature.code , features_path+"/"+ feature.indxkey() %> </td>
-    <td><%= feature.name %> </td>
+    <td><%= feature.name %>
+     </td>
     <td><%= feature.description %></td>
 
     <td><!-- %= link_to 'Edit', edit_feature_path(feature) %--></td>

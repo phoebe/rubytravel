@@ -35,6 +35,7 @@ create table IF NOT EXISTS allCountries (
 	INDEX longitude_index (longitude),
 	INDEX latitude_index (latitude),
 	INDEX source_index using HASH(source)
+	INDEX altname_index using btree(alternatenames),
 );
 
 
@@ -118,8 +119,78 @@ create table IF NOT EXISTS attractions (
 	description varchar(200);
 );
 
+create table IF NOT EXISTS basicInfo (
+	geonameid	int primary key,         -- integer id of record in geonames database
+	average_max_temp	float, -- in centigrade
+	average_min_temp	float,
+	avg_1_max_temp	float,
+	avg_2_max_temp	float,
+	avg_3_max_temp	float,
+	avg_4_max_temp	float,
+	avg_5_max_temp	float,
+	avg_6_max_temp	float,
+	avg_7_max_temp	float,
+	avg_8_max_temp	float,
+	avg_9_max_temp	float,
+	avg_10_max_temp	float,
+	avg_11_max_temp	float,
+	avg_12_max_temp	float,
+	avg_1_min_temp	float,
+	avg_2_min_temp	float,
+	avg_3_min_temp	float,
+	avg_4_min_temp	float,
+	avg_5_min_temp	float,
+	avg_6_min_temp	float,
+	avg_7_min_temp	float,
+	avg_8_min_temp	float,
+	avg_9_min_temp	float,
+	avg_10_min_temp	float,
+	avg_11_min_temp	float,
+	avg_12_min_temp	float,
+	avg_1_rainfall_mm	float,
+	avg_2_rainfall_mm	float,
+	avg_3_rainfall_mm	float,
+	avg_4_rainfall_mm	float,
+	avg_5_rainfall_mm	float,
+	avg_6_rainfall_mm	float,
+	avg_7_rainfall_mm	float,
+	avg_8_rainfall_mm	float,
+	avg_9_rainfall_mm	float,
+	avg_10_rainfall_mm	float,
+	avg_11_rainfall_mm	float,
+	avg_12_rainfall_mm	float,
+	avg_1_raindays_mm	float,
+	avg_2_raindays_mm	float,
+	avg_3_raindays_mm	float,
+	avg_4_raindays_mm	float,
+	avg_5_raindays_mm	float,
+	avg_6_raindays_mm	float,
+	avg_7_raindays_mm	float,
+	avg_8_raindays_mm	float,
+	avg_9_raindays_mm	float,
+	avg_10_raindays_mm	float,
+	avg_11_raindays_mm	float,
+	avg_12_raindays_mm	float,
+	season_1	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_2	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_3	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_4	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_5	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_6	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_7	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_8	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_9	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_10	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_11	char(1),	-- H,M,L,O - high,medium,low,off season
+	season_12	char(1),	-- H,M,L,O - high,medium,low,off season
+	open_hour	int,
+	close_hour	int,
+	hours		varchar(30),
+	open_days	char(7),	-- as MTWTFSS - O=open,C=close,D= don't know
+};
+
 -- where data came from 
-alter table allCountries add column source varchar(10);
+-- alter table allCountries add column source varchar(10);
 -- SPATIAL support
 -- alter table allCountries add column loc point NOT NULL;
 --  add SPATIAL KEY loc (loc);

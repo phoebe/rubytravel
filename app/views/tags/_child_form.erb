@@ -1,15 +1,13 @@
 
-<table>
-<th><%= link_to tag.name , edit_tag_path(tag) %></th>
-<td><%= link_to 'Destroy', tag, :confirm => 'Are you sure?', :method => :delete %>
-<%= h tag.description %><%= link_to 'New', new_tag_tag_path(tag) %> </td>
-<td>
-<li>
-<% @children= tag.children %>
-<% @children.each do |ctag| %>
-  <%= render :partial => 'child_form', :locals => { :tag => ctag } %>
-<% end %>
-</li>
-</td>
+<%= link_to h( tag.name.capitalize()) , edit_tag_path(tag) %> |
 
-</table>
+<%= link_to 'Destroy', tag, :confirm => 'Are you sure?', :method => :delete %> | 
+<%= link_to 'New', new_tag_tag_path(tag) %> |
+<%= h tag.description %>
+<% if (! tag.children_count.nil? ) %>
+<UL>
+  <% tag.children.each do |ctag| %>
+    <LI><%= render :partial => 'child_form', :locals => { :tag => ctag  } %></LI>
+  <% end %>
+</UL>
+<% end %>

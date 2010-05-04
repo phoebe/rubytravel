@@ -2,18 +2,18 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.xml
   def index
+   
     @locations =  
-      Location.paginate  :page => params[:page], :order => 'name ASC', :per_page => 20
+      Location.paginate  :page => params[:page], :order => 'name ASC', :per_page => 20 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @locations }
+      format.xml  { render :xml => @location }
     end
   end
 
   # GET /locations/1
   # GET /locations/1.xml
   def show
-    #@location = Location.find_by_geonameid(params[:id||:geonameid])
     @location = Location.find(:first, :conditions => [ "geonameid = ?", params[:id] ] )
     respond_to do |format|
       format.html # show.html.erb

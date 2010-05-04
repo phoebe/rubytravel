@@ -1,9 +1,6 @@
-<h1>Listing profiles for User <%= @user.handle() %> </h1>
-
+<h1>Welcome back, <%= @user.handle() %> </h1>
+<h2>Here are your travel profiles</h2>
 <table>
-  <tr>
-  </tr>
-
 <% @profiles.each do |profile| %>
   <tr>
     <td><%= link_to profile.name , profile %></td>
@@ -14,6 +11,21 @@
 <% end %>
 </table>
 
-<br />
 
 <%= link_to 'New profile', new_user_profile_path(@user.id) %>
+
+<br />
+<% @trips= @user.trips() %><table>
+<% if !@trips.nil? && !@trips.empty? %>
+<h2>Here are your pending trips</h2>
+<% @trips.each do |trip| %>
+  <tr>
+    <td><%= link_to trip.name , trip %></td>
+    <td><%= link_to 'Edit', edit_profile_path(trip) %></td>
+    <td><%= link_to 'Destroy', trip, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<!-- %= link_to 'New Trip', new_user_trip_path(@user.id) %-->

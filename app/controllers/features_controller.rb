@@ -5,7 +5,6 @@ class FeaturesController < ApplicationController
 
   before_filter :authenticate
   def index
-    
     #@features = Feature.all
     @features = Feature.paginate  :page => params[:page], :order => 'code ASC', :per_page => 20
     respond_to do |format|

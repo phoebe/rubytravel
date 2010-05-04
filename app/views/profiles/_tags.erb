@@ -1,0 +1,16 @@
+
+<%= check_box_tag "profile[tag_ids][]", tag.id ,@profile.tags.include?(tag) %>
+<%= tag.name.capitalize() %> 
+<%unless tag.description.nil? %>
+  :
+<%=  tag.description %>
+<% end %>
+<% if (! tag.children_count.nil? ) %>
+<UL>
+    <LI>
+  <% tag.children.each do |ctag| %>
+    <%= render :partial => 'tags', :locals => { :tag => ctag  } %>
+  <% end %>
+    </LI>
+</UL>
+<% end %>
