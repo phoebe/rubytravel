@@ -2,30 +2,11 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.xml
   def index
-    #@places = Place.all
+    conditions={}
+    conditions[:use_code_like]= params[:use_code] unless params[:use_code].blank?
+    conditions[:name_like]= params[:name] unless params[:name].blank?
     @places =  
-    if params[:use_code].blank? && params[:name].blank?
-      Place.paginate  :page => params[:page], :order => 'name ASC', :per_page => 20 
-    else
-=begin # ar extension doesn't work?
-      conditions={}
-      conditions[:use_code_like]= '%'+params[:use_code]+'%' unless params[:use_code].blank?
-      conditions[:name_like]= '%'+params[:name]+'%' unless params[:name].blank?
-=end
-      clist=[]
-      conditions=['blank']
-      unless params[:use_code].blank?
-        clist <<  'use_code like ?'
-        conditions << '%'+params[:use_code]+'%'
-      end
-      unless params[:name].blank?
-        clist <<  'name like ?'
-        conditions << '%'+params[:name]+'%'
-      end
-      conditions[0]= clist.join(' and '); 
-      puts conditions.inspect
-      Place.find( :all, :conditions => conditions).paginate  :page => params[:page], :order => 'name ASC', :per_page => 20 
-    end
+      Place.find( :all, :conditions => conditions, :order => 'name ASC').paginate  :page => params[:page], :per_page => 20 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @places }

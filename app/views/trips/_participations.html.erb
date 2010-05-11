@@ -1,0 +1,16 @@
+<OL>
+<% @participations.each { |p| %>
+<LI>
+<%= p.name %>
+<% @user = User.find(p.user_id) %>
+<%= @user.first_name %> <%= @user.last_name %>
+(<%= @user.email %>)
+<% if p.user_id == current_user().id %>
+<% @profile= Profile.find(p.profile_id) %>
+<%= @profile.name %>
+<% end %>
+Travel Date: <%= p.traveldate %>
+</LI>
+<% } %>
+</OL>
+

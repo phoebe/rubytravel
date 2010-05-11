@@ -1,3 +1,5 @@
 *.DS_Store
 *.log
 *.sqlite3
+imports
+config/initializers/actionmailer.rb

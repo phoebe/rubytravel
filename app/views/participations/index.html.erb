@@ -1,0 +1,24 @@
+<h1>Listing participations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>Profile</th>
+  </tr>
+
+<% @participations.each do |participation| %>
+  <tr>
+    <td><%=h participation.name %></td>
+    <td><%=h participation.user_id %></td>
+    <td><%=h participation.profile_id %></td>
+    <td><%= link_to 'Show', participation %></td>
+    <td><%= link_to 'Edit', edit_participation_path(participation) %></td>
+    <td><%= link_to 'Destroy', participation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New participation', new_participation_path %>

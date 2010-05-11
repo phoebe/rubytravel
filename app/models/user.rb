@@ -2,8 +2,11 @@ class User < ActiveRecord::Base
   include Clearance::User
   #attr_accessible :first_name,:last_name, :login
   has_many :tags, :foreign_key => :creator_id
-  has_many :trips, :dependent => :destroy
   has_many :profiles, :dependent => :destroy
+  #has_many :trips                             # trips initialed by this user
+  # too confusing - only thru participation with roles
+  has_many :participations, :dependent => :destroy
+  has_many :trips, :through => :participations  # participate in these trips
   
   validates_uniqueness_of :email
 

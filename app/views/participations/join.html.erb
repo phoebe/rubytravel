@@ -1,0 +1,28 @@
+<%= h @trip.name %>
+<%= h @trip.departureDate %>
+
+<% form_for :participation, @participation, :url => { :action => :create }  do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :Role %>
+    <%= f.text_field :name %>
+    <br/>
+    <%= f.label :'Leaving on' %>
+    <%= f.text_field :traveldate %>
+  </p>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :trip_id %>
+  <p>
+<% if @profiles.nil? %>
+  Please set up  a profile for your trips 
+<% else %>
+  <%= f.label 'Pick a profile for this trip' %> <%= f.select( :profile_id, @profiles.collect{ |p| [p.name,p.id]}) %>
+  <!-- , {:include_blank=>'None'} ) %-->
+<% end %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', participations_path %>

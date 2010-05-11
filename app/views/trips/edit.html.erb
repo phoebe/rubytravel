@@ -1,7 +1,12 @@
 <h1>Editing trip</h1>
 
 <% form_for(@trip) do |f| %>
-  <%= f.error_messages %>
+  <%= f.error_messages %>  
+  <%= f.hidden_field :id %>
+  
+  <%= f.text_field :name %>
+  <%= f.text_field :departureDate %>
+  <%= f.text_field :duration %>
 
   <p>
     <%= f.submit 'Update' %>
