@@ -1,5 +1,4 @@
 <h1>Listing trips</h1>
-<<<<<<< HEAD:app/views/trips/index.html.erb
 <table border=1>
   <tr>
   <th colspan=3> All trips: </th>
@@ -55,25 +54,9 @@
     <td>suggestions </td>
  
     <td><%= link_to 'Edit', edit_participation_path(part) %></td>
-=======
-
-<table>
-  <tr>
-  </tr>
-
-<% @trips.each do |trip| %>
-  <tr>
-    <td><%= link_to 'Show', trip %></td>
-    <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-    <td><%= link_to 'Destroy', trip, :confirm => 'Are you sure?', :method => :delete %></td>
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/views/trips/index.html.erb
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<<<<<<< HEAD:app/views/trips/index.html.erb
-=======
-<%= link_to 'New trip', new_trip_path %>
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/views/trips/index.html.erb
