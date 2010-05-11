@@ -34,8 +34,8 @@ create table IF NOT EXISTS allCountries (
 	INDEX name_index using btree(name),
 	INDEX longitude_index (longitude),
 	INDEX latitude_index (latitude),
-	INDEX source_index using HASH(source)
-	INDEX altname_index using btree(alternatenames),
+	INDEX source_index using HASH(source),
+	INDEX altname_index using btree(alternatenames)
 );
 
 
@@ -115,8 +115,8 @@ create table IF NOT EXISTS countryInfo (
 -- Add  activities
 -- Features = land feature , activities = things you can do
 create table IF NOT EXISTS attractions (
-	code varchar(10) primary key;
-	description varchar(200);
+	code varchar(10) primary key,
+	description varchar(200)
 );
 
 create table IF NOT EXISTS basicInfo (
@@ -186,8 +186,8 @@ create table IF NOT EXISTS basicInfo (
 	open_hour	int,
 	close_hour	int,
 	hours		varchar(30),
-	open_days	char(7),	-- as MTWTFSS - O=open,C=close,D= don't know
-};
+	open_days	char(7)	-- as MTWTFSS - O=open,C=close,D= don't know
+);
 
 -- where data came from 
 -- alter table allCountries add column source varchar(10);
