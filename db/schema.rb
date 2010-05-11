@@ -9,7 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD:db/schema.rb
 ActiveRecord::Schema.define(:version => 20100505141647) do
+=======
+ActiveRecord::Schema.define(:version => 20100323040816) do
+>>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:db/schema.rb
 
   create_table "features", :force => true do |t|
     t.datetime "created_at"
@@ -20,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+<<<<<<< HEAD:db/schema.rb
 
   create_table "participations", :force => true do |t|
     t.string   "name"
@@ -30,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+=======
+>>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:db/schema.rb
 
   create_table "places", :force => true do |t|
     t.string   "name",        :null => false

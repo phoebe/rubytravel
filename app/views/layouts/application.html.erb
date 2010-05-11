@@ -3,7 +3,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+<<<<<<< HEAD:app/views/layouts/application.html.erb
   <script type="text/javascript" src="/javascripts/jquery-1.4.2.js"></script>
+=======
+  <script type="text/javascript" src="jquery-1.4.2.js"></script>
+>>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/views/layouts/application.html.erb
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= controller.class.name %>:<%= controller.action_name %></title>
   <%= stylesheet_link_tag 'application' %>
@@ -16,6 +20,7 @@
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <%- end -%>
 </div>
+<<<<<<< HEAD:app/views/layouts/application.html.erb
 <%= link_to :Home , root_path %>
 |
 <%= link_to :Categories , tags_path %>
@@ -30,6 +35,14 @@
 <% if signed_in? %>
 | <%= link_to 'Sign out', session_path, :method => :delete %> 
 <% end %>
+=======
+<%= link_to :Home , root_path %>|
+<%= link_to :Categories , tags_path %>|
+<%= link_to :features, features_path %>|
+<%= link_to :locations , locations_path %>|
+<%= link_to :places , places_path %>
+<%= link_to :trips , trips_path %>
+>>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/views/layouts/application.html.erb
 <%= yield %>
 
 </body>

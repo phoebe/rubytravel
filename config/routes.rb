@@ -1,9 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+<<<<<<< HEAD:config/routes.rb
   map.resources :participations
 
   map.resources :places
 
   # Open trips
+=======
+  map.resources :places
+
+>>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:config/routes.rb
   map.resources :trips
   map.connect 'trip/:trip_id/:action', :controller => :participations, :action => [:join]
 
@@ -27,15 +32,23 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :profiles 
   map.resources :users,:only  =>[:new , :show, :index, :edit ]  do |users|
     users.resources :profiles, :only =>[:new , :show, :index, :edit ]
+<<<<<<< HEAD:config/routes.rb
   # trips associated with user
     users.resources :trips, :only =>[:new , :show, :index, :edit ] do |trip|
       trip.resource :participations, :only => [:new, :show, :index, :edit ]
     end
+=======
+    map.resources :trips
+>>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:config/routes.rb
   end
 
   map.resources :tags do |tag|
     tag.resources :tags
   end
+<<<<<<< HEAD:config/routes.rb
+=======
+  
+>>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:config/routes.rb
 
 
   map.resources :locations,:only => [:show, :index] 

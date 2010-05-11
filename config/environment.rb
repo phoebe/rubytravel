@@ -22,11 +22,16 @@ Rails::Initializer.run do |config|
   config.gem "htmlentities"
   config.gem "clearance"
   config.gem "acts_as_tree"
+  config.gem "ar-extensions"
   config.gem 'mislav-will_paginate', 
       :lib => 'will_paginate', 
       :source => 'http://gems.github.com'
   # Gem for accessing freebase
+<<<<<<< HEAD:config/environment.rb
   #config.gem "ken"
+=======
+  config.gem "ken"
+>>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:config/environment.rb
   # This is to fix the email config error from clearance
   config.action_mailer.default_url_options = { :host => "gmail.com" }
   config.gem "ar-extensions"
