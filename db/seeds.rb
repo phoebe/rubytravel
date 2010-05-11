@@ -8,20 +8,25 @@
 
 ron = User.find_or_create_by_login(:login => 'ron', :email => 'rnewman@thecia.net', :password=>'ron', :email_confirmed => true)
 phoebe = User.find_or_create_by_login(:login => 'phoebe',:email => 'phoebem@comcast.net', :password=>'phoebe',:encrypted_password => 'crypted_password', :email_confirmed => true)
-Profile.find_or_create_by_name_and_user_id(:name => 'work travel',:user=>phoebe, :description => 'Preferences for work related travelling'); 
+kalinda = User.find_or_create_by_login(:login => 'kalinda',:email => 'kalinda@comcast.net', :password=>'kalinda',:encrypted_password => 'crypted_password', :email_confirmed => true)
+steve = User.find_or_create_by_login(:login => 'steve',:email => 'steve@comcast.net', :password=>'steve',:encrypted_password => 'crypted_password', :email_confirmed => true)
+grandpa = User.find_or_create_by_login(:login => 'grandpa',:email => 'grandpa@comcast.net', :password=>'grandpa',:encrypted_password => 'crypted_password', :email_confirmed => true)
+grandma = User.find_or_create_by_login(:login => 'grandma',:email => 'grandma@comcast.net', :password=>'grandma',:encrypted_password => 'crypted_password', :email_confirmed => true)
+blackie = User.find_or_create_by_login(:login => 'blackie',:email => 'blackie@comcast.net', :password=>'blackie',:encrypted_password => 'crypted_password', :email_confirmed => true)
+
 
 #User.update_all('encrypted_password = crypted_password, email_confirmed = true')
  outdoors = Tag.find_or_create_by_name(:name => 'outdoors', :uri => 'http://kalinda.us/ns/Outdoors',
                         :description =>'Outdoors activities',:code=>"OUT", :creator => phoebe )
  Tag.find_or_create_by_name(:name => 'hiking',:uri=>'http://kalinda.us/ns/Hiking',
                        :parent => outdoors, :code=>'TRL',:creator=> ron)
- Tag.find_or_create_by_name(:name => 'skiing', :uri=>'http://kalinda.us/ns/Sking',:code=> "SKI",
+ skiing=Tag.find_or_create_by_name(:name => 'skiing', :uri=>'http://kalinda.us/ns/Sking',:code=> "SKI",
                        :parent => outdoors, :creator=> phoebe)
  Tag.find_or_create_by_name(:name => 'biking', :uri=>'http://kalinda.us/ns/Biking',:code=> "BIKE",
                        :parent => outdoors, :creator=> phoebe)
  Tag.find_or_create_by_name(:name => 'golf', :uri=>'http://kalinda.us/ns/Golf', :code=> "GOLF",
                        :parent => outdoors, :creator=> phoebe)
- Tag.find_or_create_by_name(:name => 'fishing', :uri=>'http://kalinda.us/ns/Fishing',
+ fishing=Tag.find_or_create_by_name(:name => 'fishing', :uri=>'http://kalinda.us/ns/Fishing',
                        :code =>'RGNL', :parent => outdoors, :creator=> phoebe)
 
 
@@ -85,8 +90,8 @@ Profile.find_or_create_by_name_and_user_id(:name => 'work travel',:user=>phoebe,
  Tag.find_or_create_by_name(:name => 'whitewater', :parent=> water, :code=>'WHITE', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'scuba', :parent => water, :code=>'SCUBA', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'snorkel', :parent => water, :code=>'SNORK', :creator => phoebe)
- Tag.find_or_create_by_name(:name => 'swimming', :parent => water, :code=>'SWIM', :creator => phoebe)
- Tag.find_or_create_by_name(:name => 'beach', :parent => outdoors, :code=>'BEACH', :creator => phoebe)
+ swimming= Tag.find_or_create_by_name(:name => 'swimming', :parent => water, :code=>'SWIM', :creator => phoebe)
+ beach=Tag.find_or_create_by_name(:name => 'beach', :parent => outdoors, :code=>'BEACH', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'cave', :parent => sport, :code=>'CAVE', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'climbing', :parent=> sport, :code=>'CLIMB', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'skiing/Snowboarding', :parent => sport, :code =>'SKI', :creator => phoebe)
@@ -96,3 +101,11 @@ religious = Tag.find_or_create_by_name(:name => 'Religious', :parent => culture,
 
 # hiking trails -  www.wikiloc.com
 
+Profile.find_or_create_by_name_and_user_id(:name => 'work travel',:user=>phoebe, :description => 'Preferences for work related travelling'); 
+phoebeprofile= Profile.find_or_create_by_name_and_user_id(:name => 'family travel',:user=>phoebe, :description => 'Family travel'); 
+kprofile = Profile.find_or_create_by_name_and_user_id(:name => 'travel',:user=>kalinda ); 
+steveprofile= Profile.find_or_create_by_name_and_user_id(:name => 'family travel',:user=>steve ); 
+grandmaprofile= Profile.find_or_create_by_name_and_user_id(:name => 'general',:user=>grandma ); 
+grandpaprofile= Profile.find_or_create_by_name_and_user_id(:name => 'general',:user=>grandpa ); 
+kprofile.update_attributes({ :tag_ids =>[family.id.to_s, outdoors.id.to_s, museum.id.to_s, beach.id.to_s, skiing.id.to_s, swimming.id.to_s] })
+grandpaprofile.update_attributes({ :tag_ids =>[cuisine.id.to_s, fishing.id.to_s, museum.id.to_s, religious.id.to_s] })

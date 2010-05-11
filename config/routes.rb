@@ -1,7 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :participations
+
   map.resources :places
 
+  # Open trips
   map.resources :trips
+  map.connect 'trip/:trip_id/:action', :controller => :participations, :action => [:join]
 
 
   Clearance::Routes.draw(map)
@@ -20,15 +24,18 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => :profiles
 
   # nested resources
-  map.resources :profiles
+  map.resources :profiles 
   map.resources :users,:only  =>[:new , :show, :index, :edit ]  do |users|
     users.resources :profiles, :only =>[:new , :show, :index, :edit ]
-    map.resources :trips
+  # trips associated with user
+    users.resources :trips, :only =>[:new , :show, :index, :edit ] do |trip|
+      trip.resource :participations, :only => [:new, :show, :index, :edit ]
+    end
   end
+
   map.resources :tags do |tag|
     tag.resources :tags
   end
-  
 
 
   map.resources :locations,:only => [:show, :index] 
@@ -43,6 +50,7 @@ ActionController::Routing::Routes.draw do |map|
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
 
+  
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
   

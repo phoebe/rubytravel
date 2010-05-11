@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100323040816) do
+ActiveRecord::Schema.define(:version => 20100505141647) do
 
   create_table "features", :force => true do |t|
     t.datetime "created_at"
@@ -17,6 +17,16 @@ ActiveRecord::Schema.define(:version => 20100323040816) do
   end
 
   create_table "locations", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "participations", :force => true do |t|
+    t.string   "name"
+    t.integer  "trip_id"
+    t.integer  "user_id"
+    t.integer  "profile_id"
+    t.date     "traveldate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -65,8 +75,9 @@ ActiveRecord::Schema.define(:version => 20100323040816) do
 
   create_table "trips", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "profile_id"
     t.string   "name"
+    t.date     "departureDate"
+    t.integer  "duration"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

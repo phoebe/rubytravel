@@ -2,8 +2,9 @@ class CreateTrips < ActiveRecord::Migration
   def self.up
     create_table :trips do |t|
       t.references :user
-      t.references :profile
       t.string :name
+      t.date  :departureDate
+      t.integer   :duration
       t.timestamps
     end
   end
