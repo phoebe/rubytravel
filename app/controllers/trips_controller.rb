@@ -1,7 +1,6 @@
 class TripsController < ApplicationController
   # GET /trips
   # GET /trips.xml
-<<<<<<< HEAD:app/controllers/trips_controller.rb
   before_filter :authenticate
   def index
     if (signed_in?)
@@ -14,10 +13,6 @@ class TripsController < ApplicationController
     @participations=@user.participations
     @parttrips = @user.trips if (@user)
     #@trips = Trip.all
-=======
-  def index
-    @trips = Trip.all
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/controllers/trips_controller.rb
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,16 +22,12 @@ class TripsController < ApplicationController
 
   # GET /trips/1
   # GET /trips/1.xml
-<<<<<<< HEAD:app/controllers/trips_controller.rb
+
   before_filter :authenticate
   def show
     @trip = Trip.find(params[:id],:include => :users)
 @participations=@trip.participations
-=======
-  def show
-    @trip = Trip.find(params[:id])
 
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/controllers/trips_controller.rb
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @trip }
@@ -45,16 +36,12 @@ class TripsController < ApplicationController
 
   # GET /trips/new
   # GET /trips/new.xml
-<<<<<<< HEAD:app/controllers/trips_controller.rb
+
   before_filter :authenticate
   def new
     @user = current_user()
     #@trip = Trip.new
     @trip = @user.trips.build
-=======
-  def new
-    @trip = Trip.new
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/controllers/trips_controller.rb
 
     respond_to do |format|
       format.html # new.html.erb
@@ -63,7 +50,7 @@ class TripsController < ApplicationController
   end
 
   # GET /trips/1/edit
-<<<<<<< HEAD:app/controllers/trips_controller.rb
+
   before_filter :authenticate
   def edit
     @user = current_user()
@@ -76,23 +63,15 @@ class TripsController < ApplicationController
       flash[:notice] =("Please edit only the trips you initiated")
       @trip=nil
     end
-=======
-  def edit
-    @trip = Trip.find(params[:id])
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/controllers/trips_controller.rb
-  end
+ end
 
   # POST /trips
   # POST /trips.xml
-<<<<<<< HEAD:app/controllers/trips_controller.rb
+
   before_filter :authenticate
   def create
     @user = current_user()
     @trip = @user.trips.new(params[:trip])
-=======
-  def create
-    @trip = Trip.new(params[:trip])
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/controllers/trips_controller.rb
 
     respond_to do |format|
       if @trip.save
@@ -108,20 +87,13 @@ class TripsController < ApplicationController
 
   # PUT /trips/1
   # PUT /trips/1.xml
-<<<<<<< HEAD:app/controllers/trips_controller.rb
+
   before_filter :authenticate
   def update
     @trip = Trip.find(params[:id])
     params[:trip][:participations] ||=[]
     respond_to do |format|
       if @trip.user_id == current_user.id && @trip.update_attributes(params[:trip])
-=======
-  def update
-    @trip = Trip.find(params[:id])
-
-    respond_to do |format|
-      if @trip.update_attributes(params[:trip])
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/controllers/trips_controller.rb
         flash[:notice] = 'Trip was successfully updated.'
         format.html { redirect_to(@trip) }
         format.xml  { head :ok }
@@ -133,18 +105,11 @@ class TripsController < ApplicationController
   end
 
   # DELETE /trips/1
-  # DELETE /trips/1.xml
-<<<<<<< HEAD:app/controllers/trips_controller.rb
+  # DELETE /trips/1.xml<<<<<<< HEAD:app/controllers/trips_controller.rb
   before_filter :authenticate
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy if @trip.user_id == current_user.id
-=======
-  def destroy
-    @trip = Trip.find(params[:id])
-    @trip.destroy
-
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/controllers/trips_controller.rb
     respond_to do |format|
       format.html { redirect_to(trips_url) }
       format.xml  { head :ok }
