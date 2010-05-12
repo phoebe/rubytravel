@@ -8,37 +8,25 @@
 
 ron = User.find_or_create_by_login(:login => 'ron', :email => 'rnewman@thecia.net', :password=>'ron', :email_confirmed => true)
 phoebe = User.find_or_create_by_login(:login => 'phoebe',:email => 'phoebem@comcast.net', :password=>'phoebe',:encrypted_password => 'crypted_password', :email_confirmed => true)
-<<<<<<< HEAD:db/seeds.rb
 kalinda = User.find_or_create_by_login(:login => 'kalinda',:email => 'kalinda@comcast.net', :password=>'kalinda',:encrypted_password => 'crypted_password', :email_confirmed => true)
 steve = User.find_or_create_by_login(:login => 'steve',:email => 'steve@comcast.net', :password=>'steve',:encrypted_password => 'crypted_password', :email_confirmed => true)
 grandpa = User.find_or_create_by_login(:login => 'grandpa',:email => 'grandpa@comcast.net', :password=>'grandpa',:encrypted_password => 'crypted_password', :email_confirmed => true)
 grandma = User.find_or_create_by_login(:login => 'grandma',:email => 'grandma@comcast.net', :password=>'grandma',:encrypted_password => 'crypted_password', :email_confirmed => true)
 blackie = User.find_or_create_by_login(:login => 'blackie',:email => 'blackie@comcast.net', :password=>'blackie',:encrypted_password => 'crypted_password', :email_confirmed => true)
 
-=======
-Profile.find_or_create_by_name_and_user_id(:name => 'work travel',:user=>phoebe, :description => 'Preferences for work related travelling'); 
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:db/seeds.rb
 
 #User.update_all('encrypted_password = crypted_password, email_confirmed = true')
  outdoors = Tag.find_or_create_by_name(:name => 'outdoors', :uri => 'http://kalinda.us/ns/Outdoors',
                         :description =>'Outdoors activities',:code=>"OUT", :creator => phoebe )
  Tag.find_or_create_by_name(:name => 'hiking',:uri=>'http://kalinda.us/ns/Hiking',
                        :parent => outdoors, :code=>'TRL',:creator=> ron)
-<<<<<<< HEAD:db/seeds.rb
  skiing=Tag.find_or_create_by_name(:name => 'skiing', :uri=>'http://kalinda.us/ns/Sking',:code=> "SKI",
-=======
- Tag.find_or_create_by_name(:name => 'skiing', :uri=>'http://kalinda.us/ns/Sking',:code=> "SKI",
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:db/seeds.rb
                        :parent => outdoors, :creator=> phoebe)
  Tag.find_or_create_by_name(:name => 'biking', :uri=>'http://kalinda.us/ns/Biking',:code=> "BIKE",
                        :parent => outdoors, :creator=> phoebe)
  Tag.find_or_create_by_name(:name => 'golf', :uri=>'http://kalinda.us/ns/Golf', :code=> "GOLF",
                        :parent => outdoors, :creator=> phoebe)
-<<<<<<< HEAD:db/seeds.rb
  fishing=Tag.find_or_create_by_name(:name => 'fishing', :uri=>'http://kalinda.us/ns/Fishing',
-=======
- Tag.find_or_create_by_name(:name => 'fishing', :uri=>'http://kalinda.us/ns/Fishing',
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:db/seeds.rb
                        :code =>'RGNL', :parent => outdoors, :creator=> phoebe)
 
 
@@ -102,13 +90,8 @@ Profile.find_or_create_by_name_and_user_id(:name => 'work travel',:user=>phoebe,
  Tag.find_or_create_by_name(:name => 'whitewater', :parent=> water, :code=>'WHITE', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'scuba', :parent => water, :code=>'SCUBA', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'snorkel', :parent => water, :code=>'SNORK', :creator => phoebe)
-<<<<<<< HEAD:db/seeds.rb
  swimming= Tag.find_or_create_by_name(:name => 'swimming', :parent => water, :code=>'SWIM', :creator => phoebe)
  beach=Tag.find_or_create_by_name(:name => 'beach', :parent => outdoors, :code=>'BEACH', :creator => phoebe)
-=======
- Tag.find_or_create_by_name(:name => 'swimming', :parent => water, :code=>'SWIM', :creator => phoebe)
- Tag.find_or_create_by_name(:name => 'beach', :parent => outdoors, :code=>'BEACH', :creator => phoebe)
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:db/seeds.rb
  Tag.find_or_create_by_name(:name => 'cave', :parent => sport, :code=>'CAVE', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'climbing', :parent=> sport, :code=>'CLIMB', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'skiing/Snowboarding', :parent => sport, :code =>'SKI', :creator => phoebe)

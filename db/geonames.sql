@@ -34,13 +34,8 @@ create table IF NOT EXISTS allCountries (
 	INDEX name_index using btree(name),
 	INDEX longitude_index (longitude),
 	INDEX latitude_index (latitude),
-<<<<<<< HEAD:db/geonames.sql
-	INDEX source_index using HASH(source)
-	INDEX altname_index using btree(alternatenames),
-=======
 	INDEX source_index using HASH(source),
 	INDEX altname_index using btree(alternatenames)
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:db/geonames.sql
 );
 
 

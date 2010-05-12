@@ -2,20 +2,12 @@
 
 <% form_for(@trip) do |f| %>
   <%= f.error_messages %>
-<<<<<<< HEAD:app/views/trips/new.html.erb
   Name:<%= f.text_field :name %>
   Date:<%= f.text_field :departureDate %>
   Duration:<%= f.text_field :duration %>days
-=======
-
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/views/trips/new.html.erb
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<<<<<<< HEAD:app/views/trips/new.html.erb
 <%= link_to 'Back', trips_path %>
-=======
-<%= link_to 'Back', trips_path %>
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/views/trips/new.html.erb
