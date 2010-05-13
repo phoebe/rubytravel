@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :profiles, :dependent => :destroy
   #has_many :trips                             # trips initialed by this user
   # too confusing - only thru participation with roles
-  has_many :participations, :dependent => :destroy
+  has_many :participations #, :dependent => :destroy
   has_many :trips, :through => :participations  # participate in these trips
   
   validates_uniqueness_of :email

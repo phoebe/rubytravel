@@ -10,7 +10,7 @@ class Participation < ActiveRecord::Base
   end
 
   def validate_on_update
-    errors.add_to_base("No changes have occurred") if unchanged_attributes?
+   # errors.add_to_base("No changes have occurred") if unchanged_attributes?
   end
 
 

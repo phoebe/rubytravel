@@ -11,6 +11,7 @@ namespace :mysql do
     sh %{  gzip -d db/data/db/data/places_sample_dump.sql.gz  }
     sh %{  cp -f db/data/places_sample_dump.sql /tmp; }
     sh %{ mysqlimport -d -u root  --fields-terminated-by="\t" --verbose --default-character-set=utf8 geonames /tmp/places_sample_dump.sql }
+    sh %{ mysql geonames < echo 'rename table places2 to places' }
   end
 
 end
