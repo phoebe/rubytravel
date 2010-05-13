@@ -256,8 +256,8 @@ create table IF NOT EXISTS basicInfo (
 	open_hour	int,
 	close_hour	int,
 	hours		varchar(30),
-	open_days	char(7),	-- as MTWTFSS - O=open,C=close,D= don't know
-};
+	open_days	char(7)	-- as MTWTFSS - O=open,C=close,D= don't know
+);
 
 -- where data came from 
 -- alter table allCountries add column source varchar(10);
