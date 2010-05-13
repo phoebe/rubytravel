@@ -2,7 +2,7 @@
 <%= h @trip.name unless @trip.blank? %>
 <%= h @trip.departureDate unless @trip.blank? %>
 
-<% form_for :participation, @participation do |f| %>
+<% form_for :participation, @participation, :url=>participation_url, :html=>{:method=>:put} do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :Role %><br />
@@ -12,7 +12,7 @@
   <%= f.hidden_field :trip_id %>
   <p>
   <%= f.label 'Pick a profile for this trip' %><br />
-  <%= f.select( :profile_id, @profiles.collect{ |p| [p.name,p.id]}, {:include_blank=>'None'} ) %>
+  <%= f.select( :profile_id, @profiles.collect{ |p| [p.name,p.id]}, {:include_blank=>'None'} ) unless @profiles.blank? %>
   </p>
   <p>
     <%= f.submit 'Update' %>
