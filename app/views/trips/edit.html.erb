@@ -1,16 +1,12 @@
 <h1>Editing trip</h1>
 
 <% form_for(@trip) do |f| %>
-<<<<<<< HEAD:app/views/trips/edit.html.erb
   <%= f.error_messages %>  
   <%= f.hidden_field :id %>
   
   <%= f.text_field :name %>
   <%= f.text_field :departureDate %>
   <%= f.text_field :duration %>
-=======
-  <%= f.error_messages %>
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/views/trips/edit.html.erb
 
   <p>
     <%= f.submit 'Update' %>
@@ -18,8 +14,4 @@
 <% end %>
 
 <%= link_to 'Show', @trip %> |
-<<<<<<< HEAD:app/views/trips/edit.html.erb
 <%= link_to 'Back', trips_path %>
-=======
-<%= link_to 'Back', trips_path %>
->>>>>>> 10da8583e5392072805cd13988d0b0c5c92442bd:app/views/trips/edit.html.erb
