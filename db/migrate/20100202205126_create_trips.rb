@@ -3,6 +3,7 @@ class CreateTrips < ActiveRecord::Migration
     create_table :trips do |t|
       t.references :user
       t.string :name
+      t.string :description
       t.date  :departureDate
       t.integer   :duration
       t.timestamps

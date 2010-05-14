@@ -5,3 +5,28 @@
 #
 # two:
 #   column: value
+#
+
+phoebe_work_profile:
+user_id: users(:phoebe).id
+name: Work Profile
+
+ron_work_profile:
+user_id: users(:phoebe).id
+name: Work Profile
+
+phoebe_family_profile:
+user_id: users(:phoebe).id
+name: Family Profile
+
+kalinda_family_profile:
+user_id: users(:kalinda).id
+name: Family Profile
+
+grandpa_family_profile:
+user_id: users(:grandpa).id
+name: Family Profile
+
+
+
+

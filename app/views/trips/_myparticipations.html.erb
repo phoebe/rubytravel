@@ -1,0 +1,29 @@
+
+<table border="1">
+  <tr>
+  <th> Participates in these trips: </th>
+  </tr>
+  <tr> <th> Trip Name </th>
+  <th>Profile  </th>
+   <th> Departure Date </th> <th> Days in duration </th>
+   <th>Suggestions</th>
+    <th>Changes</th>
+  </tr>
+  <tr>
+  
+<% @participations.each do |part| %>
+<% trip = part.trip %>
+  <tr>
+    <td><%= link_to trip.name, trip %></td>
+    <td><% @profile= Profile.find(part.profile_id) unless part.profile_id.blank? %>
+    <%= @profile.name unless @profile.blank? %>
+    </td>
+    <td><%= part.traveldate %></td>
+    <td><%= trip.duration %></td>
+    <td>suggestions </td>
+ 
+    <td><%= link_to 'Edit', edit_participation_path(part) %></td>
+  </tr>
+<% end %>
+<table>
+

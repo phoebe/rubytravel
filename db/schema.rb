@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
   create_table "trips", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
+    t.string   "description"
     t.date     "departureDate"
     t.integer  "duration"
     t.datetime "created_at"

@@ -2,9 +2,9 @@
 
 <% form_for(@trip) do |f| %>
   <%= f.error_messages %>
-  Name:<%= f.text_field :name %>
-  Date:<%= f.text_field :departureDate %>
-  Duration:<%= f.text_field :duration %>days
+  Name:<%= f.text_field :name %><br/>
+  Date(mm-dd-yyyy):<%= f.text_field :departureDate, :size=> 10 %>
+  Duration:<%= f.text_field :duration, :size=> 4 %>days
   <p>
     <%= f.submit 'Create' %>
   </p>

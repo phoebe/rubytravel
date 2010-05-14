@@ -91,7 +91,7 @@ class TripsController < ApplicationController
   before_filter :authenticate
   def update
     @trip = Trip.find(params[:id])
-    params[:trip][:participations] ||=[]
+    #params[:trip][:participations] ||=[]
     respond_to do |format|
       if @trip.user_id == current_user.id && @trip.update_attributes(params[:trip])
         flash[:notice] = 'Trip was successfully updated.'
@@ -105,7 +105,6 @@ class TripsController < ApplicationController
   end
 
   # DELETE /trips/1
-  # DELETE /trips/1.xml<<<<<<< HEAD:app/controllers/trips_controller.rb
   before_filter :authenticate
   def destroy
     @trip = Trip.find(params[:id])

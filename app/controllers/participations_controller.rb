@@ -75,11 +75,11 @@ class ParticipationsController < ApplicationController
   # PUT /participations/1.xml
   def update
     @participation = Participation.find(params[:id])
-
+    
     respond_to do |format|
       if @participation.update_attributes(params[:participation])
         flash[:notice] = 'Participation was successfully updated.'
-        format.html { redirect_to(@participation) }
+        format.html { redirect_to(trips_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -95,7 +95,7 @@ class ParticipationsController < ApplicationController
     @participation.destroy
 
     respond_to do |format|
-      format.html { redirect_to(participations_url) }
+      format.html { redirect_to(trips_path) }
       format.xml  { head :ok }
     end
   end

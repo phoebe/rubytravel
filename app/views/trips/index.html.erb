@@ -37,26 +37,6 @@
   </tr>
 <% end %>
 </table>
-<table>
-  <tr>
-  <th> Participates in these trips: </th>
-  </tr>
-  <tr> <th> Trip Name </th> <th> Departure Date </th> <th> Days in duration </th>
-    <th>Changes</th>
-  </tr>
-  <tr>
-<% @participations.each do |part| %>
-<% trip = part.trip %>
-  <tr>
-    <td><%= link_to trip.name, trip %></td>
-    <td><%= part.traveldate %></td>
-    <td><%= trip.duration %></td>
-    <td>suggestions </td>
- 
-    <td><%= link_to 'Edit', edit_participation_path(part) %></td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial =>'myparticipations.html', :locals=>{:participations=>@participations} %>
 
-<br />
 

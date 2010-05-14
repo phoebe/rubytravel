@@ -6,13 +6,29 @@
 # two:
 #   column: value
 
-ron:
-    login: ron
-    first_name: ron
-    last_name: newman
 
 phoebe:
     login: phoebe
     first_name: phoebe
     last_name: miller
     email: phoebem@comcast.net
+
+ron:
+    login: ron
+    first_name: ron
+    last_name: newman
+
+kalinda:
+  login: kalinda
+  first_name: kalinda
+  email: kalinda@kalinda.us
+
+grandpa:
+  login: grandpa
+  first_name: grandpa
+  email: grandpa@kalinda.us
+
+grandma:
+  login: grandma
+  first_name: grandpa
+  email: grandpa@kalinda.us
