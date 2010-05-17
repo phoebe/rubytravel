@@ -1,0 +1,28 @@
+
+<% form_for(@trip) do |f| %>
+  <%= f.error_messages %>  
+  <!-- %= f.hidden_field :id %-->
+  <table>
+  <tr>
+  <td> Name: </td>
+  <td><%= f.text_field :name, :size=>80 %></td>
+  </tr>
+  <tr>
+  <td>Description:</td>
+  <td><%= f.text_area :description , :cols=>80, :rows=>5%></td>
+  </tr>
+  <tr>
+  <td> Date(mm/dd/yyyy): </td>
+  <td>
+    <%= f.text_field :departureDate,  :size=> 10 %>
+  for<%= f.text_field :duration, :size=>4 %>days
+  </td>
+  </tr>
+  </table>
+  <p>
+    <%= f.submit button_label %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @trip %> |
+<%= link_to 'Back', trips_path %>
