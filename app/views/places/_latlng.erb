@@ -1,0 +1,2 @@
+Latitude<%= text_field_tag "place[latitude]", @coords.nil? ? 0: @coords['lat']  %>
+Longitude<%= text_field_tag "place[longitude]", @coords.nil? ? 0: @coords['lon'] %>
