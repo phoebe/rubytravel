@@ -1,7 +1,6 @@
 class CreateLocations < ActiveRecord::Migration
   def self.up
     create_table :locations do |t|
-
       t.timestamps
     end
   end
