@@ -1,9 +1,14 @@
+require "geocoder_google"
 class PlacesController < ApplicationController
+  layout "application", :except => [:ajax_method, :more_ajax, :another_ajax]
+ 
   # GET /places
   # GET /places.xml
   def index
     conditions={}
+    # match(use_code) against params[:use_code] as score
     conditions[:use_code_like]= params[:use_code] unless params[:use_code].blank?
+    conditions[:feature_code_like]= params[:feature] unless params[:feature].blank?
     conditions[:name_like]= params[:name] unless params[:name].blank?
     @places =  
       Place.find( :all, :conditions => conditions, :order => 'name ASC').paginate  :page => params[:page], :per_page => 20 
@@ -76,6 +81,20 @@ before_filter :authenticate
         format.xml  { render :xml => @place.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def lookup
+    #puts params.inspect 
+    p=  params
+    address="#{p[:street_address]} #{ p[:city] }, #{p[:state]} #{p[:postal_code]}, #{p[:country_code]}";      
+    puts "address= #{address}"
+   #address||=params[:address]   
+    if address.length > 5
+          @coords=Geocoder.glookup(address)
+    else puts "address is bad" 
+    end
+    #@coords=Geocoder::lookup(params[:place])
+    render :layout => false,  :partial=>'latlng',  :object => @coords.nil? ? nil : @coords
   end
 
   # DELETE /places/1

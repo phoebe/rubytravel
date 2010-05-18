@@ -4,12 +4,14 @@
 <%= p.name %>
 <% @user = User.find(p.user_id) %>
 <%= @user.first_name %> <%= @user.last_name %>
-(<%= @user.email %>)</B>
+&lt;<%= @user.email %>&gt;</B>
+arrives: <%= p.traveldate %>
 <% if p.user_id == current_user().id %>
-<I><% @profile= Profile.find(p.profile_id) %></I>
-<%= @profile.name %>
+    <% @profile= Profile.find(p.profile_id) %>
+  (<I>
+  <%= @profile.name %>
+    </I>)
 <% end %>
-Travel Date: <%= p.traveldate %>
 </LI>
 <% } %>
 </OL>

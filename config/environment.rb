@@ -22,7 +22,6 @@ Rails::Initializer.run do |config|
   config.gem "htmlentities"
   config.gem "clearance"
   config.gem "acts_as_tree"
-  config.gem "ar-extensions"
   config.gem 'mislav-will_paginate', 
       :lib => 'will_paginate', 
       :source => 'http://gems.github.com'

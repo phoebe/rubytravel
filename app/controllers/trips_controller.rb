@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
   # GET /trips
   # GET /trips.xml
+
   before_filter :authenticate
   def index
     if (signed_in?)
@@ -12,7 +13,6 @@ class TripsController < ApplicationController
     @mytrips = Trip.find(:all,:conditions=>[ 'user_id=?',current_user().id ] )  if (@user)
     @participations=@user.participations
     @parttrips = @user.trips if (@user)
-    #@trips = Trip.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,8 +26,15 @@ class TripsController < ApplicationController
   before_filter :authenticate
   def show
     @trip = Trip.find(params[:id],:include => :users)
-@participations=@trip.participations
-
+    @participations=@trip.participations
+    profile_list= @participations.collect { |p| p.profile_id }
+    
+    (@tags,@points)=Tag.forProfiles(profile_list)
+=begin
+    ptags= ProfilesTag.find(:all,:conditions =>{ :profile_id => profile_list })
+    tags_list = ptags.collect { |p| p.tag_id }
+    tags= Tag.find(:all, :conditions => { :id=> tags_list } )
+=end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @trip }

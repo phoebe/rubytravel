@@ -1,19 +1,28 @@
-<table border="1">
-  <tr> <th> Trip Name </th> <th> Departure Date </th> <th> Days in duration </th> 
-  <th>Participants</hr><tr>
-    <td>
-<%= @trip.name %>
-    </td>
-    <td>
-<%= @trip.departureDate %>
-    </td>
-    <td>
-<%= @trip.duration %>
-    </td>
+<table width="80%" cellpadding ="5" rules="groups" frame="box">
+  <tr> <th width="20%" align="right"> Trip Name </th>
+    <td> <%= @trip.name %> </td>
+    <tr>
+      <th align="right">Description</th>
+    <td> <%= @trip.description %> </td>
+    <tr>
+      <th align="right"> Start Date </th>
+    <td> <%= @trip.departureDate %> </td>
+    <tr>
+      <th align="right"> Days in duration </th> 
+    <td> <%= @trip.duration %> </td>
+      <tbody>
+    <tr>
+  <th align="right">Participants</th>
     <td>
       <%= render :partial => 'participations',:locals =>{:participations=> @participations } %> 
     </td>
   </tr>
+</table>
+<table>
+<% @tags.each { |t| %><tr>
+<td><%=	t.name%><td><%=t.code %>
+	<td><%=@points[t.id] %>
+<%} %>
 </table>
 
 <% if @trip.user_id == current_user().id %>

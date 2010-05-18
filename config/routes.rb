@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :participations
 
-  map.resources :places
+  map.resources :places, :member => { :lookup => :get } 
 
   # Open trips
   map.resources :trips

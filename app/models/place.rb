@@ -8,4 +8,10 @@ class Place < GeonameDB
   #def id 
     #return self.attributes['id'].to_s 
   #end
+  def supportsTags(tags,points)
+    tlist= tags.collect{ |t| t.name }
+    qstr= 'SELECT *, MATCH (use_code) AGAINST ("'+tagstr+
+       '") from places where MATCH (use_code) AGAINST ("'+tagstr+'");'
+
+  end
 end

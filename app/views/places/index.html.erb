@@ -2,8 +2,9 @@
 
 <% form_tag('places', :method => "get") do %>
 Name:<%= text_field_tag :name, params[:name] %> 
+Features:<%= text_field_tag :feature, params[:feature] %> 
 Uses:<%= text_field_tag :use_code, params[:use_code] %> 
-<%= submit_tag 'Search', :name=>nil %> <!-- To avoid commit=Search in the url --> 
+<%= submit_tag 'Search' %> <!-- To avoid commit=Search in the url --> 
 <% end %>
 
 <%= render :partial => 'places', :locals => { :places => @places  } %>

@@ -1,9 +1,13 @@
 <h1>Editing place</h1>
 
-<% form_for(@place) do |f| %>
+ <% form_for(@place) do |f| %>
   <%= hidden_field 'place', :id  %>
   <%= hidden_field 'place', :geonameid  %>
-  Name<%= text_field 'place', :name  %>
+  Name<%= text_field 'place', :name  %>  
+  <BR/>
+  URL<%= text_field 'place', :url  %>
+  <BR/>
+  thumbnail<%= text_field 'place', :thumbnail_link  %>
   <BR/>
   Street Address<%= text_field 'place', :street_address  %>
   <BR/>
@@ -13,8 +17,21 @@
   Postal_code<%= text_field 'place', :postal_code  %>
   Country_code<%= text_field 'place', :country_code  %>
   <BR/>
-  URL<%= text_field 'place', :url  %>
-  <BR/>
+   <%= link_to_remote  "Geocode",:method=>"get",
+      :url  => {:action=>'lookup'},
+     :with => "'country_code='+ document.getElementById('place_country_code').value+
+     '&state='+document.getElementById('place_state').value+
+     '&city='+document.getElementById('place_city').value+
+     '&postal_code='+document.getElementById('place_postal_code').value+
+     '&street_address='+document.getElementById('place_street_address').value",
+      :update => "latlng" %>
+
+ <div id='latlng'>
+    Latitude<%= text_field 'place', :latitude  %>
+    Longitude<%= text_field 'place', :longitude  %>
+  </div>
+ 
+ 
   Phone<%= text_field 'place', :phone  %>
   <BR/>
   Email<%= text_field 'place', :email  %>
@@ -23,16 +40,20 @@
   <BR/>
   Difficulty<%= text_field 'place', :difficulty  %>
   <BR/>
+  Distance (km)<%= text_field 'place', :distance  %>
+  <BR/>
+  Area (sq metres)<%= text_field 'place', :area  %>
+  <BR/>
   Accessibility<%= text_field 'place', :howaccessible  %>
   <BR/>
   Transport<%= text_field 'place', :transportation  %>
   <BR/>
-  Use Code<%= text_area 'place', :use_code, :size=>20  %>
+  Use Code<%= text_area 'place', :use_code, :columns=>80 ,  :rows=>5 %>
   <BR/>
-  Hours (text) <%= text_area 'place', :hours, :size=> 5  %>
+  Hours (text) <%= text_area 'place', :hours,:columns=>80 ,  :rows=>2  %>
   <BR/>
   Hour start(int)<%= text_field 'place', :hour_start  %>
-  Hour end (int)<%= text_field 'place', :hour_end  %>
+  Hour end (int)<%= text_field 'place', :hour_end  %><br/>
   Days open(MTWTFSS)<%= text_field 'place', :open_days  %>
 
   <%= f.error_messages %>

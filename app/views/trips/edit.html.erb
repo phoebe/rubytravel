@@ -1,17 +1,4 @@
-<h1>Editing trip</h1>
-
-<% form_for(@trip) do |f| %>
-  <%= f.error_messages %>  
-  <%= f.hidden_field :id %>
-  
-  <%= f.text_field :name %>
-  <%= f.text_field :departureDate %>
-  <%= f.text_field :duration %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @trip %> |
-<%= link_to 'Back', trips_path %>
+<h1>Edit Trip</h1>
+<%= render :partial=>"form.html", :locals=>{:trip=>@trip,:button_label=>'Update'} %>
+<% getTags %>
+<%= @tags.inspect %>
