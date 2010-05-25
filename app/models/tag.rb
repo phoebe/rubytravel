@@ -24,12 +24,18 @@ class Tag < ActiveRecord::Base
   def self.forProfiles(profile_list)
     points={}
     ptags= ProfilesTag.find(:all,:conditions =>{ :profile_id => profile_list })
-    tags_list = ptags.collect { |p|
-      points[p.tag_id]= points[p.tag_id].nil? ? 1 : points[p.tag_id]+1;
+    tags_list = ptags.collect { |p|      
+      points[p.tag_id]= points[p.tag_id].blank? ? 1 : points[p.tag_id]+1;
       p.tag_id
     }
     tags= Tag.find(:all, :conditions => { :id=> tags_list } )
-    return tags,points
+    tagpoints={}
+    tags.each { |t|
+      tagpoints[t.id] = [ points[t.id] , t ]
+    }
+    tagpoints= tagpoints.sort { |a,b| b[1][0] <=> a[1][0] }
+
+    return tags,points,tagpoints
   end
 
   def getChildren

@@ -18,13 +18,19 @@
     </td>
   </tr>
 </table>
-<table>
-<% @tags.each { |t| %><tr>
-<td><%=	t.name%><td><%=t.code %>
-	<td><%=@points[t.id] %>
-<%} %>
-</table>
 
+<h3> Group interests are (highest points=most interest):
+</h3>
+<% @tagpoints.each { |p,t| %>
+<%=	t[1].name%> (<%=t[0] %>),
+<%} %>
+</p><hr>
+<table>
+<% @res.each { |t| %>
+<tr><td><%= t.name %>
+   <td><%= t.city %><td><%= t.state %><td><%= t.use_code %><td><%= t.distance %>
+<%}%>
+</table>
 <% if @trip.user_id == current_user().id %>
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <% end %>

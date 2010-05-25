@@ -29,12 +29,9 @@ class TripsController < ApplicationController
     @participations=@trip.participations
     profile_list= @participations.collect { |p| p.profile_id }
     
-    (@tags,@points)=Tag.forProfiles(profile_list)
-=begin
-    ptags= ProfilesTag.find(:all,:conditions =>{ :profile_id => profile_list })
-    tags_list = ptags.collect { |p| p.tag_id }
-    tags= Tag.find(:all, :conditions => { :id=> tags_list } )
-=end
+    (@tags,@points,@tagpoints)=Tag.forProfiles(profile_list)
+    @res= Place.supportsTags(@tags,45,nil,100, @trip.departureDate )
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @trip }
