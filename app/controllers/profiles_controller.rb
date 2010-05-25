@@ -1,9 +1,10 @@
 class ProfilesController < ApplicationController
-  # GET /profiles
-  # GET /profiles.xml
-  #
 
   before_filter :authenticate
+  
+  # GET /profiles
+  # GET /profiles.xml
+
   def index
     if ( signed_in? ) 
       @user = User.find( current_user().id);
@@ -23,7 +24,6 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1
   # GET /profiles/1.xml
-  before_filter :authenticate
 
   def show
     @profile = Profile.find(params[:id],:include => :tags)
@@ -35,7 +35,6 @@ class ProfilesController < ApplicationController
   end
 
   # GET /users/1/profiles/new.xml
-  before_filter :authenticate
 
   def new
     @user = current_user()
@@ -48,13 +47,11 @@ class ProfilesController < ApplicationController
   end
 
   # GET /profiles/1/edit
-  before_filter :authenticate
 
   def edit
     @user = current_user()
     begin 
       @profile = @user.profiles.find(params[:id], :include => :tags)
-      @tags= Tag.find(:all,  :conditions => ['parent_id is null'] );  
     rescue ActiveRecord::RecordNotFound
       flash[:notice] =("Please edit only the profiles in your list")
       @profile=nil
@@ -63,7 +60,6 @@ class ProfilesController < ApplicationController
 
   # POST /profiles
   # POST /profiles.xml
-  before_filter :authenticate
 
   def create
     @user = current_user()
@@ -83,7 +79,6 @@ class ProfilesController < ApplicationController
 
   # PUT /profiles/1
   # PUT /profiles/1.xml
-  before_filter :authenticate
 
   def update
     @profile = Profile.find(params[:id])
@@ -103,7 +98,6 @@ class ProfilesController < ApplicationController
 
   # DELETE /profiles/1
   # DELETE /profiles/1.xml
-  before_filter :authenticate
 
   def destroy
     @profile = Profile.find(params[:id])

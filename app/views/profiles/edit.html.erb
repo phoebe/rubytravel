@@ -1,26 +1,6 @@
 <h1>Editing profile</h1>
 
-<% form_for(@profile) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= hidden_field( :user, :id) %>
-    Name: <%= f.text_field :name %><br/>
-    Description: <%= f.text_field :description %><br/>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-  <%= link_to_function  :onMouseover => "document.getElementById('dropdown').style.display = 'none'"; "document.getElementById('dropdown').style.display = 'block'" %>
-  <div id="dropdown">
-  </div>
-  <div id="options">
-  <% @tags.each { |tag| %>
-  <%= render :partial => 'tags' , :locals => { :tag => tag } %>
-	
- <% } %>
-<% end %>
-  </div>
+<%= render :partial => 'form' %>
 <!-- %=
   javascript_tag "alert('All is good')", :defer => 'defer'
 %-->
