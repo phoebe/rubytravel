@@ -1,8 +1,7 @@
 class TripsController < ApplicationController
   # GET /trips
   # GET /trips.xml
-
-  before_filter :authenticate
+ before_filter :authenticate
   def index
     if (signed_in?)
       @user= User.find( current_user().id);
@@ -23,7 +22,6 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.xml
 
-  before_filter :authenticate
   def show
     @trip = Trip.find(params[:id],:include => :users)
     @participations=@trip.participations
@@ -47,7 +45,6 @@ class TripsController < ApplicationController
   # GET /trips/new
   # GET /trips/new.xml
 
-  before_filter :authenticate
   def new
     @user = current_user()
     #@trip = Trip.new
@@ -61,7 +58,7 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
 
-  before_filter :authenticate
+
   def edit
     @user = current_user()
     begin
@@ -78,7 +75,7 @@ class TripsController < ApplicationController
   # POST /trips
   # POST /trips.xml
 
-  before_filter :authenticate
+
   def create
     @user = current_user()
     @trip = @user.trips.new(params[:trip])
@@ -98,7 +95,7 @@ class TripsController < ApplicationController
   # PUT /trips/1
   # PUT /trips/1.xml
 
-  before_filter :authenticate
+
   def update
     @trip = Trip.find(params[:id])
     #params[:trip][:participations] ||=[]
@@ -115,7 +112,7 @@ class TripsController < ApplicationController
   end
 
   # DELETE /trips/1
-  before_filter :authenticate
+
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy if @trip.user_id == current_user.id

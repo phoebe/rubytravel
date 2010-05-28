@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Open trips
   map.resources :trips
-  map.connect 'trip/:trip_id/:action', :controller => :participations, :action => [:join]
+  map.connect 'trips/:trip_id/:action', :controller => :participations, :action => [:join]
 
 
   Clearance::Routes.draw(map)

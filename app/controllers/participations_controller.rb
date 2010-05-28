@@ -1,6 +1,7 @@
 class ParticipationsController < ApplicationController
   # GET /participations
   # GET /participations.xml
+  before_filter :authenticate
   def index
     @participations = Participation.all
 
