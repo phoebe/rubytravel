@@ -1,14 +1,15 @@
 
-<table border="1">
+<table id="trip">
+<thead>
   <tr>
-  <th> Participates in these trips: </th>
-  </tr>
-  <tr> <th> Trip Name </th>
-  <th>Profile  </th>
-   <th> Departure Date </th> <th> Days in duration </th>
-   <th>Suggestions</th>
+  <th colspan=5> Participates in these trips: </th>
+  </tr></thead><tbody>
+  <tr class="alt"> <th width="60%"> Trip Name </th>
+  <th>Profile used </th>
+   <th> Departure Date </th> <th> Days in duration </th> 
     <th>Changes</th>
   </tr>
+  
   <tr>
   
 <% @participations.each do |part| %>
@@ -20,10 +21,10 @@
     </td>
     <td><%= part.traveldate %></td>
     <td><%= trip.duration %></td>
-    <td>suggestions </td>
+    
  
     <td><%= link_to 'Edit', edit_participation_path(part) %></td>
-  </tr>
+  </tr> </tbody>
 <% end %>
 <table>
 

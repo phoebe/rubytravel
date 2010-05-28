@@ -14,17 +14,22 @@
  'Address','URL','Elevation','Source']
 %>
 
-
   <% displayfields.each do |name| %>
   <th> <%= name.capitalize %></th>
  <%end%>
 </tr>
  <tr>
  <% places.each do |location| %>
-     <td><%= link_to location.name , location %></td>
+   <td><%= link_to location.name , location %>
+   </td>
+     <td>
+       <%= location.attributes['rating'] || 'N/A' %>
+     <br>
+     <%= link_to 'Edit', edit_place_path(location), :popup=>['editwindow', 'height=800,width=500'] %>
+    <%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %>
+     </td>
      <!--% location.attributes.each do |f| %--> 
      <!--% fields.each do |f| %-->
-        <td> <%= location.attributes['rating'] %></td>
           <td> <%= location.latitude %> , <%= location.longitude %></td>
           <td> <%= location.feature_code %></td>
           <td> <%= location.use_code %></td>
@@ -32,12 +37,10 @@
           <td> <%= location.street_address %>, <%= location.city %>,
             <%= location.state %> <%= location.country_code %> <%= location.postal_code %> <%= location.phone %></td>
           <td> <%  unless ( location.url.nil? ) %>
-          <%= link_to  location.url , location.url %>
+              <%= link_to  location.url , location.url,:popup => ['viewer', 'scrollbar=true,height=500,width=600,toolbar=no,location=no,directories=no,status=yes,menubar=yes,scrollbars=yes,resizable=yes'] %>
           <% end %> </td>
         <td> <%= location.attributes['elevation']%> / <%= location.attributes['maxelevation'] %>( <%= location.attributes['area'] %>)</td>
           <td> <%= location.source %></td>
-     <td><%= link_to 'Edit', edit_place_path(location) %></td>
-    <td><%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %></td>
   
  </tr>
 <% end %>

@@ -87,7 +87,7 @@ before_filter :authenticate
     #puts params.inspect 
     p=  params
     address="#{p[:street_address]} #{ p[:city] }, #{p[:state]} #{p[:postal_code]}, #{p[:country_code]}";      
-    puts "address= #{address}"
+    #puts "address= #{address}"
    #address||=params[:address]   
     if address.length > 5
           @coords=Geocoder.glookup(address)

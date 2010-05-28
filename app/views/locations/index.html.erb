@@ -1,37 +1,12 @@
 <h1>Listing locations</h1>
-
-
-<table border=1>
-  <tr>
-  <!-- @locations.first.attributes %-->
-   <!-- % @locations.first.attributes.each do |f| %-->
- <!--%= f[0] %-->
- <th>Name</th>
-  <th>Other Names</th>
-    <th>Coordinates</th>
-      <th>Features</th>
-       <th>Province/State</th>
-       <th>Region</th> <th>Country</th>
-        <th>Time Zone</th>
-  </tr>
-
-<% @locations.each do |location| %>
-  <tr>
-    <td> <%= location.name %> </td><!-- location.geonameid gives me blank !?! bug? -->
-    <td width="30"> <%= location.alternatenames %> </td>
-    <td> <%= location.latitude %>, <%= location.longitude %> </td>
-    <td> <%= location.feature_class %> 
-     <%= location.feature_code %> </td>
-    <td> <%= location.admin1_code %> </td>
-    <td> <%= location.admin2_code %> </td>
-    <td> <%= location.country_code %> </td>
-    <td> <%= location.timezone %> </td>
-    <td> <%= link_to 'Show', locations_path+"/"+location.attributes['geonameid'].to_s %></td>
-<!-- %= link_to 'Edit', edit_location_path(location) -->
-<!-- %= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete -->
-  </tr>
+<% form_tag('locations', :method => "get") do %>
+Name:<%= text_field_tag :name, params[:name] %>  
+State (US):<%= text_field_tag :admin1, params[:admin1], {:size => 2} %>
+Country:<%= text_field_tag :country, params[:country], {:size => 2} %>  
+<%= submit_tag 'Search' %> <!-- To avoid commit=Search in the url --> 
 <% end %>
-</table>
+
+<%= render :partial => 'locations', :locals => { :locations => @locations  } %>
 
 <br />
 <%= will_paginate @locations %>

@@ -25,12 +25,25 @@
 <%=	t[1].name%> (<%=t[0] %>),
 <%} %>
 </p><hr>
-<table>
-<% @res.each { |t| %>
-<tr><td><%= t.name %>
-   <td><%= t.city %><td><%= t.state %><td><%= t.use_code %><td><%= t.distance %>
-<%}%>
-</table>
+Here is a list of locations that may be interesting, with a sample of nearby attractions
+<br/>
+<% @suggestions.each { |c| %>
+<% city= c[:city] %>
+Near
+<%= h city.name.capitalize %>
+<%= city.admin1_code %>
+<%  places= c[:places] %>
+<div class="scroll"><table border=1>
+<% places.each { |t| %>
+<tr>
+  <td width="20%"><%= link_to t.name , t.url %>
+   <td width="10%"><%= t.city.capitalize %>, <%= t.state %><td><%= t.use_code %><td> <%= t.geonameid %><td>
+   <%= t.sqdist %><Br/>
+   <%= t.distance %>
+<% }%></table>
+</div>
+<% } %><hr>
+
 <% if @trip.user_id == current_user().id %>
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <% end %>

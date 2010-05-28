@@ -2,9 +2,16 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.xml
   def index
-   
+    conditions={}
+       params[:country]='US' if params[:country].blank?
+       # match(use_code) against params[:use_code] as score
+       conditions[:country_code]= params[:country] unless params[:country].blank?
+       #conditions[:feature_code_like]= params[:feature] unless params[:feature].blank?
+       conditions[:name_like]= params[:name] unless params[:name].blank?
+       conditions[:admin1_code_like]= params[:admin1] unless params[:admin1].blank?
     @locations =  
-      Location.paginate  :page => params[:page], :order => 'name ASC', :per_page => 20 
+       Location.find( :all, :conditions => conditions, :order => 'name ASC').paginate  :page => params[:page], :per_page => 20 
+      #Location.paginate  :page => params[:page], :order => 'name ASC', :per_page => 20 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @location }

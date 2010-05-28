@@ -9,6 +9,21 @@
   <BR/>
   thumbnail<%= text_field 'place', :thumbnail_link  %>
   <BR/>
+  Season:
+  Jan<%= select('place',:season_1, @place.season_options,{:include_blank => true} ) %>
+  Feb<%= select('place',:season_2, @place.season_options,{:include_blank => true} ) %>
+  Mar<%= select('place',:season_3, @place.season_options,{:include_blank => true} ) %>
+  Apr<%= select('place',:season_4, @place.season_options,{:include_blank => true} ) %>
+  May<%= select('place',:season_5, @place.season_options,{:include_blank => true} ) %>
+  Jun<%= select('place',:season_6, @place.season_options,{:include_blank => true} ) %>
+  Jul<%= select('place',:season_7, @place.season_options,{:include_blank => true} ) %>
+  Aug<%= select('place',:season_8, @place.season_options,{:include_blank => true} ) %>
+  Sep<%= select('place',:season_9, @place.season_options,{:include_blank => true} ) %>
+  Oct<%= select('place',:season_10, @place.season_options,{:include_blank => true} ) %>
+  Nov<%= select('place',:season_11, @place.season_options,{:include_blank => true} ) %>
+  Dec<%= select('place',:season_12, @place.season_options,{:include_blank => true} ) %>
+  
+  <BR/>
   Street Address<%= text_field 'place', :street_address  %>
   <BR/>
   City<%= text_field 'place', :city  %>

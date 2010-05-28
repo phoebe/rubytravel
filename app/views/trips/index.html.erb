@@ -1,29 +1,30 @@
 <h1>Listing trips</h1>
-<table border=1>
-  <tr>
-  <th colspan=3> All trips: </th>
-  </tr>
-  <tr> <th> Trip Name </th> <th> Departure Date </th> <th> Days in duration </th>
-    <th>Changes</th>
+<table id="trip">
+  <thead><tr>
+  <th colspan=4> All trips: </th></tr>
+  </thead>
+  <tbody>
+  <tr class="alt"> 
+  <th width="60%"> Trip Name </th> <th> Departure Date </th> <th> Days in duration </th>  
   </tr>
 <% @trips.each do |trip| %>
   <tr>
-    <td><%= trip.name %></td>
+    <td><%=link_to  trip.name, trip %></td>
     <td><%= trip.departureDate %></td>
     <td><%= trip.duration %></td>
-    <td><%= link_to 'Show', trip %> |
-    <%= link_to 'Join', 'trip/'+trip.id.to_s+'/join' %> |
+    <td><%= link_to 'Join', 'trip/'+trip.id.to_s+'/join' %></td>
   </tr>
-<% end %>
+<% end %></tbody>
 </table>
-<table border=1>
+<table id="trip">
+<thead>
   <tr>
-  <th> Owns these trips: </th>
-  <th colspan=3>
+  <th colspan=3> Owns these trips: </th>
+  <th>
   <%= link_to 'New trip', new_trip_path %>
   </th>
-  </tr>
-  <tr> <th> Trip Name </th> <th> Departure Date </th> <th> Days in duration </th>
+  </tr></thead><tbody>
+  <tr class="alt"> <th width="60%"> Trip Name </th> <th> Departure Date </th> <th> Days in duration </th>
     <th>Changes</th>
   </tr>
 <% @mytrips.each do |trip| %>
@@ -35,7 +36,7 @@
     <%= link_to 'Edit', edit_trip_path(trip) %> |
     <%= link_to 'Destroy', trip, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
-<% end %>
+<% end %></tbody>
 </table>
 <%= render :partial =>'myparticipations.html', :locals=>{:participations=>@participations} %>
 
