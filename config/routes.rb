@@ -37,15 +37,10 @@ ActionController::Routing::Routes.draw do |map|
     tag.resources :tags
   end
 
-  map.resources :locations,:only => [:show, :index] 
-  map.connect 'locations/:geonameid', :controller => :locations, :action => [:show]
-  map.connect 'locations/:action/:geonameid', :controller => :locations, :action => [:show, :index]
-  map.connect 'locations/:action/:geonameid.:format', :controller => :locations, :action => [:show, :index]
+  map.resources :locations, :only => [:show, :index] 
 
-  map.resources :features
-  map.connect 'features/:action/:class.:code', :controller => :features, :action => [:show, :index]
-  map.connect 'features/:action/:class.:code.:format', :controller => :features, :action => [:show, :index]
-
+  map.resources :features, :only => [:show, :index] 
+  
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
 
