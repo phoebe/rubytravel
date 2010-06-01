@@ -6,12 +6,11 @@ class Location < GeonameDB
   set_primary_key :geonameid
   #attr_reader :geonameid
     
-  def self.closestCities(list)
+  def self.closestCities(list, miles=50)
     arr=[]
     begin
       list.each { |p|
         ff = closestCity(p[0], p[1])
-        miles = 50;
         while (ff.blank?)
           miles = miles+10;
           ff = closestCity(p[0], p[1], miles )
@@ -24,17 +23,23 @@ class Location < GeonameDB
     return arr;
   end
   
-  # return closest biggest city within 50 miles
+  # return closest biggest city within 50 miles or km?
   def self.closestCity( lat, lon, miles=50)           
       begin 
+      rmiles = 3956       # 2 * radius of the great circle in miles
+      rkm = 6371          # 2 * radius in kilometers...some algorithms use 6367
+      
+      l_mile=69.1             # miles per deg
+      l_km=111                # km per deg
       #miles = 50;
-      offset = miles/(Math.cos((lat*Math::PI/180.0))*69.1).abs;
+      offset = miles/(Math.cos((lat*Math::PI/180.0))*l_mile).abs;
       lon1= lon- offset;
       lon2= lon+ offset;
-      lat1= lat- (miles/69.1);
-      lat2= lat+ (miles/69.1);
-      monthcond=
-      nearest= [' 3956 * 2 * ASIN(SQRT(POWER(SIN((latitude - ',
+      lat1= lat- (miles/l_mile);
+      lat2= lat+ (miles/l_mile);
+    
+        # Took out  rmiles * 2 * since it's relative ,
+      nearest= [ ' ASIN(SQRT(POWER(SIN((latitude - ',
       lat,') * pi()/180/2),2) + COS(latitude * pi()/180) * COS(', lat ,
       ' * pi()/180) * POWER(SIN((longitude -', lon,') * pi()/180/2),2) )) ',
       ' as distance '].join()

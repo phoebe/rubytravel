@@ -25,17 +25,10 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id],:include => :users)
     @participations=@trip.participations
-    profile_list= @participations.collect { |p| p.profile_id }
-    
-    (@tags,@points,@tagpoints)=Tag.forProfiles(profile_list)
+    profile_list= @participations.collect { |p| p.profile_id }    
+    (@tags,@points,@tagpoints)=Tag.forProfiles(profile_list) # find interests
    # @res= Place.supportsTagsLoc(@tags,45,-120,300, @trip.departureDate )
-    @res= Place.supportsTags(@tags, @trip.departureDate )
-    @cluster=Cluster.new(@res)
-    coords=@cluster.getCenters();
-    cities=Location.closestCities(coords);
-    @res= @cluster.addAssignmentSqDist()
-    
-    @suggestions=Trip.clusterLocations( cities, @res )
+    @suggestions=Trip.clusterLocations(@tags,@trip) # find interesting places around cities
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @trip }

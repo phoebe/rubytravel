@@ -3,4 +3,6 @@
 *.sqlite3
 tmp
 imports
+script/*
+vendor/*
 config/initializers/actionmailer.rb

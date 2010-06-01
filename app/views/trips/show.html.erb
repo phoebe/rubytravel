@@ -31,15 +31,16 @@ Here is a list of locations that may be interesting, with a sample of nearby att
 <% city= c[:city] %>
 Near
 <%= h city.name.capitalize %>
-<%= city.admin1_code %>
+<%= city.admin1_code %> at [<%= c[:latlng][0] %>,<%= c[:latlng][1] %>]
+[<%= city.latitude %>,<%= city.longitude %>]<%=c[:diff] %>
 <%  places= c[:places] %>
 <div class="scroll"><table id="trip">
 <% places.each { |t| %>
 <tr>
   <td width="20%"><%= link_to t.name , t.url %>
-   <td width="10%"><%= t.city.capitalize %>, <%= t.state %><td><%= t.use_code %><td> <%= t.geonameid %><td>
-   <%= t.sqdist %><Br/>
-   <%= t.distance %>
+   <td width="10%"><%= t.city.capitalize %>, <%= t.state %><td><%= t.use_code %><td><%= t.geonameid %><td>
+   SDist=<%= t.sqdist %><Br/>[<%= t.latitude %>,<%= t.longitude %>]<br/>
+   <%= t.distance %>/<%=t.diff%>
 <% }%></table>
 </div>
 <% } %><hr>
