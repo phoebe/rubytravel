@@ -8,25 +8,25 @@
 #
 
 family:
-name: Family Reunion 2011
-description: Fun for the whole extended family, can we not kill each other in 2 weeks
-date: 7-1-2011
-duration: 14
+    name: Family Reunion 2011
+    description: Fun for the whole extended family, can we not kill each other in 2 weeks
+    departureDate: 7-1-2011
+    duration: 14
 
 geek:
-name: Geeky conference 2011
-description: Lets geek out together
-date: 5-30-2011
-duration: 4
+    name: Geeky conference 2011
+    description: Lets geek out together
+    departureDate: 5-30-2011
+    duration: 4
 
 active:
-name: Active Camp
-description: Jocks united
-date: 9-1-2010
-duration: 3
+    name: Active Camp
+    description: Jocks united
+    departureDate: 9-1-2010
+    duration: 3
 
 relax:
-name: Spa Holiday
-description: Sedate spa and museum holiday
-date: 9-1-2010
-duration: 6
+    name: Spa Holiday
+    description: Sedate spa and museum holiday
+    departureDate: 9-1-2010
+    duration: 6

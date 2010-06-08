@@ -7,18 +7,18 @@
 #   column: value
 
 pt1:
-profile_id: profiles(:phoebe_work_profile).id
-tag_id:     tags(:food).id
+    profile_id: profiles(:phoebe_work_profile).id
+    tag_id:     tags(:food).id
 
 pt2:
-profile_id: profiles(:phoebe_family_profile).id
-tag_id:     tags(:food).id
+    profile_id: profiles(:phoebe_family_profile).id
+    tag_id:     tags(:food).id
 
 pt3:
-profile_id: profiles(:kalinda_work_profile).id
-tag_id:     tags(:amusement_park).id
+    profile_id: profiles(:kalinda_work_profile).id
+    tag_id:     tags(:amusement_park).id
 
 pt4:
-profile_id: profiles(:grandpa_family_profile).id
-tag_id:     tags(:accessible).id
+    profile_id: profiles(:grandpa_family_profile).id
+    tag_id:     tags(:accessible).id
 
