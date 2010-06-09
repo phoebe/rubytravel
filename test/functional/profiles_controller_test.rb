@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class ProfilesControllerTest < ActionController::TestCase
+  def setup
+     @request.cookies['remember_token'] = CGI::Cookie.new('remember_token', users(:phoebe).remember_token)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -21,23 +25,23 @@ class ProfilesControllerTest < ActionController::TestCase
   end
 
   test "should show profile" do
-    get :show, :id => profiles(:one).to_param
+    get :show, :id => profiles(:phoebe_work_profile).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => profiles(:one).to_param
+    get :edit, :id => profiles(:phoebe_work_profile).to_param
     assert_response :success
   end
 
   test "should update profile" do
-    put :update, :id => profiles(:one).to_param, :profile => { }
+    put :update, :id => profiles(:phoebe_work_profile).to_param, :profile => { }
     assert_redirected_to profile_path(assigns(:profile))
   end
 
   test "should destroy profile" do
     assert_difference('Profile.count', -1) do
-      delete :destroy, :id => profiles(:one).to_param
+      delete :destroy, :id => profiles(:phoebe_work_profile).to_param
     end
 
     assert_redirected_to profiles_path

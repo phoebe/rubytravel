@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class TripsControllerTest < ActionController::TestCase
+  def setup
+     @request.cookies['remember_token'] = CGI::Cookie.new('remember_token', users(:phoebe).remember_token)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -21,23 +25,23 @@ class TripsControllerTest < ActionController::TestCase
   end
 
   test "should show trip" do
-    get :show, :id => trips(:one).to_param
+    get :show, :id => trips(:family).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => trips(:one).to_param
+    get :edit, :id => trips(:family).to_param
     assert_response :success
   end
 
   test "should update trip" do
-    put :update, :id => trips(:one).to_param, :trip => { }
+    put :update, :id => trips(:family).to_param, :trip => { }
     assert_redirected_to trip_path(assigns(:trip))
   end
 
   test "should destroy trip" do
     assert_difference('Trip.count', -1) do
-      delete :destroy, :id => trips(:one).to_param
+      delete :destroy, :id => trips(:family).to_param
     end
 
     assert_redirected_to trips_path
