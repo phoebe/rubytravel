@@ -10,6 +10,6 @@ namespace :mysql do
     sh %{ mysqlimport -d -u root --fields-terminated-by="\t" --verbose --default-character-set=utf8 geonames /tmp/cities.txt }
     sh %{ echo 'create index cities_latlng on cities(latitude,longitude)'| mysql geonames }
     sh %{ echo 'create index cities_name on cities(name)'| mysql geonames }
-  end
+  end 
 
 end

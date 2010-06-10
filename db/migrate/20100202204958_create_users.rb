@@ -11,6 +11,11 @@ class CreateUsers < ActiveRecord::Migration
 	    t.string :state
 	    t.string :country_code
 	    t.date :birthday
+	    
+	    # user's current location
+	    t.float :latitude  
+	    t.float :longitude
+	    
       t.timestamps
     end
   end

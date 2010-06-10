@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
     t.integer  "trip_id"
     t.integer  "user_id"
     t.integer  "profile_id"
+    t.integer  "radius"
     t.date     "traveldate"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -91,6 +92,8 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birthday"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "encrypted_password", :limit => 128

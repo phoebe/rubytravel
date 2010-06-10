@@ -7,31 +7,31 @@
 #   column: value
 
 part1:
-name: member
-trip_id: trips(:family).id
-user_id: users(:phoebe).id
-profile_id:1
+    name: member
+    trip: family
+    user: phoebe
+    profile: phoebe_family_profile
 
 part2:
-trip_id: trips(:family).id
-user_id: users(:kalinda).id
+    trip: family
+    user: kalinda
 
 part3:
-trip_id: trips(:family).id
-user_id: users(:grandpa).id
+    trip: family
+    user: grandpa
 
 part4:
-trip_id: trips(:geek).id
-user_id: users(:ron).id
+    trip: geek
+    user: ron
 
 part5:
-trip_id: trips(:geek).id
-user_id: users(:phoebe).id
+    trip: geek
+    user: phoebe
 
 part6:
-trip_id: trips(:relax).id
-user_id: users(:phoebe).id
+    trip: relax
+    user: phoebe
 
-part6:
-trip_id: trips(:active).id
-user_id: users(:phoebe).id
+part7:
+    trip: active
+    user: feebee

@@ -12,6 +12,7 @@ phoebe:
     first_name: phoebe
     last_name: miller
     email: phoebem@comcast.net
+    remember_token: phoebe_token
 
 ron:
     login: ron

@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class TagsControllerTest < ActionController::TestCase
+  def setup
+     @request.cookies['remember_token'] = CGI::Cookie.new('remember_token', users(:phoebe).remember_token)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
