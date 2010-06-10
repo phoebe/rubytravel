@@ -44,12 +44,13 @@ class Place < GeonameDB
     ' latitude between ', lat1 ,' and ', lat2 ,
     ' group by feature_code,use_code',
     ' having distance < ', miles,
+    ' and geonameid > 0 ',
     ' ORDER by geonameid desc, distance asc' ].join()
     rescue
          nearest=""; conditions="";
     end
     #@places= self.find_by_sql ["SELECT *, MATCH (use_code) AGAINST (?) as geonameid FROM places WHERE MATCH (use_code) AGAINST (?) limit 100", intr, intr]
-    @places= self.find_by_sql ["SELECT *,"+nearest+" MATCH (name,use_code) AGAINST (?) as geonameid FROM places WHERE MATCH (name,use_code) AGAINST (?) " + mcond + conditions+ " limit 300 ", intr, intr]
+    @places= self.find_by_sql ["SELECT *,0 as cluster,0 as sqdist,"+nearest+" MATCH (name,use_code) AGAINST (?) as geonameid FROM places WHERE MATCH (name,use_code) AGAINST (?) " + mcond + conditions+ " limit 300 ", intr, intr]
   end
 
   # return a list of places supporting tags anywhere, open on ddate
@@ -67,6 +68,6 @@ class Place < GeonameDB
       mcond=""
     end
     conditions= ' group by feature_code,use_code ORDER by geonameid desc'
-    @places= self.find_by_sql ["SELECT *,count(*) as distance,MATCH (name,use_code) AGAINST (?) as geonameid FROM places WHERE MATCH (name,use_code) AGAINST (?) " + mcond + conditions+" limit 300", intr, intr]
+    @places= self.find_by_sql ["SELECT *,0 as cluster,0 as sqdist,count(*) as distance,MATCH (name,use_code) AGAINST (?) as geonameid FROM places WHERE MATCH (name,use_code) AGAINST (?) " + mcond + conditions+" limit 300", intr, intr]
   end
 end

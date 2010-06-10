@@ -56,3 +56,5 @@ Rails::Initializer.run do |config|
 end
   URIPREFIX='http://kalinda.us/ns/'
 
+# Load order for fixtures
+ENV['FIXTURES'] ||= 'country,features,tag,user,location,places,profiles,profiles_tag,trip,participation'

@@ -8,7 +8,7 @@
 -- drop table features ;
 -- drop table countryInfo ;
 
-create table IF NOT EXISTS allCountries (
+create table IF NOT EXISTS cities (
 	geonameid	int primary key,         -- integer id of record in geonames database
 	name        varchar(200),      -- name of geographical point (utf8) varchar(200)
 	asciiname varchar(200),         -- name of geographical point in plain ascii characters, varchar(200)

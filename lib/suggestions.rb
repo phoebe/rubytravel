@@ -1,4 +1,4 @@
-require "km"
+require "kmeans"
 require "enumerator"
 
 # This definitions should have been addressed in kmclass.i
@@ -19,9 +19,12 @@ class Suggestions
     @numCenters = 4 if @numCenters < 4
     @numCenters = 10 if @numCenters > 10
     numpoints=points.size || 0
-    @kmc = Kmeans::KMCluster.new(@numCenters , 2, numpoints , 100)
+    @numCenters=numpoints/2 if @numCenters>(numpoints/2);
+    puts "clustering #{numpoints} points"
+    @kmc = Kmeans::KMCluster.new(@numCenters , 2, numpoints , 100) 
     readPoints()
-    @kmc.runCluster(2); # hybrid
+    @kmc.runCluster(Kmeans::KMCluster::HYBRID) if numpoints>10; # hybrid
+  GC.start   # don't know why, but it seems to stop mem errors in swig/ruby
   end
   
   # find bounding box of the cluster
@@ -60,7 +63,8 @@ class Suggestions
  
   #read the points of place list into a 2D array
   def readPoints()
-    darray=Array.new
+    #darray=Floatvector.new
+     darray=Array.new
     @mypoints.each { |p|
       darray << p.latitude
       darray << p.longitude
@@ -86,14 +90,17 @@ class Suggestions
     assgn= @kmc.getassignments()
     i=0;
     @mypoints.each { |p|
-      p['cluster']=assgn[i]
-      p['sqdist']=sd[i]
+      #p['cluster']=assgn[i]
+      #p['sqdist']=sd[i]
+      p.cluster = assgn[i] 
+      p.sqdist =sd[i]
       i=i+1;
     }    
     # this needs better mapping, assume willing to drive 50 mi for a day trip
     #  1~=50mi, 4 ~= 126 mi, 15 ~= 200 mi
     @mypoints.reject! {  |p| 
-      p['sqdist'] > duration;    
+      p.sqdist > duration;  
+      #p['sqdist'] > duration;   
     }
     return @mypoints;
   end

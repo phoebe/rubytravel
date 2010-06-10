@@ -6,6 +6,8 @@ class CreateTrips < ActiveRecord::Migration
       t.string :description
       t.date  :departureDate
       t.integer   :duration
+      t.float   :latitude
+      t.float   :longitude
       t.timestamps
     end
   end

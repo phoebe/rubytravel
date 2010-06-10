@@ -12,7 +12,7 @@ user_id: users(:phoebe).id
 name: Work Profile
 
 ron_work_profile:
-user_id: users(:phoebe).id
+user_id: users(:ron).id
 name: Work Profile
 
 phoebe_family_profile:
