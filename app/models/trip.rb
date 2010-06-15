@@ -10,7 +10,8 @@ class Trip < ActiveRecord::Base
     places= Place.supportsTags(tags, trip.departureDate )
     findSuggestions =Suggestions.new(places)
     coords=findSuggestions.getCenters(); # city center
-    cities=Location.closestCities(coords,50); # within 50 miles
+    #cities=Location.closestCities(coords,50); # within 50 miles
+    cities=Location.nearbyCities(coords,40); # within 40 miles
     # longer trips can have bigger clusters - remove outliers
     places= findSuggestions.addAssignmentSqDist(trip.duration) 
     

@@ -95,7 +95,7 @@ class Location < GeonameDB
      
      conditions=[ ' longitude between ',lon1,' and ',lon2,' and ',
      ' latitude between ', lat1 ,' and ', lat2 ,
-     ' having distance < ', miles, ' ORDER by population desc ' ].join()
+     ' ORDER by population desc ' ].join()
      rescue
           nearest=""; conditions="";
      end
