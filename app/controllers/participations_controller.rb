@@ -60,6 +60,11 @@ class ParticipationsController < ApplicationController
       flash[:notice] = 'You are adding someone other than yourself'
       is_OK=false
     end
+    if @participation.profile.nil?
+      profile = @user.profiles.build(:name => "Default profile")
+      profile.save!
+      @participation.profile = profile
+    end
     respond_to do |format|
       if is_OK && @participation.save
         flash[:notice] = 'Participation was successfully created.'
