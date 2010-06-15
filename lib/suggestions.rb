@@ -14,33 +14,40 @@ class Suggestions
     
   def initialize(points)
     @mypoints= points
+    numpoints=points.size 
     @numCenters = findSpread(10)
-    # num of centers determined by spread or loc/radius
+		# num of centers determined by spread or loc/radius
     @numCenters = 4 if @numCenters < 4
     @numCenters = 10 if @numCenters > 10
-    numpoints=points.size || 0
-    @numCenters=numpoints/2 if @numCenters>(numpoints/2);
     puts "clustering #{numpoints} points"
+
     @kmc = Kmeans::KMCluster.new(@numCenters , 2, numpoints , 100) 
-    readPoints()
+    readPoints(points)
+    puts "read points"
+
     @kmc.runCluster(Kmeans::KMCluster::HYBRID) if numpoints>10; # hybrid
-  GC.start   # don't know why, but it seems to stop mem errors in swig/ruby
+    #puts "clustered points, start GB collect"
+    #GC.start   # don't know why, but it seems to stop mem errors in swig/ruby
+    puts "GB collected"
   end
   
   # find bounding box of the cluster
   def findSpread(clustersz)
-    maxp=[-180,-180]
-    minp=[180,180]
-    @mypoints.each { |p|
-      maxp[0]= p.latitude if  maxp[0] < p.latitude
-      minp[0]= p.latitude if  minp[0] > p.latitude
-      maxp[1]= p.longitude if  maxp[1] < p.longitude
-      minp[1]= p.longitude if  minp[1] > p.longitude
-    }
-    lng= (maxp[1]-minp[1])/clustersz;
-    lat=(maxp[0]-minp[0])/clustersz;
-    return Integer( (lat> lng)? lat:lng );
-
+	begin
+		maxp=[-180,-180]
+		minp=[180,180]
+		@mypoints.each { |p|
+		  maxp[0]= p.latitude if  maxp[0] < p.latitude
+		  minp[0]= p.latitude if  minp[0] > p.latitude
+		  maxp[1]= p.longitude if  maxp[1] < p.longitude
+		  minp[1]= p.longitude if  minp[1] > p.longitude
+		}
+		lng= (maxp[1]-minp[1])/clustersz;
+		lat=(maxp[0]-minp[0])/clustersz;
+		return Integer( (lat> lng)? lat:lng );
+	rescue => details
+		puts "got an exception #{details.inspect}"
+	end
   end
   
 
@@ -62,38 +69,58 @@ class Suggestions
   end
  
   #read the points of place list into a 2D array
-  def readPoints()
-    #darray=Floatvector.new
-     darray=Array.new
+  def readPointsV()
+    darray= Kmeans::FloatVector.new();
+    #darray=Array.new
     @mypoints.each { |p|
       darray << p.latitude
       darray << p.longitude
     }
-    @kmc.readPtVector(darray); #seg faults here , why?
+    @kmc.readPtVector(darray); 
+  end
+
+  def readPoints(points)
+	  begin
+	  i=0;
+	  points.each { |p|
+		  @kmc.readdataPt(i, p.latitude,p.longitude);
+		  i=i+1;
+	  }
+	  @kmc.setNpts(i);
+	 rescue => details
+		puts "got an exception in readPoints #{details.inspect}"
+	  end
   end
   
   # gets a list of the centers returned by clustering
   def getCenters()
-    pts = @kmc.getcenterPoints();
-    darray=Array.new
-
-    pts.each_slice(2) { |p|
-      darray << p
-    }
-    return darray;
+	begin
+		pts = @kmc.getcenterPoints();
+		darray=Array.new
+		pts.each_slice(2) { |p|
+		  darray << p
+		}
+		return darray;
+	 rescue => details
+		puts "got an exception in getCenter #{details.inspect}"
+	 	return nil;
+	 end
   end
 
-  
+	  
   # gets a list of the assignments and distance of each place from the centers
   def addAssignmentSqDist(duration)
-    sd= @kmc.getsqDist;
-    assgn= @kmc.getassignments()
+  begin
+    #sd= @kmc.getsqDist;
+    #assgn= @kmc.getassignments()
     i=0;
     @mypoints.each { |p|
       #p['cluster']=assgn[i]
       #p['sqdist']=sd[i]
-      p.cluster = assgn[i] 
-      p.sqdist =sd[i]
+      #p.cluster = assgn[i] 
+      #p.sqdist =sd[i]
+	  p.sqdist=  @kmc.getsqDistd(i)
+	  p.cluster= @kmc.getAssignmentd(i)
       i=i+1;
     }    
     # this needs better mapping, assume willing to drive 50 mi for a day trip
@@ -103,6 +130,9 @@ class Suggestions
       #p['sqdist'] > duration;   
     }
     return @mypoints;
+	rescue  => details
+		puts "got an exception in addAssignment #{details.inspect}"
+	end
   end
 
 end
