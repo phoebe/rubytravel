@@ -8,6 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.join_trip 'trips/:trip_id/join', :controller => :participations, :action => :new
 
 
+  map.resources :users, :only => :show, :controller => :users
   Clearance::Routes.draw(map)
   # The priority is based upon order of creation: first created -> highest priority.
 
