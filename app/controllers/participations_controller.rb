@@ -24,11 +24,11 @@ class ParticipationsController < ApplicationController
 
   # GET /participations/new
   # GET /participations/new.xml
-  def join
+  def new
     @user = current_user()
     @profiles=  @user.profiles
     @trip=Trip.find(params[:trip_id])
-    @participation = @user.participations.build(params[:trip])
+    @participation = @user.participations.build
     @participation.trip_id=@trip.id
     @participation.traveldate=@trip.departureDate
     respond_to do |format|
