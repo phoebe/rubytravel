@@ -13,8 +13,8 @@
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :trip_id %>
   <p>
-<% if @profiles.nil? %>
-  Please set up  a profile for your trips 
+<% if @profiles.empty? %>
+  Please <%= link_to 'set up a profile', new_user_profile_path(@user) %> for your trips 
 <% else %>
   <%= f.label 'Pick a profile for this trip' %> <%= f.select( :profile_id, @profiles.collect{ |p| [p.name,p.id]}) %>
   <!-- , {:include_blank=>'None'} ) %-->

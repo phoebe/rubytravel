@@ -24,11 +24,11 @@ class ParticipationsController < ApplicationController
 
   # GET /participations/new
   # GET /participations/new.xml
-  def join
+  def new
     @user = current_user()
     @profiles=  @user.profiles
     @trip=Trip.find(params[:trip_id])
-    @participation = @user.participations.build(params[:trip])
+    @participation = @user.participations.build
     @participation.trip_id=@trip.id
     @participation.traveldate=@trip.departureDate
     respond_to do |format|
@@ -59,6 +59,11 @@ class ParticipationsController < ApplicationController
     if @participation.user_id !=@user.id
       flash[:notice] = 'You are adding someone other than yourself'
       is_OK=false
+    end
+    if @participation.profile.nil?
+      profile = @user.profiles.build(:name => "Default profile")
+      profile.save!
+      @participation.profile = profile
     end
     respond_to do |format|
       if is_OK && @participation.save

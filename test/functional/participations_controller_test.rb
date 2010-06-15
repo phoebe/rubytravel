@@ -12,7 +12,7 @@ class ParticipationsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, :trip_id => trips(:geek).id
     assert_response :success
   end
 
