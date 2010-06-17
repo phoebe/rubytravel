@@ -136,3 +136,150 @@ create table IF NOT EXISTS weatherInfo (
 );
 
 create unique index weather_latlng on weatherInfo(latitude,longitude);
+
+CREATE TABLE `attractions` (
+	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `name` varchar(200) DEFAULT NULL,
+	  `geonameid` int(11) DEFAULT NULL, -- closest city in geonames database
+	  `asciiname` varchar(200) DEFAULT NULL,-- name of geographical point in plain ascii characters, varchar(200)
+	  `alternatenames` varchar(5000) DEFAULT NULL, -- alternatenames, comma separated varchar(5000)
+	  `latitude` double DEFAULT NULL, -- latitude in decimal degrees (wgs84)
+	  `longitude` double DEFAULT NULL,
+	  `elevation` int(11) DEFAULT NULL, -- in meters, integer
+	  `maxelevation` int(11) DEFAULT NULL, -- in meters
+	  `feature_class` char(1) DEFAULT NULL,
+	  `feature_code` varchar(10) DEFAULT NULL, -- see http://www.geonames.org/export/codes.html, varchar(10)
+	  `use_code` varchar(500) DEFAULT NULL, -- comma delimited text
+	  `country_code` char(2) DEFAULT NULL, -- ISO-3166 2-letter country code, 2 characters
+	  `street_address` varchar(300) DEFAULT NULL,
+	  `city` varchar(100) DEFAULT NULL, 	-- text - should be in geonames.allCountries tbl
+	  `state` varchar(100) DEFAULT NULL,	 --  matches admin1Codes.txt; deref
+	  `postal_code` varchar(20) DEFAULT NULL,
+	  `phone` varchar(30) DEFAULT NULL,
+	  `email` varchar(80) DEFAULT NULL,
+	  `url` varchar(256) DEFAULT NULL,
+	  `source` char(3) DEFAULT NULL, -- the import file from whence phoebe loaded 
+	  `source_id` varchar(100) DEFAULT NULL, -- format depends on source - maps to source for updates
+	  `season_1` char(1) DEFAULT NULL,		 -- H,M,L,O - high,medium,low,off season, S= superhigh, C = closed
+	  `season_2` char(1) DEFAULT NULL,
+	  `season_3` char(1) DEFAULT NULL,
+	  `season_4` char(1) DEFAULT NULL,
+	  `season_5` char(1) DEFAULT NULL,
+	  `season_6` char(1) DEFAULT NULL,
+	  `season_7` char(1) DEFAULT NULL,
+	  `season_8` char(1) DEFAULT NULL,
+	  `season_9` char(1) DEFAULT NULL,
+	  `season_10` char(1) DEFAULT NULL,
+	  `season_11` char(1) DEFAULT NULL,
+	  `season_12` char(1) DEFAULT NULL,
+	  `hour_start` int(11) DEFAULT NULL,
+	  `hour_end` int(11) DEFAULT NULL,
+	  `open_days` char(7) DEFAULT NULL, -- as MTWTFSS - O=open,C=close,A - appointment, blank= don't know
+	  `hours` varchar(200) DEFAULT NULL, -- free text - use to seed structure
+	  `geopoint` point DEFAULT NULL,
+	  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+	  `admin1_code` varchar(20) DEFAULT NULL,
+	  `transportation` varchar(200) DEFAULT NULL, -- car,train,plane,walk,bus from nearest town/city (csv)
+	  `transportation_note` varchar(500) DEFAULT NULL,
+	  `difficulty` float DEFAULT NULL, -- 1-10 , 1 - trivial, 10- hardest
+	  `distance` float DEFAULT NULL, -- in m  for trails 
+	  `area` float DEFAULT NULL, -- sq m
+	  `howaccessible` int(11) DEFAULT NULL, -- 1-10  , 0:inaccessible, 1:no road, 2:trails, 3:remote, 4:private vehicle, 5-7:pub transp, 8,9:handicap (hotels for deaf/ blind)
+	  `parent` int(11) DEFAULT NULL,
+	  `nextsibling` int(11) DEFAULT NULL,
+	  `note` varchar(2000) DEFAULT NULL,
+	  `rating` int(11) DEFAULT NULL,
+	  `thumbnail_link` varchar(256) DEFAULT NULL,
+	  `place_class` varchar(200) DEFAULT NULL,
+	  `place_code` varchar(500) DEFAULT NULL,
+	  `use_class` varchar(500) DEFAULT NULL,
+	  PRIMARY KEY (`id`),
+	UNIQUE KEY `lplace_name_city` (`name`,`city`),
+	  KEY `lpfeature_class_index` (`feature_class`),
+	  KEY `lpfeature_code_index` (`feature_code`),
+	  KEY `lpname_index` (`name`) USING BTREE,
+	  KEY `lplongitude_index` (`longitude`), -- merge lat,long into 1 index?
+	  KEY `lplatitude_index` (`latitude`),
+	  KEY `lpsource_index` (`source`) USING HASH
+);
+create fulltext index attr_use_code_findex on attractions(use_class,use_code);
+create fulltext index attr_place_code_findex on attractions(place_class,place_code);
+create fulltext index attr_name_code_findex on attractions(name);
+
+create table plcategory (
+	code varchar(6) primary key,
+	parent varchar(6),
+	descr varchar(80)
+);
+
+insert into plcategory(code,descr) values ('OUT','Outdoors');
+insert into plcategory(code,descr) values ('ACCOM','Accommodations');
+insert into plcategory(code,descr) values ('MUSEUM','Museum');
+insert into plcategory(code,descr) values ('FOOD','Food producers or restaurants');
+insert into plcategory(code,descr) values ('ENTER','Entertainments');
+insert into plcategory(code,descr) values ('SHOP','Shopping');
+insert into plcategory(code,descr) values ('SERV','Services such as Salon,Spa or Massage');
+insert into plcategory(code,descr) values ('CONF','Conference space');
+insert into plcategory(code,descr) values ('RESORT','Resorts');
+insert into plcategory(code,descr) values ('HOSP','Hospital or clinic');
+
+insert into plcategory(code,parent,descr) values ('PARK','OUT','National ,State or Local Park or Reservations');
+insert into plcategory(code,parent,descr) values ('GARDEN','OUT','Botanical,Public gardens or Zoo');
+insert into plcategory(code,parent,descr) values ('AMUSE','OUT','Amusement park, Water Park, Miniature golf, Paintball etc ');
+insert into plcategory(code,parent,descr) values ('WILD','OUT','Wilderness or BLM land');
+insert into plcategory(code,parent,descr) values ('BEACH','OUT','Beach or water front');
+insert into plcategory(code,parent,descr) values ('WATER','OUT','River, Lake, Coast, etc');
+
+insert into plcategory(code,parent,descr) values ('HOTEL','ACCOM','Hotel,Motel or B&B');
+insert into plcategory(code,parent,descr) values ('CAMP','ACCOM','Cabin,Tent,Rv park');
+insert into plcategory(code,parent,descr) values ('ART','MUSEUM','Art museum');
+insert into plcategory(code,parent,descr) values ('SCI','MUSEUM','Science,Natural History or Geology Museum');
+insert into plcategory(code,parent,descr) values ('CULT','MUSEUM','History or religious museum');
+insert into plcategory(code,parent,descr) values ('REST','FOOD','Restaurant, Cafe,or just serves food');
+insert into plcategory(code,parent,descr) values ('DRINK','FOOD','Brewery,Bar,Winery etc');
+insert into plcategory(code,parent,descr) values ('CASINO','ENTER','Casino');
+insert into plcategory(code,parent,descr) values ('FEST','ENTER','Festivals');
+insert into plcategory(code,parent,descr) values ('CLUB','ENTER','Bar, dance club or places with live music');
+insert into plcategory(code,parent,descr) values ('SPORT','ENTER','Sports stadiums or facility');
+insert into plcategory(code,parent,descr) values ('SHOW','ENTER','Opera,theatre,Concert hall,Ballet,Playhouse or other performance spaces');
+insert into plcategory(code,parent,descr) values ('MALL','SHOP','Mall');
+insert into plcategory(code,parent,descr) values ('OUTLET','SHOP','Outlets');
+insert into plcategory(code,parent,descr) values ('SPA','SERV','Spa');
+insert into plcategory(code,parent,descr) values ('CRUISE','RESORT','Cruise');
+
+create table usecategory (
+	code varchar(6) primary key,
+	parent varchar(6),
+	descr varchar(30)
+);
+
+insert into usecategory (code,descr) values('ACT','active');
+insert into usecategory (code,descr) values('KIDS','suitable for kids under 18');
+insert into usecategory (code,descr) values('NIGHT','night time entertainment');
+insert into usecategory (code,descr) values('CULT','cultural interests');
+insert into usecategory (code,descr) values('ROM','romantic');
+insert into usecategory (code,descr) values('ADV','adventurous');
+insert into usecategory (code,descr) values('SCENE','scenic');
+insert into usecategory (code,descr) values('RELAX','relaxing');
+insert into usecategory (code,descr) values('HEALTH','health care, holistic,etc');
+insert into usecategory (code,descr) values('EAT','food and drink');
+
+insert into usecategory (code,parent,descr) values('SWIM','ACT','swim');
+insert into usecategory (code,parent,descr) values('DIVE','ACT','snorkeling or scuba diving');
+insert into usecategory (code,parent,descr) values('HUNT','ACT','Hunting');
+insert into usecategory (code,parent,descr) values('FISH','ACT','Fishing');
+insert into usecategory (code,parent,descr) values('HIKE','ACT','Hiking or walking');
+insert into usecategory (code,parent,descr) values('BIKE','ACT','Biking');
+insert into usecategory (code,parent,descr) values('CLIMB','ACT','Rock or Ice climbing');
+
+insert into usecategory (code,parent,descr) values('ARCHIT','CULT','architecture');
+insert into usecategory (code,parent,descr) values('ARCHAE','CULT','archaelogy');
+insert into usecategory (code,parent,descr) values('HIST','CULT','history');
+insert into usecategory (code,parent,descr) values('SKI','ACT','ski,snowboard');
+insert into usecategory (code,parent,descr) values('BOAT','ACT','kayak,canoe,whitewater,surf,sail');
+insert into usecategory (code,parent,descr) values('ART','CULT','visual or performance art');
+insert into usecategory (code,parent,descr) values('SCI','CULT','science');
+insert into usecategory (code,parent,descr) values('RELIG','CULT','religion');
+insert into usecategory (code,parent,descr) values('MUSIC','CULT','music');
+insert into usecategory (code,parent,descr) values('MARTIAL','CULT','martial arts');

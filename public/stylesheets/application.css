@@ -1,4 +1,12 @@
-body { background-color: #fff; color: #111; }
+#banner { width:100%;
+	height: 100px;
+	background-image: url:('banner.jpg');
+}
+
+body {
+	background-color: #fff; color: #000;
+}
+
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;

@@ -1,8 +1,19 @@
-<h1>Editing user</h1>
+<h1>Editing personal information for <%=@user.handle()%> </h1>
 
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
-
+<table id="trip">
+  <TR>
+  <TD>
+  First Name
+  <TD><%= f.text_field :first_name, :size=>40 %></td>
+  <TR>
+  <TD>Last name
+  <TD><%= f.text_field :last_name, :size=>40 %></td>
+  <TR><TD colspan="2">Closest City: (Let us know if you want to limit the distance you want to travel) 
+  <TR><TD>City<TD><%= f.text_field :city, :size=>40 %></td>
+<TR> <TD>State<TD><%= f.text_field :state, :size=>40 %></td>
+</table>
   <p>
     <%= f.submit 'Update' %>
   </p>

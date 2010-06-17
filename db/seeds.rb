@@ -112,6 +112,9 @@ blackie = User.find_or_create_by_login(:login => 'blackie',:email => 'blackie@co
 religious = Tag.find_or_create_by_name(:name => 'Religious', :parent => culture, :code =>'RELIC', :creator => phoebe)
  Tag.find_or_create_by_name(:name => 'church/temple', :parent => religious, :code=>'CHRH', :creator => phoebe)
 
+ shopping = Tag.find_or_create_by_name(:name => 'shopping',  :uri=>'http://kalinda.us/ns/Health', :code=>'SHOP', :description =>'Shopping' )
+
+
 # hiking trails -  www.wikiloc.com
 
 Profile.find_or_create_by_name_and_user_id(:name => 'work travel',:user=>phoebe, :description => 'Preferences for work related travelling'); 

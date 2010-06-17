@@ -7,10 +7,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :trips
   map.join_trip 'trips/:trip_id/join', :controller => :participations, :action => :new
 
+  map.page  'pages/:action.html', :controller => 'pages'
 
-  map.resources :users, :only => :show, :controller => :users
+  map.resources :users, :only => [:show, :edit, :update], :controller => :users
   Clearance::Routes.draw(map)
-  # The priority is based upon order of creation: first created -> highest priority.
+#!!! The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'

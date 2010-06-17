@@ -1,4 +1,13 @@
 <h1>Welcome back, <%= @user.handle().capitalize() %> </h1>
+
+<% if @user.latitude.blank? %>
+location unknown
+<% else %>
+<%= @user.city %>
+<%= @user.state %>
+<% end %>
+<%= link_to 'Edir Personal Information', edit_user_path(@user.id) %>
+
 <% @trips= @user.trips() %>
 <% if !@trips.nil? && !@trips.empty? %>
 <table id="trip">
