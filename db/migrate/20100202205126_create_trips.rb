@@ -1,7 +1,7 @@
 class CreateTrips < ActiveRecord::Migration
   def self.up
     create_table :trips do |t|
-      t.references :user
+      t.references :owner
       t.string :name
       t.string :description
       t.date  :departureDate

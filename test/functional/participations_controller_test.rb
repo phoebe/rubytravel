@@ -19,11 +19,9 @@ class ParticipationsControllerTest < ActionController::TestCase
   test "should create participation" do
     assert_difference('Participation.count', 1) do
       post :create, :participation => 
-        {:trip_id => trips(:family).id, :traveldate => "7/4/2010"}
-      puts Participation.all.inspect
-      puts "flash is " + flash.inspect
+        {:trip_id => trips(:active).id, :traveldate => "7/4/2010"}
     end
-    assert_redirected_to participation_path(assigns(:participation))
+    assert_redirected_to trip_path(trips(:active))
   end
 
   test "should show participation" do
@@ -37,8 +35,8 @@ class ParticipationsControllerTest < ActionController::TestCase
   end
 
   test "should update participation" do
-    put :update, :id => participations(:part1).to_param, :participation => { }
-    assert_redirected_to participation_path(assigns(:participation))
+    put :update, :id => participations(:part1).to_param, :participation => {:traveldate => "8/9/2011" }
+    assert_redirected_to trip_path(assigns(:participation).trip)
   end
 
   test "should destroy participation" do
@@ -46,6 +44,6 @@ class ParticipationsControllerTest < ActionController::TestCase
       delete :destroy, :id => participations(:part1).to_param
     end
 
-    assert_redirected_to participations_path
+    assert_redirected_to trips_path
   end
 end

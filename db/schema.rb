@@ -11,16 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 20100505141647) do
 
-  create_table "features", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "locations", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "participations", :force => true do |t|
     t.string   "name"
     t.integer  "trip_id"
@@ -28,17 +18,6 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
     t.integer  "profile_id"
     t.integer  "radius"
     t.date     "traveldate"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "places", :force => true do |t|
-    t.string   "name",        :null => false
-    t.float    "lat"
-    t.float    "lon"
-    t.integer  "parent_id"
-    t.string   "type"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
   add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
 
   create_table "trips", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "owner_id"
     t.string   "name"
     t.string   "description"
     t.date     "departureDate"

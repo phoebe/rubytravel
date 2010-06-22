@@ -1,7 +1,7 @@
 class Trip < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :owner, :class_name => "User"
   has_many :participations
-  has_many :users, :through => :participations
+  has_many :participants, :through => :participations, :source => :user
   has_many :profiles, :through => :participations
   has_many :suggestions
   

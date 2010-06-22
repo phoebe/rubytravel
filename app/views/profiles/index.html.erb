@@ -9,7 +9,7 @@ location unknown
 <BR>
 <%= link_to 'Edit Personal Information', edit_user_path(@user.id) %>
 
-<% @trips= @user.trips() %>
+<% @trips= @user.part_trips %>
 <% if !@trips.nil? && !@trips.empty? %>
 <table id="trip">
 <h2>Here are your pending trips</h2>
