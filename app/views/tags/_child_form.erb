@@ -1,10 +1,11 @@
 
-<%= link_to h( tag.name.capitalize()) , edit_tag_path(tag) %> |
+<%= link_to h( tag.name.capitalize()) , tag_path(tag) %> |
 
-<%= link_to 'Destroy', tag, :confirm => 'Are you sure?', :method => :delete %> | 
+<%= link_to 'Edit', edit_tag_path(tag) %> |
+<!-- %= link_to 'Destroy', tag, :confirm => 'Are you sure?', :method => :delete % --> | 
 <%= link_to 'New', new_tag_tag_path(tag) %> |
 <%= h tag.description %>
-<% if (! tag.children_count.nil? ) %>
+<% if (! tag.children.blank? ) %>
 <UL>
   <% tag.children.each do |ctag| %>
     <LI><%= render :partial => 'child_form', :locals => { :tag => ctag  } %></LI>

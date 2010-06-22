@@ -5,14 +5,13 @@
   <%= f.error_messages %><br/>
 <%= f.label 'Name:'%><%= f.text_field :name %><br/>
 <%= f.label 'Description:'%><%= f.text_field :description %><br/>
-<%= f.label 'URI:'%><%= f.text_field :uri %><br/>
-<%= f.label 'GeoCode:'%><%= f.text_field :code %><br/>
-<%= f.label 'Activity Code:'%><%= f.text_field :code2 %>
+<!-- %= f.label 'URI:'% --><!-- %= f.text_field :uri %><br/ -->
+<!-- %= f.label 'GeoCode:'% --><!-- %= f.text_field :code % --><br/ -->
+<!-- %= f.label 'Activity Code:'% --><!-- %= f.text_field :code2 % -->
   <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
 
 <%= link_to 'Show', @tag %> |
-<%= link_to 'Showplaces', tags_path+'/showplaces/'+@tag.id.to_s %>
 <%= link_to 'Back', tags_path %>

@@ -1,7 +1,9 @@
 
 <%=  h @tag.name.capitalize() %> 
+<!-- 
 Also known as
-<%= h @tag.uri %>
+-->
+<!-- %= h @tag.uri % -->
 
 <%= render :partial => 'child_form', :locals => { :tag => @tag } %>
 
