@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
   #attr_accessible :first_name,:last_name, :login
   has_many :tags, :foreign_key => :creator_id
   has_many :profiles, :dependent => :destroy
-  #has_many :trips                             # trips initialed by this user
-  # too confusing - only thru participation with roles
   has_many :participations #, :dependent => :destroy
-  has_many :trips, :through => :participations  # participate in these trips
+  # participates in these trips
+  has_many :part_trips, :through => :participations, :source => :trip
+  # owns these trips
+  has_many :own_trips, :class_name => "Trip", :foreign_key => :owner_id
   
   validates_uniqueness_of :email
 

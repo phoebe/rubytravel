@@ -49,7 +49,13 @@ class ParticipationsController < ApplicationController
   # POST /participations.xml
   def create
     @user = current_user()
-    @participation = @user.participations.new(params[:participation])
+    @participation = @user.participations.find_by_trip_id(params[:participation][:trip_id])
+    if @participation
+      params[:id] = @participation.id
+      return update()
+    else
+      @participation = @user.participations.new(params[:participation])
+    end
     @trip=Trip.find(@participation.trip_id)
     is_OK=true;
     if @trip.nil?
@@ -85,7 +91,7 @@ class ParticipationsController < ApplicationController
     respond_to do |format|
       if @participation.update_attributes(params[:participation])
         flash[:notice] = 'Participation was successfully updated.'
-        format.html { redirect_to(trips_path) }
+        format.html { redirect_to(trip_path(@participation.trip)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -1,5 +1,5 @@
 <h1>Welcome back, <%= @user.handle().capitalize() %> </h1>
-<% @trips= @user.trips() %>
+<% @trips= @user.part_trips %>
 <% if !@trips.nil? && !@trips.empty? %>
 <table id="trip">
 <h2>Here are your pending trips</h2>
