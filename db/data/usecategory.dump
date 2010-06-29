@@ -1,0 +1,54 @@
+-- MySQL dump 10.13  Distrib 5.1.47, for redhat-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: geonames
+-- ------------------------------------------------------
+-- Server version	5.1.47
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `usecategory`
+--
+
+DROP TABLE IF EXISTS `usecategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usecategory` (
+  `id` int(11) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `code` varchar(6) NOT NULL,
+  `pcode` varchar(6) DEFAULT NULL,
+  `descr` varchar(80) DEFAULT NULL,
+  PRIMARY KEY (`code`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usecategory`
+--
+
+LOCK TABLES `usecategory` WRITE;
+/*!40000 ALTER TABLE `usecategory` DISABLE KEYS */;
+INSERT INTO `usecategory` VALUES (1,NULL,'ACT',NULL,'active'),(2,NULL,'KIDS',NULL,'suitable for kids under 18'),(3,NULL,'NIGHT',NULL,'night time entertainment'),(4,NULL,'CULT',NULL,'cultural interests'),(5,NULL,'ROM',NULL,'romantic'),(6,NULL,'ADV',NULL,'adventurous'),(7,NULL,'SCENE',NULL,'scenic'),(8,NULL,'RELAX',NULL,'relaxing'),(9,NULL,'HEALTH',NULL,'health care, holistic,etc'),(10,NULL,'EAT',NULL,'food and drink'),(11,1,'SWIM','ACT','swim'),(12,1,'DIVE','ACT','snorkeling or scuba diving'),(13,1,'HUNT','ACT','Hunting'),(14,1,'FISH','ACT','Fishing'),(15,1,'HIKE','ACT','Hiking or walking'),(16,1,'BIKE','ACT','Biking'),(17,1,'CLIMB','ACT','Rock or Ice climbing'),(18,4,'ARCHIT','CULT','architecture'),(19,4,'ARCHAE','CULT','archaelogy'),(20,4,'HIST','CULT','history'),(21,1,'SKI','ACT','ski,snowboard'),(22,1,'BOAT','ACT','kayak,canoe,whitewater,surf,sail'),(23,4,'ART','CULT','visual or performance art'),(24,4,'SCI','CULT','science'),(25,4,'RELIG','CULT','religion'),(26,4,'MUSIC','CULT','music'),(27,1,'MARTIA','ACT','martial arts');
+/*!40000 ALTER TABLE `usecategory` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2010-06-29 14:19:01

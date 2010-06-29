@@ -1,0 +1,54 @@
+-- MySQL dump 10.13  Distrib 5.1.47, for redhat-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: geonames
+-- ------------------------------------------------------
+-- Server version	5.1.47
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `plcategory`
+--
+
+DROP TABLE IF EXISTS `plcategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `plcategory` (
+  `code` varchar(6) NOT NULL,
+  `id` int(11) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `pcode` varchar(6) DEFAULT NULL,
+  `descr` varchar(80) DEFAULT NULL,
+  PRIMARY KEY (`code`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `plcategory`
+--
+
+LOCK TABLES `plcategory` WRITE;
+/*!40000 ALTER TABLE `plcategory` DISABLE KEYS */;
+INSERT INTO `plcategory` VALUES ('OUT',101,NULL,NULL,'Outdoors'),('MUSEUM',102,NULL,NULL,'Museum'),('FOOD',103,NULL,NULL,'Food producers or restaurants'),('ENTER',104,NULL,NULL,'Entertainments'),('RESORT',105,NULL,NULL,'Resorts'),('ACCOM',106,NULL,NULL,'Accommodations'),('SHOP',107,NULL,NULL,'Shopping'),('SERV',108,NULL,NULL,'Services such as Salon,Spa or Massage'),('CONF',109,NULL,NULL,'Conference space'),('HOSP',110,NULL,NULL,'Hospital or clinic'),('PARK',111,101,'OUT','National ,State or Local Park or Reservations'),('GARDEN',112,101,'OUT','Botanical,Public gardens or Zoo'),('AMUSE',113,101,'OUT','Amusement park, Water Park, Miniature golf, Paintball etc '),('WILD',114,101,'OUT','Wilderness or BLM land'),('BEACH',115,101,'OUT','Beach or water front'),('WATER',116,101,'OUT','River, Lake, Coast, etc'),('TRL',117,101,'OUT','Hiking trails'),('ART',120,102,'MUSEUM','Art museum'),('SCI',121,102,'MUSEUM','Science,Natural History or Geology Museum'),('CULT',122,102,'MUSEUM','History or religious museum'),('REST',123,103,'FOOD','Restaurant, Cafe,or just serves food'),('DRINK',124,103,'FOOD','Brewery,Bar,Winery etc'),('CASINO',125,104,'ENTER','Casino'),('FEST',126,104,'ENTER','Festivals'),('CLUB',127,104,'ENTER','Bar, dance club or places with live music'),('SPORT',128,104,'ENTER','Sports stadiums or facility'),('SHOW',129,104,'ENTER','Opera,theatre,Concert hall,Ballet,Playhouse or other places for watching perform'),('HOTEL',118,106,'ACCOM','Hotel,Motel or B&B'),('CAMP',119,106,'ACCOM','Cabin,Tent,Rv park'),('MALL',130,107,'SHOP','Mall'),('OUTLET',131,107,'SHOP','Outlets'),('SPA',132,108,'SERV','Spa'),('CRUISE',133,105,'RESORT','Cruise');
+/*!40000 ALTER TABLE `plcategory` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2010-06-29 14:18:17
