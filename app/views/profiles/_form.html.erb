@@ -9,12 +9,13 @@
   <p>
     <%= f.submit(controller.action_name == 'edit' ? 'Update' : 'Create' ) %>
   </p>
-  <%= link_to_function  :onMouseover => "document.getElementById('dropdown').style.display = 'none'"; "document.getElementById('dropdown').style.display = 'block'" %>
   <div id="dropdown">
   </div>
   <div id="options">
+ 
   <% Tag.roots.each { |tag| %>
     <%= render :partial => 'tags' , :locals => { :tag => tag } %>
-  <% } %>
+  <br/><% } %>
+
   </div>
 <% end %>

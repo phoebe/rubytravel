@@ -2,9 +2,9 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.xml
   def index
-    tags = Usetag.find(:all, :conditions => ['parent_id is null'] )
-    t2= Placetag.find(:all, :conditions => ['parent_id is null'] )
-	@tags=tags+t2
+    @tags = Tag.find(:all, :conditions => ['parent_id is null'] )
+    #t2= Placetag.find(:all, :conditions => ['parent_id is null'] )
+	  #@tags=tags+t2
     #@tags = Usetag.all;
     respond_to do |format|
       format.html # index.html.erb
@@ -16,11 +16,11 @@ class TagsController < ApplicationController
   # GET /tags/1.xml
   def show
 	begin
-		@tag = Usetag.find(params[:id])
+		@tag = Tag.find(params[:id])
 		@children= @tag.children
 	rescue
-		@tag= Placetag.find(params[:id]) if @tag.blank?
-		@children= @tag.children
+		#@tag= Placetag.find(params[:id]) if @tag.blank?
+		#@children= @tag.children
 	end
     respond_to do |format|
       format.html # show.html.erb
@@ -29,7 +29,7 @@ class TagsController < ApplicationController
   end
 
   def showplaces
-    @tag = Usetag.find(params[:id])
+    @tag = Tag.find(params[:id])
     @children= @tag.children
     respond_to do |format|
       format.html # show.html.erb
@@ -48,10 +48,10 @@ class TagsController < ApplicationController
   # GET /tags/new
   # GET /tags/new.xml
   before_filter :authenticate
-  def new_notallowed
-    @tag = Usetag.new
+  def new #_notallowed    
+    @tag = Tag.new
     if ! params[:tag_id].nil?
-      @tag.parent = Usetag.find(params[:tag_id])
+      @tag.parent = Tag.find(params[:tag_id])
     end
     respond_to do |format|
       format.html # new.html.erb
@@ -63,23 +63,24 @@ class TagsController < ApplicationController
   before_filter :authenticate
   def edit
 	begin
-		@tag = Usetag.find(params[:id])
+    @tag = Tag.find(params[:id])
+		#@tag = Usetag.find(params[:id])
 		@children= @tag.children
 	rescue
-		@tag= Placetag.find(params[:id]) if @tag.blank?
-		@children= @tag.children
+		#@tag= Placetag.find(params[:id]) if @tag.blank?
+		#@children= @tag.children
 	end
   end
 
   # POST /tags
   # POST /tags.xml
   before_filter :authenticate
-  def create_notallowed
+  def create #_notallowed
     if ( params[:tag][:uri].nil? || params[:tag][:uri].empty?)
       params[:tag][:uri] = URIPREFIX+params[:tag][:name].gsub(' ','_')
     end    
     params[:tag][:name] = params[:tag][:name].downcase
-    @tag = Usetag.new(params[:tag])
+    @tag = Tag.new(params[:tag])
     respond_to do |format|
       if @tag.save
         flash[:notice] = 'Tag was successfully created.'
@@ -97,11 +98,11 @@ class TagsController < ApplicationController
   before_filter :authenticate
   def update
 	begin
-		@tag = Usetag.find(params[:id])
+		@tag = Tag.find(params[:id])
 		@children= @tag.children
 	rescue
-		@tag= Placetag.find(params[:id]) if @tag.blank?
-		@children= @tag.children
+		#@tag= Placetag.find(params[:id]) if @tag.blank?
+		#@children= @tag.children
 	end
 
     respond_to do |format|
@@ -119,8 +120,8 @@ class TagsController < ApplicationController
   # DELETE /tags/1
   # DELETE /tags/1.xml
   before_filter :authenticate
-  def destroy_notallowed
-    @tag = Usetag.find(params[:id])
+  def destroy#_notallowed
+    @tag = Tag.find(params[:id])
     @tag.destroy
 
     respond_to do |format|

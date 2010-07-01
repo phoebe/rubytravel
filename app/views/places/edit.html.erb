@@ -6,8 +6,7 @@
   Name<%= text_field 'place', :name  %>  
   <BR/>
   URL<%= text_field 'place', :url  %>
-  <BR/>
-  thumbnail<%= text_field 'place', :thumbnail_link  %>
+  Thumbnail<%= text_field 'place', :thumbnail_link  %>
   <BR/>
   Season:
   Jan<%= select('place',:season_1, @place.season_options,{:include_blank => true} ) %>
@@ -28,7 +27,6 @@
   <BR/>
   City<%= text_field 'place', :city  %>
   State<%= text_field 'place', :state  %>
-  <BR/>
   Postal_code<%= text_field 'place', :postal_code  %>
   Country_code<%= text_field 'place', :country_code  %>
   <BR/>
@@ -48,22 +46,19 @@
  
  
   Phone<%= text_field 'place', :phone  %>
-  <BR/>
   Email<%= text_field 'place', :email  %>
   <BR/>
   Rating<%= text_field 'place', :rating  %>
-  <BR/>
   Difficulty<%= text_field 'place', :difficulty  %>
-  <BR/>
   Distance (km)<%= text_field 'place', :distance  %>
-  <BR/>
   Area (sq metres)<%= text_field 'place', :area  %>
-  <BR/>
   Accessibility<%= text_field 'place', :howaccessible  %>
   <BR/>
   Transport<%= text_field 'place', :transportation  %>
   <BR/>
   Use Code<%= text_area 'place', :use_code, :columns=>80 ,  :rows=>5 %>
+  <BR/>
+  Note<%= text_area 'place', :note, :columns=>80 ,  :rows=>5 %>
   <BR/>
   Hours (text) <%= text_area 'place', :hours,:columns=>80 ,  :rows=>2  %>
   <BR/>

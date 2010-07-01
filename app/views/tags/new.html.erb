@@ -1,11 +1,11 @@
 <% form_for(@tag) do |f| %>
 
 <span>New tag  
-  <% if !@tag.parent.nil? %>
+  <!-- % if !@tag.parent.blank? %-->
   under
-  <EM><%= @tag.parent.name %></EM> 
+  <EM><!-- %= @tag.parent.name %--></EM> 
   <%= hidden_field(:tag, :parent_id ) %>
-  <% end %>
+  <!-- % end %-->
 </span>
 <br/>
 
@@ -16,7 +16,7 @@
   <%= f.text_field :description %><br/>
   <%= f.label :uri %>
   <%= f.text_field :uri %><br />
-<%= f.label :Geocode %>
+  <%= f.label :Geocode %>
   <%= f.text_field :code %><br />
  <!--% @parents=Tag.find(:all); %-->
  <!-- %= collection_select(:tag, :id, @parents, :id, :name, options ={:prompt => "-Select a Parent"}, :class =>"tag") %-->
