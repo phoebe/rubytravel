@@ -13,6 +13,7 @@ phoebe:
     last_name: miller
     email: phoebem@comcast.net
     remember_token: phoebe_token
+    encrypted_password: foobarbaz
 
 ron:
     login: ron

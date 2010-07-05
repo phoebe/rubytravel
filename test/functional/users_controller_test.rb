@@ -10,21 +10,16 @@ class UsersControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:users)
-/bin/bash: indent: command not found
+  end
+
   test "should get new" do
     get :new
     assert_response :success
   end
 =end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, :user => { :login=>'josie',:email=>'josie@gmail.com',:password=>'josie',:email_confirmed => true, :latitude => 42.383, :longitude=>-71.055}
-    end
-
-    assert_redirected_to user_path(assigns(:user))
-  end
-
+  # test "should create user" - moved to test/functional/clearance/users_controller_test.rb
+  
   test "should show user" do
     get :show, :id => users(:phoebe).to_param
     assert_response :success
@@ -36,7 +31,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-    put :update, :id => users(:phoebe).to_param, :user => {:first_name=>"Phoebe",:last_name=>"Miller" }
+    put :update, :id => users(:phoebe).to_param, :user => {:first_name=>"Phoebe",:last_name=>"Miller"}
     assert_redirected_to user_path(assigns(:user))
   end
 
