@@ -1,9 +1,12 @@
 class Trip < ActiveRecord::Base
   belongs_to :owner, :class_name => "User"
-  has_many :participations
+  has_many :participations, :dependent => :destroy
   has_many :participants, :through => :participations, :source => :user
   has_many :profiles, :through => :participations
   has_many :suggestions
+  
+  validates_date :departureDate, :allow_blank => true
+  validates_presence_of :name
   
   #create a cluster of attractions matching tags around city centers
   def self.clusterLocations( tags,trip) # cities, places )

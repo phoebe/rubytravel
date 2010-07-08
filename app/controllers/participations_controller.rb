@@ -14,7 +14,7 @@ class ParticipationsController < ApplicationController
   # GET /participations/1
   # GET /participations/1.xml
   def show
-    @participation = Participation.find(params[:id])
+    @participation = current_user.participations.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,6 @@ class ParticipationsController < ApplicationController
   # GET /participations/new.xml
   def new
     @user = current_user()
-    @profiles=  @user.profiles
     @trip=Trip.find(params[:trip_id])
     @participation = @user.participations.build
     @participation.trip_id=@trip.id
@@ -40,9 +39,8 @@ class ParticipationsController < ApplicationController
   # GET /participations/1/edit
   def edit
     @user = current_user()
-    @profiles=  @user.profiles 
-    @participation = Participation.find(params[:id])
-    @trip=Trip.find(@participation.trip_id) unless @participation.trip_id.nil?
+    @participation = @user.participations.find(params[:id])
+    @trip=@participation.trip
   end
 
   # POST /participations
@@ -56,14 +54,10 @@ class ParticipationsController < ApplicationController
     else
       @participation = @user.participations.new(params[:participation])
     end
-    @trip=Trip.find(@participation.trip_id)
-    is_OK=true;
+    is_OK=true
+    @trip=@participation.trip
     if @trip.nil?
       flash[:notice] = 'No such trip'
-      is_OK=false
-    end
-    if @participation.user_id !=@user.id
-      flash[:notice] = 'You are adding someone other than yourself'
       is_OK=false
     end
     if @participation.profile.nil?
@@ -77,7 +71,7 @@ class ParticipationsController < ApplicationController
         format.html { redirect_to(@trip) }
         format.xml  { render :xml => @trip, :status => :created, :location => @trip }
       else
-        format.html { render :action => "join" }
+        format.html { render :action => "new"}
         format.xml  { render :xml => @participation.errors, :status => :unprocessable_entity }
       end
     end
@@ -86,7 +80,7 @@ class ParticipationsController < ApplicationController
   # PUT /participations/1
   # PUT /participations/1.xml
   def update
-    @participation = Participation.find(params[:id])
+    @participation = current_user.participations.find(params[:id])
     
     respond_to do |format|
       if @participation.update_attributes(params[:participation])
@@ -103,7 +97,7 @@ class ParticipationsController < ApplicationController
   # DELETE /participations/1
   # DELETE /participations/1.xml
   def destroy
-    @participation = Participation.find(params[:id])
+    @participation = current_user.participations.find(params[:id])
     @participation.destroy
 
     respond_to do |format|

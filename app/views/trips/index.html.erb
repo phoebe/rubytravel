@@ -5,14 +5,14 @@
   </thead>
   <tbody>
   <tr class="alt"> 
-  <th width="60%"> Trip Name </th> <th> Departure Date </th> <th> Days in duration </th>  
+  <th width="60%"> Trip Name </th> <th> Departure Date </th> <th> Days in duration </th>  <th> Changes </th>
   </tr>
 <% @trips.each do |trip| %>
   <tr>
     <td><%=link_to  trip.name, trip %></td>
     <td><%= trip.departureDate %></td>
     <td><%= trip.duration %></td>
-    <td><%= link_to 'Join', join_trip_path(trip) %></td>
+    <td><%= trip_part_change_links(trip) %></td>
   </tr>
 <% end %></tbody>
 </table>
@@ -27,14 +27,12 @@
   <tr class="alt"> <th width="60%"> Trip Name </th> <th> Departure Date </th> <th> Days in duration </th>
     <th>Changes</th>
   </tr>
-<% @mytrips.each do |trip| %>
+<% @owntrips.each do |trip| %>
   <tr>
     <td><%=link_to trip.name, trip %></td>
     <td><%= trip.departureDate %></td>
     <td><%= trip.duration %></td>
-    <td>
-    <%= link_to 'Edit', edit_trip_path(trip) %> |
-    <%= link_to 'Destroy', trip, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= trip_part_change_links(trip) %></td>
   </tr>
 <% end %></tbody>
 </table>

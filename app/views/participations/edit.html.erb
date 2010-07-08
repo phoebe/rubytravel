@@ -1,18 +1,20 @@
 <h1>Editing Trip participation</h1>
-<%= h @trip.name unless @trip.blank? %>
-<%= h @trip.departureDate unless @trip.blank? %>
+Trip <%= h @trip.name %> departing on <%= h @trip.departureDate %>
 
-<% form_for :participation, @participation, :url=>participation_url, :html=>{:method=>:put} do |f| %>
+<% form_for @participation do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :Role %><br />
     <%= f.text_field :name %>
+    <br/>
+    <%= f.label 'Leaving on date (MM/DD/YYYY)' %>
+    <%= f.text_field :traveldate %>
   </p>
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :trip_id %>
   <p>
   <%= f.label 'Pick a profile for this trip' %><br />
-  <%= f.select( :profile_id, @profiles.collect{ |p| [p.name,p.id]}, {:include_blank=>'None'} ) unless @profiles.blank? %>
+  <%= f.select( :profile_id, @user.profiles.collect{ |p| [p.name,p.id]}, {:include_blank=>'None'} ) unless @user.profiles.blank? %>
   </p>
   <p>
     <%= f.submit 'Update' %>

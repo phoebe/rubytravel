@@ -2,16 +2,12 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.xml
  before_filter :authenticate
+ 
   def index
-    if (signed_in?)
-      @user= User.find( current_user().id);
-    else
-      print "Must signed in first";
-    end
+    @user= current_user
     @trips = Trip.all
-    @mytrips = Trip.find(:all,:conditions=>[ 'owner_id=?',current_user().id ] )  if (@user)
+    @owntrips = @user.own_trips 
     @participations=@user.participations
-    @parttrips = @user.part_trips if (@user)
 
     respond_to do |format|
       format.html # index.html.erb

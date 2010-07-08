@@ -9,15 +9,14 @@ location unknown
 <BR>
 <%= link_to 'Edit Personal Information', edit_user_path(@user.id) %>
 
-<% @trips= @user.part_trips %>
-<% if !@trips.nil? && !@trips.empty? %>
+<% @parts= @user.participations %>
+<% unless @parts.empty? %>
 <table id="trip">
 <h2>Here are your pending trips</h2>
-<% @trips.each do |trip| %>
+<% @parts.each do |part| %>
   <tr>
-    <td width="70%"><%= link_to trip.name.capitalize() , trip %></td>
-    <td><%= link_to 'Change', edit_profile_path(trip) %></td>
-    <td><%= link_to 'Leave', trip, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td width="70%"><%= link_to part.trip.name.capitalize() , part.trip %></td>
+    <td><%= part_change_links(part) %></td>
 </tr>
 <% end %>
 </table>

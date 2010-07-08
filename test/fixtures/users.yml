@@ -19,7 +19,8 @@ ron:
     login: ron
     first_name: ron
     last_name: newman
-
+    email: rnewman@thecia.net
+    
 kalinda:
   login: kalinda
   first_name: kalinda
@@ -32,5 +33,5 @@ grandpa:
 
 grandma:
   login: grandma
-  first_name: grandpa
-  email: grandpa@kalinda.us
+  first_name: grandma
+  email: grandma@kalinda.us

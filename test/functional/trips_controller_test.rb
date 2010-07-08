@@ -18,7 +18,8 @@ class TripsControllerTest < ActionController::TestCase
 
   test "should create trip" do
     assert_difference('Trip.count') do
-      post :create, :trip => { }
+      post :create, :trip => 
+        {:name => 'Functional test trip', :departureDate => "3/17/2011"}
     end
 
     assert_redirected_to trip_path(assigns(:trip))

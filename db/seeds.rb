@@ -9,22 +9,22 @@
 ron = User.find_or_create_by_login(:login => 'ron', :email => 'rnewman@thecia.net', 
    :password=>'ron', :email_confirmed => true, :latitude => 42.383, :longitude => -71.055) # Boston
 phoebe = User.find_or_create_by_login(:login => 'phoebe',:email => 'phoebem@comcast.net', 
-   :password=>'phoebe',:encrypted_password => 'crypted_password', :email_confirmed => true,
+   :password=>'phoebe', :email_confirmed => true,
    :latitude => 37.7875, :longitude => -122.4138)  # San Francisco
 kalinda = User.find_or_create_by_login(:login => 'kalinda',:email => 'kalinda@comcast.net', 
-    :password=>'kalinda',:encrypted_password => 'crypted_password', :email_confirmed => true,
+    :password=>'kalinda', :email_confirmed => true,
     :latitude => 47.6321, :longitude => -122.330)  # Seattle
 steve = User.find_or_create_by_login(:login => 'steve',:email => 'steve@comcast.net', 
-    :password=>'steve',:encrypted_password => 'crypted_password', :email_confirmed => true,
+    :password=>'steve', :email_confirmed => true,
     :latitude => 30.295, :longitude => -97.741)  # Austin
 grandpa = User.find_or_create_by_login(:login => 'grandpa',:email => 'grandpa@comcast.net', 
-    :password=>'grandpa',:encrypted_password => 'crypted_password', :email_confirmed => true,
+    :password=>'grandpa', :email_confirmed => true,
     :latitude => 40.7400, :longitude => -74.0025)  # NYC
 grandma = User.find_or_create_by_login(:login => 'grandma',:email => 'grandma@comcast.net', 
-    :password=>'grandma',:encrypted_password => 'crypted_password', :email_confirmed => true,
+    :password=>'grandma', :email_confirmed => true,
     :latitude => 40.7400, :longitude => -74.0025)  # NYC
 blackie = User.find_or_create_by_login(:login => 'blackie',:email => 'blackie@comcast.net', 
-    :password=>'blackie',:encrypted_password => 'crypted_password', :email_confirmed => true,
+    :password=>'blackie', :email_confirmed => true,
     :latitude => 35.7019, :longitude => -105.9370)  # Santa Fe
 
 

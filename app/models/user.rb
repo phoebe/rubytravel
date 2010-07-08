@@ -14,6 +14,11 @@ class User < ActiveRecord::Base
   validates_format_of :email,
     :with => /^([^@\s]+)@((?:[-_+.%a-z0-9]+\.)+[a-z0-9]{2,})$/i
   
+  # Do I participate in this trip?
+  def part_trip?(trip)
+    part_trips.include?(trip)
+  end
+  
   def handle()   
     if  (! self.first_name.nil? ) 
       return (self.first_name);
