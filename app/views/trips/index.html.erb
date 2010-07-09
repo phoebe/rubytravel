@@ -10,7 +10,7 @@
 <% @trips.each do |trip| %>
   <tr>
     <td><%=link_to  trip.name, trip %></td>
-    <td><%= trip.departureDate %></td>
+    <td><%= trip.departure_date %></td>
     <td><%= trip.duration %></td>
     <td><%= trip_part_change_links(trip) %></td>
   </tr>
@@ -30,7 +30,7 @@
 <% @owntrips.each do |trip| %>
   <tr>
     <td><%=link_to trip.name, trip %></td>
-    <td><%= trip.departureDate %></td>
+    <td><%= trip.departure_date %></td>
     <td><%= trip.duration %></td>
     <td><%= trip_part_change_links(trip) %></td>
   </tr>

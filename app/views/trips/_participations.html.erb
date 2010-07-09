@@ -5,7 +5,7 @@
 <% @user = User.find(p.user_id) %>
 <%= @user.first_name %> <%= @user.last_name %>
 &lt;<%= @user.email %>&gt;</B>
-arrives: <%= p.traveldate %>
+arrives: <%= p.travel_date %>
 <% if p.user_id == current_user().id %>
     <% @profile= Profile.find(p.profile_id) %>
   (<I>

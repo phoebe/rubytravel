@@ -19,7 +19,7 @@
     <td><% @profile= Profile.find(part.profile_id) unless part.profile_id.blank? %>
     <%= @profile.name unless @profile.blank? %>
     </td>
-    <td><%= part.traveldate %></td>
+    <td><%= part.travel_date %></td>
     <td><%= trip.duration %></td>
     
  

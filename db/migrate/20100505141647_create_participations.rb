@@ -6,7 +6,7 @@ class CreateParticipations < ActiveRecord::Migration
       t.references :user           # user joins trip
       t.references :profile        # user is using this profile for this trip
       t.integer :radius           # distance in miles that user is willing to travel from his/her location
-      t.date      :traveldate     # optional - when this person will join trip
+      t.date      :travel_date     # optional - when this person will join trip
       t.timestamps
     end
   end

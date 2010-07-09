@@ -1,5 +1,5 @@
 <%= h @trip.name %>
-<%= h @trip.departureDate %>
+<%= h @trip.departure_date %>
 
 <% form_for :participation, @participation, :url => { :action => :create }  do |f| %>
   <%= f.error_messages %>
@@ -8,7 +8,7 @@
     <%= f.text_field :name %>
     <br/>
     <%= f.label 'Leaving on date (MM/DD/YYYY)' %>
-    <%= f.text_field :traveldate %>
+    <%= f.text_field :travel_date %>
   </p>
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :trip_id %>

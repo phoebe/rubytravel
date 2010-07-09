@@ -29,7 +29,7 @@ class ParticipationsController < ApplicationController
     @trip=Trip.find(params[:trip_id])
     @participation = @user.participations.build
     @participation.trip_id=@trip.id
-    @participation.traveldate=@trip.departureDate
+    @participation.travel_date=@trip.departure_date
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @participation }

@@ -4,7 +4,7 @@ class CreateTrips < ActiveRecord::Migration
       t.references :owner
       t.string :name
       t.string :description
-      t.date  :departureDate
+      t.date  :departure_date
       t.integer   :duration
       t.float   :latitude
       t.float   :longitude

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
     t.integer  "user_id"
     t.integer  "profile_id"
     t.integer  "radius"
-    t.date     "traveldate"
+    t.date     "travel_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
     t.integer  "owner_id"
     t.string   "name"
     t.string   "description"
-    t.date     "departureDate"
+    t.date     "departure_date"
     t.integer  "duration"
     t.float    "latitude"
     t.float    "longitude"
