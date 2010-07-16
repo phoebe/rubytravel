@@ -18,7 +18,7 @@ class ProfilesControllerTest < ActionController::TestCase
 
   test "should create profile" do
     assert_difference('Profile.count') do
-      post :create, :profile => { }
+      post :create, :profile => {:name => "test profile" }
     end
 
     assert_redirected_to profile_path(assigns(:profile))

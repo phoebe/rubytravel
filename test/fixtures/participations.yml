@@ -15,20 +15,25 @@ part1:
 part2:
     trip: family
     user: kalinda
+    profile: kalinda_family_profile
 
 part3:
     trip: family
     user: grandpa
-
+    profile: grandpa_family_profile
+    
 part4:
     trip: geek
     user: ron
+    profile: ron_work_profile
 
 part5:
     trip: geek
     user: phoebe
+    profile: phoebe_work_profile
 
 part6:
     trip: relax
     user: phoebe
+    profile: phoebe_family_profile
 

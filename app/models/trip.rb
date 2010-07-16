@@ -7,6 +7,7 @@ class Trip < ActiveRecord::Base
   
   validates_date :departure_date, :allow_blank => true
   validates_presence_of :name
+  validates_uniqueness_of :name, :scope => :owner_id
   
   #create a cluster of attractions matching tags around city centers
   def self.clusterLocations( tags,trip) # cities, places )
