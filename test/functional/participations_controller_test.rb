@@ -19,7 +19,7 @@ class ParticipationsControllerTest < ActionController::TestCase
   test "should create participation" do
     assert_difference('Participation.count', 1) do
       post :create, :participation => 
-        {:trip_id => trips(:active).id, :traveldate => "7/4/2010"}
+        {:trip_id => trips(:active).id, :travel_date => "7/4/2010"}
     end
     assert_redirected_to trip_path(trips(:active))
   end
@@ -35,7 +35,7 @@ class ParticipationsControllerTest < ActionController::TestCase
   end
 
   test "should update participation" do
-    put :update, :id => participations(:part1).to_param, :participation => {:traveldate => "8/9/2011" }
+    put :update, :id => participations(:part1).to_param, :participation => {:travel_date => "8/9/2011" }
     assert_redirected_to trip_path(assigns(:participation).trip)
   end
 

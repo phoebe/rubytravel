@@ -11,26 +11,26 @@ family:
     owner: phoebe
     name: Family Reunion 2011
     description: Fun for the whole extended family, can we not kill each other in 2 weeks
-    departureDate: 7-1-2011
+    departure_date: 7-1-2011
     duration: 14
 
 geek:
     owner: ron
     name: Geeky conference 2011
     description: Lets geek out together
-    departureDate: 5-30-2011
+    departure_date: 5-30-2011
     duration: 4
 
 active:
     owner: kalinda
     name: Active Camp
     description: Jocks united
-    departureDate: 9-1-2010
+    departure_date: 9-1-2010
     duration: 3
 
 relax:
     owner: grandma
     name: Spa Holiday
     description: Sedate spa and museum holiday
-    departureDate: 9-1-2010
+    departure_date: 9-1-2010
     duration: 6

@@ -1,18 +1,14 @@
 <OL>
 <% @participations.each { |p| %>
-<LI><B>
-<%= p.name %>
-<% @user = User.find(p.user_id) %>
-<%= @user.first_name %> <%= @user.last_name %>
-&lt;<%= @user.email %>&gt;</B>
-arrives: <%= p.traveldate %>
-<% if p.user_id == current_user().id %>
-    <% @profile= Profile.find(p.profile_id) %>
-  (<I>
-  <%= @profile.name %>
-    </I>)
-<% end %>
-</LI>
+    <LI><B>
+    <%= p.name %>
+    <%= p.user.handle %>
+    &lt;<%= p.user.email %>&gt;</B>
+    arrives: <%= p.travel_date %>
+    <% if p.user_id == current_user().id %>
+      (<I> <%= link_to h(p.profile.name), p.profile %> </I>)
+    <% end %>
+    </LI>
 <% } %>
 </OL>
 

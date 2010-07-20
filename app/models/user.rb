@@ -19,14 +19,21 @@ class User < ActiveRecord::Base
     part_trips.include?(trip)
   end
   
+  # Do I own this trip?
+  def own_trip?(trip)
+    trip.owner_id == self.id
+  end
+  
   def handle()   
-    if  (! self.first_name.nil? ) 
+    if (!self.first_name.blank? && !self.last_name.blank?)
+      return self.first_name + " " + self.last_name
+    elsif  (! self.first_name.blank? ) 
       return (self.first_name);
-    elsif  (! self.last_name.nil? ) 
+    elsif  (! self.last_name.blank? ) 
       return (self.last_name);
-    elsif  (! self.login.nil?)
+    elsif  (! self.login.blank?)
       return self.login
-    elsif  (! self.email.nil?)
+    elsif  (! self.email.blank?)
       return self.email;
     else
       return "Mystery!"

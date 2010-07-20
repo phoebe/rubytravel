@@ -7,6 +7,7 @@
   <tr class="alt"> <th width="60%"> Trip Name </th>
   <th>Profile used </th>
    <th> Departure Date </th> <th> Days in duration </th> 
+    <th>Owner</th>
     <th>Changes</th>
   </tr>
   
@@ -16,12 +17,11 @@
 <% trip = part.trip %>
   <tr>
     <td><%= link_to trip.name, trip %></td>
-    <td><% @profile= Profile.find(part.profile_id) unless part.profile_id.blank? %>
-    <%= @profile.name unless @profile.blank? %>
+    <td><%= link_to h(part.profile.name), part.profile %>
     </td>
-    <td><%= part.traveldate %></td>
+    <td><%= part.travel_date %></td>
     <td><%= trip.duration %></td>
-    
+    <td><%= trip.owner.handle %></td>
  
     <td><%= part_change_links(part) %></td>
   </tr> </tbody>
