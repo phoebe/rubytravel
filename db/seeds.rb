@@ -182,7 +182,7 @@ MARTIA=Tag.find_or_create_by_name(:name => 'MARTIA',
 			:parent=> ACT)
 OUT=Tag.find_or_create_by_name(:name => 'OUTD',
 			:uri => 'http://kalinda.us/ns/OUT',
-			:code => 'OUTD'
+			:code => 'OUTD',
 			:id=> 101,
 			:description=> "Outdoors")
 MUSEUM=Tag.find_or_create_by_name(:name => 'MUSEUM',

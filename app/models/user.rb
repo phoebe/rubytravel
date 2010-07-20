@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   include Clearance::User
-  #attr_accessible :first_name,:last_name, :login
   has_many :tags, :foreign_key => :creator_id
   has_many :profiles, :dependent => :destroy
   has_many :participations #, :dependent => :destroy
@@ -31,8 +30,8 @@ class User < ActiveRecord::Base
       return (self.first_name);
     elsif  (! self.last_name.blank? ) 
       return (self.last_name);
-    elsif  (! self.login.blank?)
-      return self.login
+    #elsif  (! self.login.blank?)
+      #return self.login
     elsif  (! self.email.blank?)
       return self.email;
     else
