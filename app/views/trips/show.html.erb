@@ -22,7 +22,10 @@
 <h3> Group interests are (highest points=most interest):
 </h3>
 <% @tagpoints.each { |p,t| %>
-<%=	t[1].name%> (<%=t[0] %>),
+<!-- %=	t[1].name%> (<%=t[0] %>), -->
+<%} %>
+<% @tags.each { |t| %>
+<%=	t.name%> (<%=t.points %>),
 <%} %>
 </p><hr>
 Here is a list of locations that may be interesting, with a sample of nearby attractions
@@ -38,7 +41,13 @@ Near
 <% places.each { |t| %>
 <tr>
   <td width="20%"><%= link_to t.name , t.url %>
-   <td width="10%"><%= t.city.capitalize %>, <%= t.state %><td><%= t.use_code %><td><%= t.geonameid %><td>
+   <td width="10%"><%= t.city.capitalize %>, <%= t.state %><td>
+   <%= t.use_code %> <td><%= t.use_code1 %>
+   <%= t.use_code2 %>
+   <td>
+   <%= t.loc_code1 %>
+   <%= t.loc_code2 %>
+   <td><%= t.geonameid %><td>
    SDist=<%= t.sqdist %><Br/>[<%= t.latitude %>,<%= t.longitude %>]<br/>
    <%= t.distance %>/<%=t.diff%>
 <% }%></table>

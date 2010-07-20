@@ -9,8 +9,8 @@ class Trip < ActiveRecord::Base
   validates_presence_of :name
   
   #create a cluster of attractions matching tags around city centers
-  def self.clusterLocations( tags,trip) # cities, places )
-    places= Place.supportsTags(tags, trip.departureDate )
+  def self.clusterLocations( tagpoints,trip) # cities, places )
+    places= Place.supportsTags(tagpoints, trip.departureDate )
     findSuggestions =Suggestions.new(places)
     coords=findSuggestions.getCenters(); # city center
     #cities=Location.closestCities(coords,50); # within 50 miles

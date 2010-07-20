@@ -15,6 +15,10 @@ CREATE TABLE `places` (
 	  `feature_class` char(1) DEFAULT NULL,
 	  `feature_code` varchar(10) DEFAULT NULL, -- see http://www.geonames.org/export/codes.html, varchar(10)
 	  `use_code` varchar(500) DEFAULT NULL, -- comma delimited text
+	  `use_code1` varchar(500) DEFAULT NULL, -- top level tag on uses/activity
+	  `use_code2` varchar(500) DEFAULT NULL, -- 2nd level tag
+	  `loc_code1` varchar(500) DEFAULT NULL, -- top level tag on loc
+	  `loc_code2` varchar(500) DEFAULT NULL, -- 2nd level tag
 	  `country_code` char(2) DEFAULT NULL, -- ISO-3166 2-letter country code, 2 characters
 	  `street_address` varchar(300) DEFAULT NULL,
 	  `city` varchar(100) DEFAULT NULL, 	-- text - should be in geonames.allCountries tbl

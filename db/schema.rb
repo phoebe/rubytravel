@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(:version => 20100505141647) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "login",                                                :null => false
     t.string   "email"
     t.datetime "last_login"
     t.string   "first_name"

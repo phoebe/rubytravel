@@ -31,9 +31,11 @@ class Tag < ActiveRecord::Base
     tags= Tag.find(:all, :conditions => { :id=> tags_list } )
     tagpoints={}
     tags.each { |t|
+      t['points']=points[t.id]
       tagpoints[t.id] = [ points[t.id] , t ]
     }
     tagpoints= tagpoints.sort { |a,b| b[1][0] <=> a[1][0] }
+    tags.sort!{|a,b| b.points <=> a.points }
 
     return tags,points,tagpoints
   end

@@ -6,31 +6,31 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
-ron = User.find_or_create_by_login(:login => 'ron', :email => 'rnewman@thecia.net', 
+ron = User.find_or_create_by_email(:email => 'rnewman@thecia.net', 
    :password=>'ron', :email_confirmed => true, :latitude => 42.383, :longitude => -71.055) # Boston
-phoebe = User.find_or_create_by_login(:login => 'phoebe',:email => 'phoebem@comcast.net', 
+phoebe = User.find_or_create_by_email(:email => 'phoebem@comcast.net', 
    :password=>'phoebe', :email_confirmed => true,
    :latitude => 37.7875, :longitude => -122.4138)  # San Francisco
-kalinda = User.find_or_create_by_login(:login => 'kalinda',:email => 'kalinda@comcast.net', 
+kalinda = User.find_or_create_by_email(:email => 'kalinda@comcast.net', 
     :password=>'kalinda', :email_confirmed => true,
     :latitude => 47.6321, :longitude => -122.330)  # Seattle
-steve = User.find_or_create_by_login(:login => 'steve',:email => 'steve@comcast.net', 
+steve = User.find_or_create_by_email(:email => 'steve@comcast.net', 
     :password=>'steve', :email_confirmed => true,
     :latitude => 30.295, :longitude => -97.741)  # Austin
-grandpa = User.find_or_create_by_login(:login => 'grandpa',:email => 'grandpa@comcast.net', 
+grandpa = User.find_or_create_by_email(:email => 'grandpa@comcast.net', 
     :password=>'grandpa', :email_confirmed => true,
     :latitude => 40.7400, :longitude => -74.0025)  # NYC
-grandma = User.find_or_create_by_login(:login => 'grandma',:email => 'grandma@comcast.net', 
+grandma = User.find_or_create_by_email(:email => 'grandma@comcast.net', 
     :password=>'grandma', :email_confirmed => true,
     :latitude => 40.7400, :longitude => -74.0025)  # NYC
-blackie = User.find_or_create_by_login(:login => 'blackie',:email => 'blackie@comcast.net', 
+blackie = User.find_or_create_by_email(:email => 'blackie@comcast.net', 
     :password=>'blackie', :email_confirmed => true,
     :latitude => 35.7019, :longitude => -105.9370)  # Santa Fe
 
 
-ACT=Tag.find_or_create_by_name(:name => 'ACT',
+ACT=Tag.find_or_create_by_name(:name => 'ACTV',
 			:uri => 'http://kalinda.us/ns/ACT',
-			:code => 'ACT',
+			:code => 'ACTV',
 			:id=> 1,
 			:description=> "active")
 KIDS=Tag.find_or_create_by_name(:name => 'KIDS',
@@ -48,14 +48,14 @@ CULT=Tag.find_or_create_by_name(:name => 'CULT',
 			:code => 'CULT',
 			:id=> 4,
 			:description=> "cultural interests")
-ROM=Tag.find_or_create_by_name(:name => 'ROM',
+ROM=Tag.find_or_create_by_name(:name => 'ROME',
 			:uri => 'http://kalinda.us/ns/ROM',
-			:code => 'ROM',
+			:code => 'ROME',
 			:id=> 5,
 			:description=> "romantic")
-ADV=Tag.find_or_create_by_name(:name => 'ADV',
+ADV=Tag.find_or_create_by_name(:name => 'ADVE',
 			:uri => 'http://kalinda.us/ns/ADV',
-			:code => 'ADV',
+			:code => 'ADVE',
 			:id=> 6,
 			:description=> "adventurous")
 SCENE=Tag.find_or_create_by_name(:name => 'SCENE',
@@ -138,9 +138,9 @@ HIST=Tag.find_or_create_by_name(:name => 'HIST',
 			:id=> 20,
 			:description=> "history",:parent_id=> 4,
 			:parent=> CULT)
-SKI=Tag.find_or_create_by_name(:name => 'SKI',
-			:uri => 'http://kalinda.us/ns/SKI',
-			:code => 'SKI',
+SKI=Tag.find_or_create_by_name(:name => 'SKIS',
+			:uri => 'http://kalinda.us/ns/SKIS',
+			:code => 'SKIS',
 			:id=> 21,
 			:description=> "ski,snowboard",:parent_id=> 1,
 			:parent=> ACT)
@@ -150,15 +150,15 @@ BOAT=Tag.find_or_create_by_name(:name => 'BOAT',
 			:id=> 22,
 			:description=> "kayak,canoe,whitewater,surf,sail",:parent_id=> 1,
 			:parent=> ACT)
-ART=Tag.find_or_create_by_name(:name => 'ART',
+ART=Tag.find_or_create_by_name(:name => 'ARTS',
 			:uri => 'http://kalinda.us/ns/ART',
-			:code => 'ART',
+			:code => 'ARTS',
 			:id=> 23,
 			:description=> "visual or performance art",:parent_id=> 4,
 			:parent=> CULT)
-SCI=Tag.find_or_create_by_name(:name => 'SCI',
+SCI=Tag.find_or_create_by_name(:name => 'SCIE',
 			:uri => 'http://kalinda.us/ns/SCI',
-			:code => 'SCI',
+			:code => 'SCIE',
 			:id=> 24,
 			:description=> "science",:parent_id=> 4,
 			:parent=> CULT)
@@ -180,9 +180,9 @@ MARTIA=Tag.find_or_create_by_name(:name => 'MARTIA',
 			:id=> 27,
 			:description=> "martial arts",:parent_id=> 1,
 			:parent=> ACT)
-OUT=Tag.find_or_create_by_name(:name => 'OUT',
+OUT=Tag.find_or_create_by_name(:name => 'OUTD',
 			:uri => 'http://kalinda.us/ns/OUT',
-			:code => 'OUT',
+			:code => 'OUTD'
 			:id=> 101,
 			:description=> "Outdoors")
 MUSEUM=Tag.find_or_create_by_name(:name => 'MUSEUM',
