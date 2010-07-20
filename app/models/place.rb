@@ -74,6 +74,10 @@ class Place < GeonameDB
     wcond=[];
     xterms=[]
     begin
+      if tags.empty?
+        @places = []
+        return
+      end
       tags.each { |t|
         if (t.parent_id.nil?)
           sterms[1][t.points]=t.name+' '+(sterms[1][t.points]||'')
@@ -108,17 +112,18 @@ class Place < GeonameDB
       #depdate = Date.strptime('2010-07-10')
       month= 10; #depdate.mon()
       mcond= ' and (season_'+month.to_s+' is null or season_'+month.to_s+' <> "C" )'
-  rescue
-      mcond=""
-      puts "Error in function"
-      puts tags.inspect
-      puts relterms.inspect
-  end
-    conditions= ' group by feature_code,use_code ORDER by '+ order
-    puts "QUERY: SELECT *,#{relterms} 0 as cluster,0 as sqdist,count(*) as distance FROM places WHERE #{cond} " + mcond + conditions+" limit 300"
+
+      conditions= ' group by feature_code,use_code ORDER by '+ order
+      puts "QUERY: SELECT *,#{relterms} 0 as cluster,0 as sqdist,count(*) as distance FROM places WHERE #{cond} " + mcond + conditions+" limit 300"
 
     #conditions= ' group by feature_code,use_code ORDER by geonameid desc'
-    @places= self.find_by_sql ["SELECT *,#{relterms} 0 as cluster,0 as sqdist,count(*) as distance FROM places WHERE #{cond} " + mcond + conditions+" limit 300"]
+      @places= self.find_by_sql ["SELECT *,#{relterms} 0 as cluster,0 as sqdist,count(*) as distance FROM places WHERE #{cond} " + mcond + conditions+" limit 300"]
     # @places= self.find_by_sql ["SELECT *,0 as cluster,0 as sqdist,count(*) as distance,MATCH (name,use_code) AGAINST (?) as geonameid FROM places WHERE MATCH (name,use_code) AGAINST (?) " + mcond + conditions+" limit 300", intr, intr]
+  rescue
+    mcond=""
+    puts "Error in function"
+    puts tags.inspect
+    puts relterms.inspect
   end
+end
 end

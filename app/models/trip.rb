@@ -11,6 +11,7 @@ class Trip < ActiveRecord::Base
   
   #create a cluster of attractions matching tags around city centers
   def self.clusterLocations( tags,trip) # cities, places )
+    return [] if tags.empty?
     places= Place.supportsTags(tags, trip.departure_date )
     findSuggestions =Suggestions.new(places)
     coords=findSuggestions.getCenters(); # city center
