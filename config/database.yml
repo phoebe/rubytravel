@@ -6,6 +6,14 @@ development:
   pool: 5
   timeout: 5000
 
+geonames2:
+  adapter: postgresql
+  database: rubytravel
+  flags: CLIENT_MULTI_RESULTS
+  host: localhost
+  username: phoebe
+  encoding: UTF8
+
 geonames:
   adapter: mysql
   database: geonames

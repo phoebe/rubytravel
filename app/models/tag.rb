@@ -29,15 +29,15 @@ class Tag < ActiveRecord::Base
       p.tag_id
     }
     tags= Tag.find(:all, :conditions => { :id=> tags_list } )
-    tagpoints={}
+    #tagpoints={}
     tags.each { |t|
       t['points']=points[t.id]
-      tagpoints[t.id] = [ points[t.id] , t ]
+     # tagpoints[t.id] = [ points[t.id] , t ]
     }
-    tagpoints= tagpoints.sort { |a,b| b[1][0] <=> a[1][0] }
+    #tagpoints= tagpoints.sort { |a,b| b[1][0] <=> a[1][0] }
     tags.sort!{|a,b| b.points <=> a.points }
 
-    return tags,points,tagpoints
+    return tags,points#,tagpoints
   end
 
   def getChildren

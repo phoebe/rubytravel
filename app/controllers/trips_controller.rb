@@ -22,7 +22,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id],:include => :participants)
     @participations=@trip.participations
     profile_list= @participations.collect { |p| p.profile_id }    
-    (@tags,@points,@tagpoints)=Tag.forProfiles(profile_list) # find interests
+    (@tags,@points)=Tag.forProfiles(profile_list) # find interests
    # @res= Place.supportsTagsLoc(@tags,45,-120,300, @trip.departure_date )
     begin
        @suggestions=Trip.clusterLocations(@tags,@trip) # find interesting places around cities

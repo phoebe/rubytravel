@@ -29,43 +29,52 @@
     </tr>
   </tbody>
 </table>
-
-<h3> Group interests are (highest points=most interest):
-</h3>
-<% @tagpoints.each { |p,t| %>
-<!-- %=	t[1].name%> (<%=t[0] %>), -->
-<%} %>
-<% @tags.each { |t| %>
-<%=	t.name%> (<%=t.points %>),
-<%} %>
-</p><hr>
-Here is a list of locations that may be interesting, with a sample of nearby attractions
-<br/>
-<% @suggestions.each { |c| %>
-<% city= c[:city] %>
-Near
-<%= h city.name.capitalize %>
-<%= city.admin1_code %> at [<%= c[:latlng][0] %>,<%= c[:latlng][1] %>]
-[<%= city.latitude %>,<%= city.longitude %>]<%=c[:diff] %>
-<%  places= c[:places] %>
-<div class="scroll"><table id="trip">
-<% places.each { |t| %>
-<tr>
-  <td width="20%"><%= link_to t.name , t.url %>
-   <td width="10%"><%= t.city.capitalize %>, <%= t.state %><td>
-   <%= t.use_code %> <td><%= t.use_code1 %>
-   <%= t.use_code2 %>
-   <td>
-   <%= t.loc_code1 %>
-   <%= t.loc_code2 %>
-   <td><%= t.geonameid %><td>
-   SDist=<%= t.sqdist %><Br/>[<%= t.latitude %>,<%= t.longitude %>]<br/>
-   <%= t.distance %>/<%=t.diff%>
-<% }%></table>
-</div>
-<% } %><hr>
-
-<% if current_user.own_trip?(@trip) %>
-<%= link_to 'Edit', edit_trip_path(@trip) %> |
+<% if !current_user.part_trip?(@trip) %>
+	<h3> Please	<%= link_to('join', join_trip_path(@trip)) %>
+	this trip and add a profile to add your input to update the list of locations
+	</h3>
+<%end%>
+<% if !@participations.empty? %>
+<% if @tags.empty? %>
+	<h3> You have not selected any interests, please edit your profile and add a few interests to help us make suggestions for you.
+	</h3>
+<% else %>
+	<h3> Group interests are (highest points=most interest):
+	</h3>
+	<% @tags.each { |t| %>
+	<%=	t.name%> (<%=t.points %>),
+	<%} %>
+	</p><hr>
+	<% if @suggestions.empty? %>
+	We have no suggestions for you, maybe you can add some interests in your profile to help us find locations that match your interests
+	<% else %>
+	Here is a list of locations that may be interesting, with a sample of nearby attractions
+	<br/>
+	<% end %>
+	<% @suggestions.each { |c| %>
+	<% city= c[:city] %>
+	Near
+	<%= h city.name.capitalize %>
+	<%= city.admin1_code %> at [<%= c[:latlng][0] %>,<%= c[:latlng][1] %>]
+	[<%= city.latitude %>,<%= city.longitude %>]<%=c[:diff] %>
+	<%  places= c[:places] %>
+	<div class="scroll"><table id="trip">
+	<% places.each { |t| %>
+	<tr>
+	  <td width="20%"><%= link_to t.name , t.url %>
+	   <td width="10%"><%= t.city.capitalize %>, <%= t.state %><td>
+	   <%= t.use_code %> <td><%= t.use_code1 %>
+	   <%= t.use_code2 %>
+	   <td>
+	   <%= t.loc_code1 %>
+	   <%= t.loc_code2 %>
+	   <td><%= t.geonameid %><td>
+	   SDist=<%= t.sqdist %><Br/>[<%= t.latitude %>,<%= t.longitude %>]<br/>
+	   <%= t.distance %>/<%=t.diff%>
+	<% }%></table>
+	</div>
+	<% } %><hr>
 <% end %>
+<% end %>
+<%= trip_part_change_links(@trip,true) %>
 <%= link_to 'Back', trips_path %>

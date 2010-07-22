@@ -17,28 +17,33 @@ class Trip < ActiveRecord::Base
     coords=findSuggestions.getCenters(); # city center
     #cities=Location.closestCities(coords,50); # within 50 miles
     cities=Location.nearbyCities(coords,40); # within 40 miles
+	  #puts "cities: #{cities.inspect}"
     # longer trips can have bigger clusters - remove outliers
+	trip.duration=5 if trip.duration.blank?
     places= findSuggestions.addAssignmentSqDist(trip.duration) 
     
     @suggestions=[]
     i=0
     cities.each { |p|
+	  #puts "cities: #{p.inspect}"
       @suggestions[i]= {};
       @suggestions[i][:city]=p;   # biggest city within 50 miles
       @suggestions[i][:latlng]=coords[i]; # real coord
       @suggestions[i][:diff]= Suggestions::haversine_distance(coords[i],[p.latitude,p.longitude])
-      @suggestions[i][:places]=[]
+      @suggestions[i][:places]=[] # init
       i= i+1;
     }
     # longer trips can have bigger clusters - how big?
   
     places.each { |p| 
-      #@suggestions[p.cluster][:places]=[] if @suggestions[p.cluster][:places].blank?     
+	  #puts "place: #{p.name} #{p.cluster}"
       p['diff']= Suggestions::haversine_distance(@suggestions[p.cluster][:latlng],[p.latitude,p.longitude])
       @suggestions[p.cluster][:places] << p
     }
     # drop suggestions if not too many options
-    @suggestions.reject! { |item| item[:places].size < 3; } 
+	@suggestions.reject! { |item|
+		item[:places].size < 1
+	} 
     
     return @suggestions
   end

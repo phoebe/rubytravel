@@ -100,6 +100,7 @@ class Place < GeonameDB
 
       #puts orders.inspect
       #puts "terms: #{xterms.inspect}"
+      #puts "ss: #{ss.inspect}"
       #order = "("+orders.join(" + ")+") desc " unless tags.empty?
       order = "("+ss.join(" + ")+") desc " unless ss.empty?
       relterms = xterms.join(", ")+", " unless xterms.empty?
@@ -107,14 +108,15 @@ class Place < GeonameDB
       wcond << matchtag(2,wterms2.join(' '),1) unless  wterms2.empty?
       cond= "(#{wcond.join(' or ')})"
       #puts "relterms #{relterms.inspect}"
-      puts ddate
+      #puts "wcond:#{wcond.inspect}"
+	  ddate= Date.today if ddate.blank?
       month=Date.parse(ddate.to_s).mon
+      #puts "ddate #{ddate}"
       #depdate = Date.strptime('2010-07-10')
-      month= 10; #depdate.mon()
       mcond= ' and (season_'+month.to_s+' is null or season_'+month.to_s+' <> "C" )'
 
       conditions= ' group by feature_code,use_code ORDER by '+ order
-      puts "QUERY: SELECT *,#{relterms} 0 as cluster,0 as sqdist,count(*) as distance FROM places WHERE #{cond} " + mcond + conditions+" limit 300"
+      #puts "QUERY: SELECT *,#{relterms} 0 as cluster,0 as sqdist,count(*) as distance FROM places WHERE #{cond} " + mcond + conditions+" limit 300"
 
     #conditions= ' group by feature_code,use_code ORDER by geonameid desc'
       @places= self.find_by_sql ["SELECT *,#{relterms} 0 as cluster,0 as sqdist,count(*) as distance FROM places WHERE #{cond} " + mcond + conditions+" limit 300"]
@@ -125,5 +127,6 @@ class Place < GeonameDB
     puts tags.inspect
     puts relterms.inspect
   end
+
 end
 end
