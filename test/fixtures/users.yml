@@ -8,7 +8,6 @@
 
 
 phoebe:
-    login: phoebe
     first_name: phoebe
     last_name: miller
     email: phoebem@comcast.net
@@ -16,22 +15,18 @@ phoebe:
     encrypted_password: foobarbaz
 
 ron:
-    login: ron
     first_name: ron
     last_name: newman
     email: rnewman@thecia.net
     
 kalinda:
-  login: kalinda
   first_name: kalinda
   email: kalinda@kalinda.us
 
 grandpa:
-  login: grandpa
   first_name: grandpa
   email: grandpa@kalinda.us
 
 grandma:
-  login: grandma
   first_name: grandma
   email: grandma@kalinda.us
